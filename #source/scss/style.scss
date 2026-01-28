@@ -1,0 +1,62 @@
+/* GLOBAL STYLES */
+    // ~~~~~~~ GLOBAL STYLES --- START ~~~~~~~
+
+    // ~~~ Reset Styles ~~~
+    @import "../base/reset";
+
+    // ~~~ Variables ~~~
+    @import "../base/variables";
+
+    // ~~~ Mixins ~~~
+    @import "../base/mixins";
+
+    // ~~~ Typography ~~~
+    @import "../base/typography";
+
+    // ~~~ Utilities ~~~
+    @import "../base/utilities";
+
+    // ~~~ Global Styles ~~~
+    @import "../base/global";
+
+    // ~~~~~~~ GLOBAL STYLES --- END ~~~~~~~
+
+
+
+/* UI ELEMENTS */
+    // ~~~~~~~ UI ELEMENTS --- START ~~~~~~~
+
+    // ~~~ Button ~~~
+    @import "../ui/button";
+
+    // ~~~ Input ~~~
+    @import "../ui/input";
+
+    // ~~~ Modal ~~~
+    @import "../ui/modal";
+
+    // ~~~~~~~ UI ELEMENTS --- END ~~~~~~~
+
+
+
+/* HEADER & FOOTER */
+    // ~~~~~~~ HEADER & FOOTER --- START ~~~~~~~
+
+    // ~~~ Header ~~~
+    @import "../components/header/header";
+
+    // ~~~ Footer ~~~
+    @import "../components/footer/footer";
+
+    // ~~~~~~~ HEADER & FOOTER --- END ~~~~~~~
+
+
+
+/* ~~~~~~~ Styles for index.html ~~~~~~~ */
+    // ~~~~~~~ Styles for index.html START ~~~~~~~
+
+    // ~~~ Hero ~~~
+    @import "../components/hero/hero";
+
+
+    // ~~~~~~~ Styles for our-story.html END ~~~~~~~
