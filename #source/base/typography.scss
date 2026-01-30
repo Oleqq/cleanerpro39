@@ -1,0 +1,26 @@
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Geologica:wght,CRSV@100..900,0&display=swap');
+@import "../assets/fonts/benzin-font.css";
+
+
+.section {
+
+    &__title {
+        font-family: $second-family;
+        font-weight: 700;
+        font-size: 36px;
+        @include adaptive-value(font-size, 36px, 24px, 1920px, 767px);
+        text-transform: uppercase;
+        color: #26357e;
+    }
+
+    &__subtitle {
+        font-family: $font-family;
+        font-weight: 300;
+        font-size: 18px;
+        @include adaptive-value(font-size, 18px, 15px, 1920px, 767px);
+        color: #26357e;
+    }
+}

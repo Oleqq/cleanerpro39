@@ -1,0 +1,360 @@
+// hero.scss
+.hero {
+  --navy: #1f2e6f;
+  --magenta: #b10f7b;
+  --bg-soft: #f3f5f9;
+  --text: #1b1f2a;
+  --muted: rgba(31, 46, 111, 0.75);
+
+    margin-top: 46px;
+    margin-bottom: 42px;
+
+    overflow: hidden;
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 50px;
+    align-items: center;
+
+    @media (max-width:991px) {
+        display: flex;
+        flex-direction: column;
+    }
+  }
+
+  &__title {
+    font-family: $second-family;
+    font-weight: 700;
+    font-size: 48px;
+    @include adaptive-value(font-size, 48px, 26px, 1920px, 467px);
+    line-height: 101%;
+    text-transform: uppercase;
+    color: #26357e;
+
+    margin-bottom: 32px;
+  }
+
+  &__title-accent {
+    @media (max-width:991px) {
+        color: #b71375;
+    }
+  }
+
+  &__subtitle {
+    font-family: $font-family;
+    font-weight: 300;
+    font-size: 16px;
+    @include adaptive-value(font-size, 16px, 15px, 1920px, 467px);
+    color: #26357e;
+
+    margin-bottom: 32px;
+  }
+
+  &__subtitle-accent {
+    color: var(--navy);
+    font-weight: 800;
+  }
+
+  &__info {
+    width: 100%;
+  }
+
+  &__gifts {
+    overflow:visible;
+  }
+
+  &-swiper__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px 0px;
+    margin: 18px 0 26px;
+
+    margin-bottom: 42px;
+
+    max-width: 500px;
+
+    @media (max-width:567px) {
+      max-width: 100%;
+    }
+    @media (max-width:467px) {
+      display: flex;
+      
+    }
+  }
+
+  &__gift {
+    display: grid;
+    grid-template-columns: 34px 1fr;
+    gap: 14px;
+
+    align-items: center;
+  }
+
+  &__gift--card {
+    grid-template-columns: 1fr;
+    padding: 18px 18px 16px;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 10px 26px rgba(31, 46, 111, 0.08);
+    min-height: 112px;
+  }
+
+  &__gift-badge {
+    width: 34px;
+    height: 34px;
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    position: relative;
+  }
+
+  &__gift-badge-dot {
+    width: 4px;
+    height: 4px;
+    border-radius: 999px;
+    background: var(--navy);
+    opacity: 0.9;
+    position: absolute;
+
+    &:nth-child(1) { top: 9px; left: 9px; }
+    &:nth-child(2) { top: 9px; right: 9px; }
+    &:nth-child(3) { bottom: 9px; left: 9px; }
+    &:nth-child(4) { bottom: 9px; right: 9px; }
+  }
+
+  
+
+
+
+  &__gift-top {
+    margin-bottom: 6px;
+  }
+
+  &__gift-value {
+    font-weight: 900;
+    color: var(--navy);
+    font-size: 30px;
+    line-height: 1;
+  }
+
+  &__gift-text {
+    margin: 0;
+    font-family: $font-family;
+    font-weight: 300;
+    font-size: 16px;
+    @include adaptive-value(font-size, 16px, 15px, 1920px, 467px);
+    line-height: 104%;
+    color: #26357e;
+  }
+
+  &__actions {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 6px;
+
+    .ui__button-arrow {
+
+        @media (max-width:991px) {
+            width: 100%;
+            justify-content: center;
+        }
+    }
+  }
+  
+
+  &__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    border-radius: 999px;
+    padding: 14px 22px;
+    font-weight: 800;
+    text-decoration: none;
+    transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease;
+    user-select: none;
+    white-space: nowrap;
+  }
+
+  &__btn--primary {
+    background: var(--magenta);
+    color: #fff;
+    padding-right: 16px;
+    box-shadow: 0 16px 30px rgba(177, 15, 123, 0.22);
+
+    &:hover { transform: translateY(-1px); }
+  }
+
+  &__btn--secondary {
+    background: transparent;
+    color: var(--navy);
+    border: 2px solid rgba(31, 46, 111, 0.55);
+
+    &:hover { transform: translateY(-1px); }
+  }
+
+  &__btn-arrow {
+    width: 40px;
+    height: 40px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.16);
+    display: grid;
+    place-items: center;
+  }
+
+  &__btn-arrow-ico {
+    width: 10px;
+    height: 10px;
+    display: block;
+    border-right: 2px solid #fff;
+    border-top: 2px solid #fff;
+    transform: rotate(45deg);
+    margin-left: -2px;
+  }
+
+  &__img {
+    display: flex;
+    justify-content: flex-end;
+
+    @media (max-width: 991px) {
+        justify-content: center;
+    }
+  }
+
+  &__img-wrap {
+    position: relative;
+    width: min(670px, 100%);
+    aspect-ratio: 1 / 1;
+    border-radius: 34px;
+    overflow: hidden;
+    background: var(--bg-soft);
+
+    border-radius: 36px;
+
+    @media (max-width:767px) {
+        display: flex;
+        background: unset;
+        gap: 16px;
+        aspect-ratio: unset ;
+    }
+  }
+
+  &__img-el {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 36px;
+
+    @media (max-width:767px) {
+        width: 50%;
+    }
+  }
+
+  &__badge {
+    position: absolute;
+    right: 22px;
+    border-radius: 18px;
+    padding: 16px 18px;
+    box-shadow: 0 18px 40px rgba(17, 24, 39, 0.16);
+
+    @media (max-width:767px) {
+        position: unset;
+        box-shadow: unset;
+    }
+  }
+
+  &__badge--rating {
+    top: 50%;
+    transform: translateY(-50%);
+    background: #fff;
+    width: 220px;
+
+    @media (max-width:767px) {
+        top: unset;
+        transform: unset;
+        width: unset;
+        background: unset;
+    }
+  }
+
+  &__badge-title {
+    font-family: $second-family;
+    font-weight: 700;
+    font-size: 36px;
+    color: #26357e;
+  }
+
+  &__badge-text {
+    font-family: $font-family;
+    font-weight: 400;
+    font-size: 16px;
+    color: #26357e;
+  }
+
+  &__badge-wrap {
+    @media (max-width:767px) {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: flex-end;
+    }
+  }
+
+  &__badge--top {
+    bottom: 22px;
+    right: 22px;
+    width: 220px;
+    padding: 18px 18px 16px;
+    background: rgba(141, 150, 170, 0.28);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 18px 40px rgba(17, 24, 39, 0.14);
+
+    @media (max-width:767px) {
+        background: unset;
+        backdrop-filter: unset;
+        width: unset;
+        box-shadow: unset;
+    }
+  }
+
+  &__badge-top-title {
+    font-family: $second-family;
+    font-weight: 700;
+    font-size: 36px;
+    color: #fff;
+
+    @media (max-width:767px) {
+        color: #26357E;
+    }
+  }
+
+  &__badge-top-text {
+    font-family: $font-family;
+    font-weight: 400;
+    font-size: 16px;
+    color: #fff;
+
+    @media (max-width:767px) {
+        color: #26357E;
+    }
+  }
+
+  // Swiper block hidden on desktop
+  &__gifts-swiper {
+    display: none;
+    margin: 18px 0 22px;
+  }
+
+  &__swiper-pagination {
+    margin-top: 12px;
+    position: static;
+  }
+
+ 
+
+  
+}

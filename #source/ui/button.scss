@@ -1,0 +1,74 @@
+.ui {
+
+
+    &__button {
+        &-arrow {
+            font-family: $font-family;
+            font-weight: 500;
+            @include adaptive-value(font-size,17px, 16px, 1920px, 767px);
+            border-radius: 79px;
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            padding: 7px 10px 7px 28px;
+
+            white-space: nowrap;
+
+            height: 48px;
+
+            svg {
+                flex-shrink: 0;
+            }
+
+            &.blue {
+                color: #fff;
+                background: #26357e;
+                
+                
+            }
+
+            &.pink {
+                color: #fff;
+                background: #b71375;
+            }
+        }
+
+        &-noarrow {
+            font-family: $font-family;
+            font-weight: 500;
+            font-size: 17px;
+            @include adaptive-value(font-size,17px, 16px, 1920px, 767px);
+            border-radius: 79px;
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            padding: 7px 28px 7px 28px;
+            height: 48px;
+            
+
+            white-space: nowrap;
+
+            svg {
+                flex-shrink: 0;
+            }
+
+            &.blue {
+                color: #fff;
+                background: #26357e;
+                
+
+                &.outline {
+                    background-color: transparent;
+                    border: 1px solid #26357e;
+                    color: #26357e;
+                }
+                
+            }
+
+            &.pink {
+                color: #fff;
+                background: #b71375;
+            }
+        }
+    }
+}

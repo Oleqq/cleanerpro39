@@ -1,0 +1,292 @@
+.services {
+    margin-bottom: 86px;
+
+    overflow: hidden;
+
+
+    .section {
+
+        &__title {
+            margin-bottom: 30px;
+            @include adaptive-value(margin-bottom, 30px, 24px, 1920px, 767px);
+        }
+    }
+
+    .ui__button-arrow.mobile {
+        display: none;
+        @media (max-width:767px) {
+            display: flex;
+            margin-top: 50px;
+            justify-content: center;
+        }
+    }
+
+    &__head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 28px;
+        overflow: visible;
+        margin-bottom: 56px;
+        @include adaptive-value(margin-bottom, 56px, 26px, 1920px, 767px);
+    }
+
+    &__title {
+        margin: 0;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 0.02em;
+        font-size: 52px;
+        line-height: 1;
+        color: #26357e;
+    }
+
+    &__controls {
+        display: flex;
+        align-items: center;
+        gap: 28px;
+        flex: 1;
+        justify-content: space-between;
+
+        overflow: visible;
+
+        @media (max-width:767px) {
+            .ui__button-arrow {
+                display: none;
+            }
+        }
+    }
+
+    &__all {
+        flex: 0 0 auto;
+    }
+
+    &__slider {
+        position: relative;
+        overflow: visible;
+    }
+
+    &__list {
+        align-items: stretch;
+    }
+
+    &__nav {
+        position: absolute;
+        top: 172px;
+        z-index: 5;
+
+        width: 54px;
+        height: 54px;
+        border-radius: 999px;
+        border: 0;
+        cursor: pointer;
+
+        background: #26357e;
+        display: grid;
+        place-items: center;
+
+        transition: transform 0.15s ease, opacity 0.15s ease;
+
+        &:hover {
+            transform: translateY(-1px);
+        }
+
+        &.is-disabled {
+            opacity: 0.35;
+            pointer-events: none;
+        }
+
+        &--prev { left: -78px; }
+        &--next { right: -78px; }
+
+        &-ico {
+            width: 10px;
+            height: 10px;
+            border-right: 2px solid #fff;
+            border-top: 2px solid #fff;
+            transform: rotate(45deg);
+        }
+
+        &--prev &-ico {
+            transform: rotate(-135deg);
+        }
+    }
+
+    @media (max-width: 1100px) {
+        &__head {
+            align-items: flex-start;
+            flex-direction: column;
+        }
+
+        &__controls {
+            width: 100%;
+        }
+
+        &__nav {
+            display: none;
+        }
+    }
+
+    @media (max-width: 640px) {
+        padding: 34px 0;
+
+        &__title {
+            font-size: 36px;
+        }
+    }
+}
+
+.services-tabs {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+
+    @media (max-width:767px) {
+        flex-wrap: nowrap;
+    }
+
+    &__btn {
+        border: 2px solid rgba(38, 53, 126, 0.55);
+        background: transparent;
+        color: #26357e;
+
+        border-radius: 999px;
+        padding: 14px 20px;
+        font-family: $font-family;
+        font-weight: 400;
+        font-size: 17px;
+        line-height: 1;
+
+        width: auto;
+
+        cursor: pointer;
+        transition: color 0.18s ease, background 0.18s ease, border-color 0.18s ease;
+
+        &.is-active {
+            background: #26357e;
+            border-color: #26357e;
+            color: #fff;
+        }
+    }
+
+    // "ползунок" под табом (senior-анимация)
+    &__indicator {
+        position: absolute;
+        left: var(--i-left, 0px);
+        top: var(--i-top, 0px);
+        width: var(--i-width, 0px);
+        height: var(--i-height, 0px);
+
+        border-radius: 999px;
+        background: rgba(38, 53, 126, 0.12);
+
+        transform: translateZ(0);
+        transition: left 0.24s cubic-bezier(.2,.8,.2,1), width 0.24s cubic-bezier(.2,.8,.2,1), top 0.24s cubic-bezier(.2,.8,.2,1), height 0.24s cubic-bezier(.2,.8,.2,1);
+        pointer-events: none;
+
+        // чтобы indicator был под кнопками
+        z-index: 0;
+    }
+
+    &__btn {
+        position: relative;
+        z-index: 1;
+    }
+}
+
+// переиспользуемая карточка
+.service-card {
+    display: flex;
+    flex-direction: column;
+
+    &__media {
+        border-radius: 22px;
+        overflow: hidden;
+        aspect-ratio: 16 / 9;
+        background: #eef1f7;
+        margin-bottom: 14px;
+    }
+
+    &__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    &__title {
+        margin: 0;
+        font-family: $third-family;
+        font-weight: 500;
+        font-size: 17px;
+        color: #26357e;
+    }
+
+    &__meta {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        display: grid;
+        gap: 8px;
+
+        &-item {
+            font-family: $font-family;
+            font-weight: 300;
+            font-size: 14px;
+            color: #26357e;
+
+            // маркер-точка, вместо svg
+            position: relative;
+            padding-left: 22px;
+
+            &::before {
+                content: '';
+                width: 10px;
+                height: 10px;
+                border-radius: 999px;
+                border: 2px solid #b71375;
+                position: absolute;
+                left: 0;
+                top: 2px;
+            }
+        }
+    }
+
+    &__price {
+        margin: 6px 0 0;
+        font-family: $third-family;
+        font-weight: 500;
+        font-size: 17px;
+        color: #b71375;
+    }
+
+    &__actions {
+        margin-top: 14px;
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        flex-wrap: wrap;
+    }
+
+    &__link {
+        font-family: $font-family;
+        font-weight: 500;
+        font-size: 17px;
+        color: #26357e;
+        text-decoration: none;
+
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}

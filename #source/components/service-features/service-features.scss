@@ -1,0 +1,75 @@
+// service-features.scss
+.service-features {
+    margin-bottom: 74px;
+
+    overflow: hidden;
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 56px;
+        align-items: start;
+
+        @media (max-width:467px) {
+            display: flex;
+        }
+    }
+
+    &__item {
+        display: grid;
+        row-gap: 14px;
+        transition: .2s ease;
+
+        @media (max-width:991px) {
+            justify-items: center;
+        }
+        @media (max-width:467px) {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    &__icon {
+        width: 60px;
+        height: 60px;
+        object-fit: contain;
+        display: flex;
+
+    }
+
+    &__text {
+        margin: 0;
+        
+        font-family: $font-family;
+        font-weight: 300;
+        font-size: 16px;
+        color: #26357e;
+
+        transition: .2s ease;
+
+        @media (max-width:991px) {
+            text-align: center;
+        }
+        @media (max-width:467px) {
+            text-align: left;
+        }
+    }
+
+    @media (max-width: 900px) {
+        &__list {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 28px 32px;
+        }
+    }
+
+    @media (max-width: 540px) {
+        &__list {
+            grid-template-columns: 1fr;
+            gap: 18px;
+        }
+
+        &__text {
+            max-width: none;
+        }
+    }
+}
