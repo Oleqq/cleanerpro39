@@ -1,3 +1,28 @@
+document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                console.log('Element is visible:', entry.target);
+                entry.target.classList.add('animated');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        root: null, 
+        rootMargin: '0px', 
+        threshold: 0.01
+    });
+  
+    const sections = document.querySelectorAll('section');
+    console.log('Sections found:', sections);  // Логирование выбранных элементов
+  
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+});
+
+
+
 document.addEventListener('DOMContentLoaded', () => {
   const BP = 468;
   const el = document.querySelector('.hero-swiper');
@@ -441,4 +466,247 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	check();
 	window.addEventListener('resize', check);
+});
+
+
+document.addEventListener('DOMContentLoaded', () => {
+	const root = document.querySelector('.faq');
+	if (!root) return;
+
+	const items = Array.from(root.querySelectorAll('[data-faq-item]'));
+	if (!items.length) return;
+
+	const getParts = (item) => {
+		const head = item.querySelector('.faq-item__head');
+		const body = item.querySelector('.faq-item__body');
+		return { head, body };
+	};
+
+	// --- init: фикс "криво" = оставляем ОДИН открытый (если есть), иначе все закрыты
+	let firstOpen = null;
+
+	items.forEach((item) => {
+		const { head, body } = getParts(item);
+		if (!head || !body) return;
+
+		// aria связываем стабильно
+		if (!body.id) body.id = `faq-${Math.random().toString(16).slice(2)}`;
+		head.setAttribute('aria-controls', body.id);
+
+		const isOpen = item.classList.contains('is-open');
+		if (isOpen && !firstOpen) firstOpen = item;
+	});
+
+	items.forEach((item) => {
+		const { head } = getParts(item);
+		if (!head) return;
+
+		const shouldBeOpen = firstOpen ? item === firstOpen : item.classList.contains('is-open');
+		item.classList.toggle('is-open', shouldBeOpen);
+		head.setAttribute('aria-expanded', shouldBeOpen ? 'true' : 'false');
+	});
+
+	const closeAllExcept = (except) => {
+		items.forEach((item) => {
+			if (item === except) return;
+
+			const { head } = getParts(item);
+			if (!item.classList.contains('is-open')) return;
+
+			item.classList.remove('is-open');
+			if (head) head.setAttribute('aria-expanded', 'false');
+		});
+	};
+
+	const openItem = (item) => {
+		const { head } = getParts(item);
+		closeAllExcept(item);
+		item.classList.add('is-open');
+		if (head) head.setAttribute('aria-expanded', 'true');
+	};
+
+	const closeItem = (item) => {
+		const { head } = getParts(item);
+		item.classList.remove('is-open');
+		if (head) head.setAttribute('aria-expanded', 'false');
+	};
+
+	const toggleItem = (item) => {
+		if (item.classList.contains('is-open')) closeItem(item);
+		else openItem(item);
+	};
+
+	// --- events (и клики, и клавиатура)
+	const heads = items
+		.map((it) => getParts(it).head)
+		.filter(Boolean);
+
+	heads.forEach((head) => {
+		head.addEventListener('click', () => {
+			const item = head.closest('[data-faq-item]');
+			if (item) toggleItem(item);
+		});
+
+		head.addEventListener('keydown', (e) => {
+			const idx = heads.indexOf(head);
+			if (idx < 0) return;
+
+			if (e.key === 'ArrowDown') {
+				e.preventDefault();
+				heads[Math.min(idx + 1, heads.length - 1)].focus();
+			}
+
+			if (e.key === 'ArrowUp') {
+				e.preventDefault();
+				heads[Math.max(idx - 1, 0)].focus();
+			}
+
+			if (e.key === 'Home') {
+				e.preventDefault();
+				heads[0].focus();
+			}
+
+			if (e.key === 'End') {
+				e.preventDefault();
+				heads[heads.length - 1].focus();
+			}
+
+			if (e.key === 'Enter' || e.key === ' ') {
+				e.preventDefault();
+				const item = head.closest('[data-faq-item]');
+				if (item) toggleItem(item);
+			}
+
+			if (e.key === 'Escape') {
+				e.preventDefault();
+				const item = head.closest('[data-faq-item]');
+				if (item) closeItem(item);
+			}
+		});
+	});
+});
+
+
+
+
+// before-after.js
+document.addEventListener('DOMContentLoaded', () => {
+	const BP = 0; // тут не нужен, просто оставляю как стиль проекта
+
+	// --- Swiper (каждый "до-после" = слайд)
+	const swiperEl = document.querySelector('.before-after__swiper');
+	if (swiperEl) {
+		const prev = swiperEl.closest('.before-after__box')?.querySelector('.before-after__nav--prev');
+		const next = swiperEl.closest('.before-after__box')?.querySelector('.before-after__nav--next');
+
+		const baSwiper = new Swiper(swiperEl, {
+			speed: 450,
+			watchOverflow: true,
+			wrapperClass: 'before-after__list',
+			slideClass: 'before-after__slide',
+			slidesPerView: 2,
+			spaceBetween: 110,
+			navigation: { prevEl: prev, nextEl: next, disabledClass: 'is-disabled' },
+      breakpoints: {
+        0: {
+          slidesPerView: 1,
+        },
+        467: {
+          slidesPerView: 1,
+          spaceBetween: 64,
+        },
+        767: {
+          slidesPerView: 2,
+        },
+        1024: {
+          slidesPerView: 2,
+        },
+        1920: {
+          slidesPerView: 2,
+        },
+      }
+		});
+
+		// ресет сравнения при смене слайда — чтобы не было "залипаний"
+		baSwiper.on('slideChangeTransitionStart', () => {
+			const active = baSwiper.slides[baSwiper.activeIndex];
+			if (!active) return;
+			const cmp = active.querySelector('.ba');
+			if (!cmp) return;
+			resetCompare(cmp);
+		});
+	}
+
+	// --- Before/After compare
+	const compares = Array.from(document.querySelectorAll('.ba'));
+	compares.forEach((cmp) => initCompare(cmp));
+
+	function resetCompare(cmp) {
+		const start = Number(cmp.getAttribute('data-start') || 50);
+		const range = cmp.querySelector('.ba__range');
+		cmp.style.setProperty('--pos', `${start}`);
+		if (range) range.value = String(start);
+	}
+
+	function initCompare(cmp) {
+		const frame = cmp.querySelector('.ba__frame');
+		const range = cmp.querySelector('.ba__range');
+		if (!frame || !range) return;
+
+		resetCompare(cmp);
+
+		const setPos = (val) => {
+			const v = Math.max(0, Math.min(100, val));
+			cmp.style.setProperty('--pos', `${v}`);
+			range.value = String(v);
+		};
+
+		// input range (клава/а11y)
+		range.addEventListener('input', () => setPos(Number(range.value)));
+
+		// drag по всему кадру (и на мобилках норм)
+		let dragging = false;
+
+		const pointerToPos = (e) => {
+			const r = frame.getBoundingClientRect();
+			const x = e.clientX - r.left;
+			return (x / r.width) * 100;
+		};
+
+		const lockSwiper = (locked) => {
+			const swiperRoot = cmp.closest('.swiper');
+			if (!swiperRoot || !swiperRoot.swiper) return;
+			swiperRoot.swiper.allowTouchMove = !locked;
+		};
+
+		const onDown = (e) => {
+			dragging = true;
+			lockSwiper(true);
+			frame.setPointerCapture?.(e.pointerId);
+			setPos(pointerToPos(e));
+		};
+
+		const onMove = (e) => {
+			if (!dragging) return;
+			setPos(pointerToPos(e));
+		};
+
+		const onUp = () => {
+			if (!dragging) return;
+			dragging = false;
+			lockSwiper(false);
+		};
+
+		frame.addEventListener('pointerdown', onDown, { passive: true });
+		frame.addEventListener('pointermove', onMove, { passive: true });
+		frame.addEventListener('pointerup', onUp);
+		frame.addEventListener('pointercancel', onUp);
+
+		// клик по картинке тоже двигает (приятно)
+		frame.addEventListener('click', (e) => {
+			// если это был drag — click прилетит следом, игнорим
+			if (dragging) return;
+			setPos(pointerToPos(e));
+		});
+	}
 });

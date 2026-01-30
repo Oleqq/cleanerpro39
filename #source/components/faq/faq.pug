@@ -1,0 +1,66 @@
+//- faq.pug
+section.faq
+	.container.faq__container
+		.faq__grid
+			.faq__intro
+				h2.section__title
+					| ВАШИ ВОПРОСЫ
+					br
+					| — НАШИ РЕШЕНИЯ
+
+				p.section__subtitle
+					| Мы знаем, что у вас есть вопросы.
+					br
+					| И мы готовы на них честно и подробно ответить!
+					br
+					| Откройте для себя мир чистоты, где каждая деталь
+					br
+					| продумана, а каждый уголок сияет.
+
+			.faq__list
+				//- item (closed)
+				article.faq-item(data-faq-item)
+					button.faq-item__head(type="button" aria-expanded="false")
+						span.faq-item__q Сколько длится уборка?
+						span.faq-item__ico(aria-hidden="true")
+					.faq-item__body(role="region")
+						.faq-item__content
+							p
+								| Обычно 3–6 часов — зависит от площади, типа уборки и состояния объекта. Перед выездом уточним детали и дадим точный диапазон.
+
+				//- item (open by default)
+				article.faq-item.is-open(data-faq-item)
+					button.faq-item__head(type="button" aria-expanded="true")
+						span.faq-item__q Что используют клинеры во время уборки?
+						span.faq-item__ico(aria-hidden="true")
+					.faq-item__body(role="region")
+						.faq-item__content
+							p
+								| Привозим профессиональную химию и инвентарь с собой, подбираем средства под поверхности. Используем безопасные составы и проверенные технологии.
+
+				article.faq-item(data-faq-item)
+					button.faq-item__head(type="button" aria-expanded="false")
+						span.faq-item__q Необходимо ли мое присутствие?
+						span.faq-item__ico(aria-hidden="true")
+					.faq-item__body(role="region")
+						.faq-item__content
+							p
+								| Не обязательно. Можем выполнить уборку без вашего присутствия — согласуем доступ и чек-лист, а по завершении отправим фото/видео.
+
+				article.faq-item(data-faq-item)
+					button.faq-item__head(type="button" aria-expanded="false")
+						span.faq-item__q Необходима ли предоплата?
+						span.faq-item__ico(aria-hidden="true")
+					.faq-item__body(role="region")
+						.faq-item__content
+							p
+								| Нет, оплата после оказания услуг. Исключения бывают только для крупных/срочных заказов — заранее проговорим.
+
+				article.faq-item(data-faq-item)
+					button.faq-item__head(type="button" aria-expanded="false")
+						span.faq-item__q Какие гарантии сохранности предметов интерьера дает ваша компания?
+						span.faq-item__ico(aria-hidden="true")
+					.faq-item__body(role="region")
+						.faq-item__content
+							p
+								| Работаем по регламентам, используем подходящие средства и бережную технику. Если что-то пойдет не так — разберёмся и компенсируем по договоренности.

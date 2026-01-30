@@ -430,6 +430,52 @@
 </svg></a>
       </div>
     </section>
+    <section class="before-after">
+      <div class="container before-after__container">
+        <h2 class="section__title">ГОТОВЫ ВЗЯТЬСЯ ЗА УБОРКУ<br>ЛЮБОЙ СЛОЖНОСТИ</h2>
+        <div class="before-after__box">
+          <button class="before-after__nav before-after__nav--prev" type="button" aria-label="Назад"></button>
+          <button class="before-after__nav before-after__nav--next" type="button" aria-label="Вперёд"></button>
+          <div class="before-after__swiper ba-swiper swiper">
+            <div class="before-after__list swiper-wrapper">
+              <div class="before-after__slide swiper-slide">
+                <div class="ba" data-start="45">
+                  <div class="ba__frame"><img class="ba__img ba__img--before" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/photoshop-face-before.jpg" alt="До">
+                    <div class="ba__after"><img class="ba__img ba__img--after" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/photoshop-face-after.jpg" alt="После"></div>
+                    <div class="ba__label ba__label--before">До</div>
+                    <div class="ba__label ba__label--after">После</div>
+                    <div class="ba__handle" type="button" aria-hidden="true"></div>
+                    <input class="ba__range" type="range" min="0" max="100" value="50" aria-label="Сравнение до и после">
+                  </div>
+                </div>
+              </div>
+              <div class="before-after__slide swiper-slide">
+                <div class="ba" data-start="55">
+                  <div class="ba__frame"><img class="ba__img ba__img--before" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/photoshop-face-before.jpg" alt="До">
+                    <div class="ba__after"><img class="ba__img ba__img--after" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/photoshop-face-after.jpg" alt="После"></div>
+                    <div class="ba__label ba__label--before">До</div>
+                    <div class="ba__label ba__label--after">После</div>
+                    <div class="ba__handle" type="button" aria-hidden="true"></div>
+                    <input class="ba__range" type="range" min="0" max="100" value="50" aria-label="Сравнение до и после">
+                  </div>
+                </div>
+              </div>
+              <div class="before-after__slide swiper-slide">
+                <div class="ba" data-start="50">
+                  <div class="ba__frame"><img class="ba__img ba__img--before" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/photoshop-face-before.jpg" alt="До">
+                    <div class="ba__after"><img class="ba__img ba__img--after" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/photoshop-face-after.jpg" alt="После"></div>
+                    <div class="ba__label ba__label--before">До</div>
+                    <div class="ba__label ba__label--after">После</div>
+                    <div class="ba__handle" type="button" aria-hidden="true"></div>
+                    <input class="ba__range" type="range" min="0" max="100" value="50" aria-label="Сравнение до и после">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     <section class="steps-4">
       <div class="container steps-4__container">
         <h2 class="section__title">4 ШАГА ДЛЯ ИДЕАЛЬНОЙ<br>ЧИСТОТЫ ВАШЕГО ДОМА</h2>
@@ -469,6 +515,35 @@
               </div>
             </article>
           </div>
+        </div>
+      </div>
+    </section>
+    <section class="callback-form">
+      <div class="container callback-form__container">
+        <div class="callback-form__grid">
+          <div class="callback-form__intro">
+            <h2 class="callback-form__title">НЕ НАШЛИ<br>НЕОБХОДИМЫЙ<br>ВИД УБОРКИ?</h2>
+            <p class="callback-form__subtitle">Оставьте свои контактные данные,<br>мы с Вами свяжемся и обязательно Вам поможем!</p>
+          </div>
+          <div class="callback-form__card">
+            <form class="callback-form__form" action="#" method="post" novalidate>
+              <div class="callback-form__field">
+                <label class="callback-form__label" for="cb-name">Ваше имя:<span class="callback-form__req">*</span></label>
+                <input class="callback-form__input" id="cb-name" type="text" name="name" autocomplete="name" required placeholder="">
+              </div>
+              <div class="callback-form__field">
+                <label class="callback-form__label" for="cb-phone">Телефон:<span class="callback-form__req">*</span></label>
+                <input class="callback-form__input" id="cb-phone" type="tel" name="phone" autocomplete="tel" inputmode="tel" required placeholder="">
+              </div>
+              <div class="callback-form__agree">
+                <label class="callback-form__check">
+                  <input class="callback-form__check-input" type="checkbox" name="agree" required><span class="callback-form__check-box" aria-hidden="true"></span><span class="callback-form__check-text">Отправляя форму, вы даете согласие на обработку<br>своих<strong class="callback-form__check-strong"> персональных данных</strong></span>
+                </label>
+              </div>
+              <button class="ui__button-arrow ui__button-arrow pink callback-form__submit" type="submit">Отправить заявку</button>
+            </form>
+          </div>
+          <div class="callback-form__media"><img class="callback-form__img" src="./assets/img/Group 215.png" alt="Фото" loading="lazy"></div>
         </div>
       </div>
     </section>
@@ -572,6 +647,58 @@
           <div class="text-photo__media"><img class="text-photo__img" src="./assets/img/Group 391.png" alt="Переписка в мессенджере"></div>
         </div><a class="ui__button-arrow mobile ui__button-arrow pink" href="#">
           Написать в Telegram<svg width="33" height="33" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="16.5" cy="16.5" r="16.5" fill="white"></circle><path d="M14.4001 12.1999C14.8419 11.8687 15.4682 11.9583 15.7995 12.4001L18.7995 16.4001C19.066 16.7556 19.066 17.2438 18.7995 17.5993L15.7995 21.5993C15.4682 22.0411 14.8419 22.1308 14.4001 21.7995C13.9583 21.4682 13.8687 20.8419 14.1999 20.4001L16.5341 17.2873L16.7497 16.9997L16.5341 16.7121L14.1999 13.5993C13.8687 13.1575 13.9583 12.5312 14.4001 12.1999Z" fill="#B71375"></path></svg></a>
+      </div>
+    </section>
+    <section class="faq">
+      <div class="container faq__container">
+        <div class="faq__grid">
+          <div class="faq__intro">
+            <h2 class="section__title">ВАШИ ВОПРОСЫ<br>— НАШИ РЕШЕНИЯ</h2>
+            <p class="section__subtitle">Мы знаем, что у вас есть вопросы.<br>И мы готовы на них честно и подробно ответить!<br>Откройте для себя мир чистоты, где каждая деталь<br>продумана, а каждый уголок сияет.</p>
+          </div>
+          <div class="faq__list">
+            <article class="faq-item" data-faq-item>
+              <button class="faq-item__head" type="button" aria-expanded="false"><span class="faq-item__q">Сколько длится уборка?</span><span class="faq-item__ico" aria-hidden="true"></span></button>
+              <div class="faq-item__body" role="region">
+                <div class="faq-item__content">
+                  <p>Обычно 3–6 часов — зависит от площади, типа уборки и состояния объекта. Перед выездом уточним детали и дадим точный диапазон.</p>
+                </div>
+              </div>
+            </article>
+            <article class="faq-item is-open" data-faq-item>
+              <button class="faq-item__head" type="button" aria-expanded="true"><span class="faq-item__q">Что используют клинеры во время уборки?</span><span class="faq-item__ico" aria-hidden="true"></span></button>
+              <div class="faq-item__body" role="region">
+                <div class="faq-item__content">
+                  <p>Привозим профессиональную химию и инвентарь с собой, подбираем средства под поверхности. Используем безопасные составы и проверенные технологии.</p>
+                </div>
+              </div>
+            </article>
+            <article class="faq-item" data-faq-item>
+              <button class="faq-item__head" type="button" aria-expanded="false"><span class="faq-item__q">Необходимо ли мое присутствие?</span><span class="faq-item__ico" aria-hidden="true"></span></button>
+              <div class="faq-item__body" role="region">
+                <div class="faq-item__content">
+                  <p>Не обязательно. Можем выполнить уборку без вашего присутствия — согласуем доступ и чек-лист, а по завершении отправим фото/видео.</p>
+                </div>
+              </div>
+            </article>
+            <article class="faq-item" data-faq-item>
+              <button class="faq-item__head" type="button" aria-expanded="false"><span class="faq-item__q">Необходима ли предоплата?</span><span class="faq-item__ico" aria-hidden="true"></span></button>
+              <div class="faq-item__body" role="region">
+                <div class="faq-item__content">
+                  <p>Нет, оплата после оказания услуг. Исключения бывают только для крупных/срочных заказов — заранее проговорим.</p>
+                </div>
+              </div>
+            </article>
+            <article class="faq-item" data-faq-item>
+              <button class="faq-item__head" type="button" aria-expanded="false"><span class="faq-item__q">Какие гарантии сохранности предметов интерьера дает ваша компания?</span><span class="faq-item__ico" aria-hidden="true"></span></button>
+              <div class="faq-item__body" role="region">
+                <div class="faq-item__content">
+                  <p>Работаем по регламентам, используем подходящие средства и бережную технику. Если что-то пойдет не так — разберёмся и компенсируем по договоренности.</p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
       </div>
     </section>
     <section class="text-video">

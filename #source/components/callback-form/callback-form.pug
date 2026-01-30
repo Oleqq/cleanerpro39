@@ -1,0 +1,62 @@
+//- callback-form.pug
+section.callback-form
+	.container.callback-form__container
+		.callback-form__grid
+			.callback-form__intro
+				h2.callback-form__title
+					| НЕ НАШЛИ
+					br
+					| НЕОБХОДИМЫЙ
+					br
+					| ВИД УБОРКИ?
+
+				p.callback-form__subtitle
+					| Оставьте свои контактные данные,
+					br
+					| мы с Вами свяжемся и обязательно Вам поможем!
+
+			.callback-form__card
+				form.callback-form__form(action="#" method="post" novalidate)
+					.callback-form__field
+						label.callback-form__label(for="cb-name")
+							| Ваше имя:
+							span.callback-form__req *
+
+						input.callback-form__input#cb-name(
+							type="text"
+							name="name"
+							autocomplete="name"
+							required
+							placeholder=""
+						)
+
+					.callback-form__field
+						label.callback-form__label(for="cb-phone")
+							| Телефон:
+							span.callback-form__req *
+
+						input.callback-form__input#cb-phone(
+							type="tel"
+							name="phone"
+							autocomplete="tel"
+							inputmode="tel"
+							required
+							placeholder=""
+						)
+
+					.callback-form__agree
+						label.callback-form__check
+							input.callback-form__check-input(type="checkbox" name="agree" required)
+							span.callback-form__check-box(aria-hidden="true")
+							span.callback-form__check-text
+								| Отправляя форму, вы даете согласие на обработку
+								br
+								| своих
+								strong.callback-form__check-strong  персональных данных
+
+					button.ui__button-arrow.ui__button-arrow.pink.callback-form__submit(type="submit")
+						| Отправить заявку
+						//- svg 
+
+			.callback-form__media
+				img.callback-form__img(src="./assets/img/Group 215.png" alt="Фото" loading="lazy")

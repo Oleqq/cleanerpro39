@@ -1,0 +1,241 @@
+.callback-form {
+	margin: 86px 0;
+    transition: .2s ease;
+    @media (max-width:767px) {
+        margin-bottom: 50px;
+    }
+
+	&__grid {
+		display: grid;
+		grid-template-columns: 1.1fr 1fr 220px;
+        gap: 20px;
+		align-items: stretch;
+
+		@media (max-width: 1024px) {
+			grid-template-columns: 1fr;
+			gap: 18px;
+		}
+
+		@media (max-width: 767px) {
+			gap: 14px;
+		}
+	}
+
+	&__intro {
+		background: #26357e;
+		border-radius: 36px;
+        padding: 54px;
+        @include adaptive-value(padding, 54px, 34px, 1920px, 767px);
+		color: #fff;
+		display: grid;
+		align-content: center;
+
+		@media (max-width: 1024px) {
+			padding: 34px 26px;
+			border-radius: 32px;
+		}
+	}
+
+	&__title {
+		margin: 0;
+        font-family: $second-family;
+        font-weight: 700;
+        font-size: 36px;
+        @include adaptive-value(font-size, 36px, 24px, 1920px, 767px);
+        line-height: 119%;
+        text-transform: uppercase;
+        color: #fff;
+
+		
+	}
+
+	&__subtitle {
+		margin: 22px 0 0;
+        font-family: $font-family;
+        font-weight: 400;
+        font-size: 18px;
+        @include adaptive-value(font-size, 18px, 15px, 1920px, 767px);
+        color: #fff;
+
+		@media (max-width: 767px) {
+			margin-top: 14px;
+			font-size: 16px;
+		}
+	}
+
+	&__card {
+		background: #f7f7f7;
+		border-radius: 36px;
+		padding: 42px 44px;
+		display: grid;
+		align-content: center;
+
+		@media (max-width: 1024px) {
+			padding: 28px 22px;
+			border-radius: 32px;
+		}
+	}
+
+	&__form {
+		display: grid;
+		gap: 22px;
+
+		@media (max-width: 767px) {
+			gap: 16px;
+		}
+	}
+
+	&__field {
+		display: grid;
+		gap: 10px;
+	}
+
+	&__label {
+        font-family: $font-family;
+        font-weight: 400;
+        font-size: 16px;
+        @include adaptive-value(font-size, 16px, 15px, 1920px, 767px);
+        color: #26357e;
+	}
+
+	&__req {
+		color: #b71375;
+		margin-left: 2px;
+	}
+
+	&__input {
+		height: 64px;
+		border-radius: 999px;
+		border: 1.5px solid rgba(38, 53, 126, 0.9);
+		background: #fff;
+		padding: 0 22px;
+		font-size: 18px;
+		color: #26357e;
+		outline: none;
+		transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+
+        font-family: $font-family;
+        font-weight: 500;
+        font-size: 16px;
+        color: #26357e;
+
+		@media (max-width: 767px) {
+			height: 58px;
+			font-size: 16px;
+			padding: 0 18px;
+		}
+
+		&:focus-visible {
+			border-color: rgba(183, 19, 117, 0.9);
+			box-shadow: 0 0 0 4px rgba(183, 19, 117, 0.18);
+		}
+	}
+
+	&__agree {
+		margin-top: 6px;
+	}
+
+	&__check {
+		display: grid;
+		grid-template-columns: 28px 1fr;
+		gap: 14px;
+		align-items: start;
+		cursor: pointer;
+		user-select: none;
+	}
+
+	&__check-input {
+		position: absolute;
+		opacity: 0;
+		pointer-events: none;
+	}
+
+	&__check-box {
+		width: 22px;
+		height: 22px;
+		border-radius: 5px;
+		border: 1.5px solid rgba(38, 53, 126, 0.9);
+		background: #fff;
+		display: inline-block;
+		margin-top: 2px;
+		position: relative;
+		transition: border-color 180ms ease, box-shadow 180ms ease, background 180ms ease;
+
+		// галочка через псевдоэлемент (без svg в разметке)
+		&:after {
+			content: "";
+			position: absolute;
+			inset: 0;
+			margin: auto;
+			width: 12px;
+			height: 10px;
+			opacity: 0;
+			transform: scale(0.9);
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: contain;
+			background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='10' viewBox='0 0 12 10'%3E%3Cpath d='M1 5.2L4.3 8.5L11 1.5' fill='none' stroke='%23B71375' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+			transition: opacity 180ms ease, transform 180ms ease;
+		}
+	}
+
+	&__check-text {
+		font-family: $font-family;
+        font-weight: 400;
+        font-size: 16px;
+        @include adaptive-value(font-size, 16px, 15px, 1920px, 767px);
+        color: #26357e;
+	}
+
+	&__check-strong {
+		font-weight: 600;
+	}
+
+	&__check-input:focus-visible + &__check-box {
+		box-shadow: 0 0 0 4px rgba(38, 53, 126, 0.18);
+	}
+
+	&__check-input:checked + &__check-box {
+		border-color: rgba(183, 19, 117, 0.9);
+
+		&:after {
+			opacity: 1;
+			transform: scale(1);
+		}
+	}
+
+	&__submit {
+		margin-top: 10px;
+		width: 100%;
+		justify-content: center;
+	}
+
+	&__media {
+		background: #f7f7f7;
+		border-radius: 36px;
+		overflow: hidden;
+		display: grid;
+		place-items: center;
+
+		@media (max-width:1024px) {
+            display: none;
+        }
+	}
+
+	&__img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		display: block;
+
+        
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		&__input,
+		&__check-box,
+		&__check-box:after {
+			transition: none;
+		}
+	}
+}

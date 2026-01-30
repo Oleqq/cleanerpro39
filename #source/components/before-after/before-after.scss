@@ -1,0 +1,242 @@
+.before-after {
+	margin: 86px 0;
+    overflow: hidden;
+    
+	&__box {
+		position: relative;
+		margin-top: 28px;
+		background: #f7f7f7;
+		border-radius: 40px;
+		padding: 22px;
+        height: 100%;
+
+        overflow:hidden;
+	}
+
+	&__swiper {
+		overflow: visible;
+        height: 100%;
+	}
+
+	&__nav {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		z-index: 5;
+
+		width: 54px;
+		height: 54px;
+		border-radius: 999px;
+		border: 0;
+		background: #26357e;
+		cursor: pointer;
+
+		display: grid;
+		place-items: center;
+
+		box-shadow: 0 16px 36px rgba(15, 23, 66, 0.18);
+		transition: transform 200ms ease, opacity 200ms ease;
+
+		&:active {
+			transform: translateY(-50%) scale(0.98);
+		}
+
+		&:disabled {
+			opacity: 0.35;
+			cursor: default;
+		}
+
+		&::before {
+			content: "";
+			width: 10px;
+			height: 10px;
+			border-right: 2px solid #fff;
+			border-bottom: 2px solid #fff;
+			display: block;
+		}
+
+		&--prev {
+			left: -28px;
+
+			&::before {
+				transform: rotate(135deg);
+			}
+		}
+
+		&--next {
+			right: -28px;
+
+			&::before {
+				transform: rotate(-45deg);
+			}
+		}
+	}
+
+	@media (max-width: 1024px) {
+		&__nav {
+			display: none;
+		}
+	}
+
+	@media (max-width: 767px) {
+		margin: 56px 0;
+
+		&__box {
+			padding: 14px;
+			border-radius: 28px;
+		}
+	}
+}
+
+.ba {
+	--pos: 50;
+
+	&__frame {
+		position: relative;
+		border-radius: 28px;
+		overflow: hidden;
+		background: #e9e9e9;
+		aspect-ratio: 600 / 500;
+	}
+
+	&__img {
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		user-select: none;
+		-webkit-user-drag: none;
+		pointer-events: none;
+	}
+
+	 &__after {
+    position: absolute;
+    inset: 0;
+    overflow: hidden; // можно оставить, не мешает
+
+    // ВАЖНО: вместо width — клип по оси X
+    clip-path: inset(0 calc((100 - var(--pos)) * 1%) 0 0);
+
+    // линия разделителя по позиции
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: calc(var(--pos) * 1%);
+      width: 2px;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.95);
+      box-shadow: 0 0 0 1px rgba(38, 53, 126, 0.06);
+      transform: translateX(-1px);
+      pointer-events: none;
+    }
+  }
+
+	&__label {
+		position: absolute;
+		bottom: 18px;
+		padding: 12px 30px;
+		border-radius: 999px;
+		background: rgba(0, 0, 0, 0.35);
+		backdrop-filter: blur(6px);
+		color: #fff;
+		font-weight: 800;
+        font-family: $font-family;
+        font-weight: 500;
+        font-size: 17px;
+        color: #fff;
+		line-height: 1;
+		z-index: 3;
+
+        border: 1.00px solid rgba(255, 255, 255, 0.15);
+
+		&--before {
+			left: 18px;
+		}
+
+		&--after {
+			right: 18px;
+		}
+	}
+
+	&__handle {
+		position: absolute;
+		top: 50%;
+		left: calc(var(--pos) * 1%);
+		transform: translate(-50%, -50%);
+		z-index: 4;
+
+		width: 56px;
+		height: 56px;
+		border-radius: 999px;
+		background: rgba(255, 255, 255, 0.98);
+		box-shadow: 0 18px 40px rgba(15, 23, 66, 0.22);
+		pointer-events: none;
+
+		&::before {
+			content: "";
+			position: absolute;
+			inset: 0;
+			border-radius: inherit;
+			box-shadow: 0 0 0 1px rgba(38, 53, 126, 0.10);
+		}
+
+		// "|||" без svg
+		&::after {
+			content: "";
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			width: 18px;
+			height: 18px;
+			background:
+				linear-gradient(#26357e, #26357e) 0 50% / 2px 18px no-repeat,
+				linear-gradient(#26357e, #26357e) 50% 50% / 2px 18px no-repeat,
+				linear-gradient(#26357e, #26357e) 100% 50% / 2px 18px no-repeat;
+			opacity: 0.95;
+		}
+	}
+
+	&__range {
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		opacity: 0;
+		cursor: ew-resize;
+		z-index: 6;
+	}
+
+	@media (max-width: 767px) {
+		&__frame {
+			aspect-ratio: 4 / 4;
+			border-radius: 22px;
+		}
+
+		&__label {
+			bottom: 12px;
+
+			&--before {
+				left: 12px;
+			}
+
+			&--after {
+				right: 12px;
+			}
+		}
+
+		&__handle {
+			width: 50px;
+			height: 50px;
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		&__handle,
+		&__after::after {
+			transition: none;
+		}
+	}
+}

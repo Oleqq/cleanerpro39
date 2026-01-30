@@ -1,5 +1,9 @@
 .text-video {
-	padding: 56px 0;
+	transition: .2s ease;
+	margin-bottom: 86px;
+	@media (max-width:767px) {
+		margin-bottom: 50px;
+	}
 
 	&__wrapper {
 		display: grid;
