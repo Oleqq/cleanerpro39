@@ -16,6 +16,10 @@
 
             height: 48px;
 
+            transition: .2s ease;
+
+            cursor: pointer;
+
             svg {
                 flex-shrink: 0;
             }
@@ -23,13 +27,30 @@
             &.blue {
                 color: #fff;
                 background: #26357e;
-                
-                
+
+
+                &:hover {
+                    transition: .2s ease;
+                    background: $hover-general;
+                }
+                &:focus {
+                    transition: .2s ease;
+                    background: $pressed-general;
+                }
             }
 
             &.pink {
                 color: #fff;
                 background: #b71375;
+
+                &:hover {
+                    transition: .2s ease;
+                    background: $hover-accent;
+                }
+                &:focus {
+                    transition: .2s ease;
+                    background: $pressed-accent;
+                }
             }
         }
 
@@ -55,12 +76,30 @@
             &.blue {
                 color: #fff;
                 background: #26357e;
-                
+                &:hover {
+                    transition: .2s ease;
+                    background: $hover-general;
+                }
+                &:focus {
+                    transition: .2s ease;
+                    background: $pressed-general;
+                }
 
                 &.outline {
                     background-color: transparent;
                     border: 1px solid #26357e;
                     color: #26357e;
+                    transition: .2s ease;
+
+                    &:hover {
+                        transition: .2s ease;
+                        background: $hover-stroke-button;
+                    }
+                    &:focus {
+                        transition: .2s ease;
+                        color: #fff;
+                        background: #26357e;
+                    }
                 }
                 
             }
@@ -68,6 +107,15 @@
             &.pink {
                 color: #fff;
                 background: #b71375;
+
+                &:hover {
+                    transition: .2s ease;
+                    background: $hover-accent;
+                }
+                &:focus {
+                    transition: .2s ease;
+                    background: $pressed-accent;
+                }
             }
         }
     }

@@ -19,6 +19,9 @@
             margin-top: 50px;
             justify-content: center;
         }
+        @media (max-width:467px) {
+            margin-top: 40px;
+        }
     }
 
     &__head {
@@ -180,10 +183,10 @@
         height: var(--i-height, 0px);
 
         border-radius: 999px;
-        background: rgba(38, 53, 126, 0.12);
+        background: #26357e;
 
         transform: translateZ(0);
-        transition: left 0.24s cubic-bezier(.2,.8,.2,1), width 0.24s cubic-bezier(.2,.8,.2,1), top 0.24s cubic-bezier(.2,.8,.2,1), height 0.24s cubic-bezier(.2,.8,.2,1);
+        transition: left 0.54s cubic-bezier(.2,.8,.2,1), width 0.54s cubic-bezier(.2,.8,.2,1), top 0.54s cubic-bezier(.2,.8,.2,1), height 0.54s cubic-bezier(.2,.8,.2,1);
         pointer-events: none;
 
         // чтобы indicator был под кнопками
@@ -201,6 +204,12 @@
     display: flex;
     flex-direction: column;
 
+    @media (max-width:467px) {
+        background-color: #f7f7f7;
+        border-bottom-right-radius: 18px;
+        border-bottom-left-radius: 18px;
+    }
+
     &__media {
         border-radius: 22px;
         overflow: hidden;
@@ -214,12 +223,17 @@
         height: 100%;
         object-fit: cover;
         display: block;
+        border-radius: 18px;
     }
 
     &__body {
         display: flex;
         flex-direction: column;
         gap: 10px;
+
+        @media (max-width:467px) {
+            padding: 18px 16px;
+        }
     }
 
     &__title {
@@ -283,10 +297,18 @@
         font-size: 17px;
         color: #26357e;
         text-decoration: none;
+        transition: .2s ease;
+        
 
 
         &:hover {
+            transition: .2s ease;
             text-decoration: underline;
+            color: #26357e;
+        }
+        &:focus {
+            transition: .2s ease;
+            color: $pressed-general;
         }
     }
 }

@@ -1,0 +1,35 @@
+.text-section {
+
+    margin-bottom: 96px;
+
+    @include adaptive-value(margin-bottom, 96px, 50px, 1920px, 767px);
+
+
+    &__container {
+
+    }
+    &__wrapper {
+
+    }
+    &__text {
+        
+        p, li {
+            font-family: $font-family;
+            font-weight: 300;
+            font-size: 18px;
+            @include adaptive-value(font-size, 18px, 15px, 1920px, 767px);
+            color: $general;
+        }
+        p {
+            margin-bottom: 16px;
+        }
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            list-style: disc;
+            margin-left: 32px;
+            margin-bottom: 16px;
+        }
+    }
+}

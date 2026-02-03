@@ -1,0 +1,84 @@
+//- includes-tabs.pug
+section.includes-tabs
+	.container.includes-tabs__container
+		h2.section__title
+			| ЧТО ВХОДИТ В СТОИМОСТЬ
+			br
+			| ГЕНЕРАЛЬНОЙ УБОРКИ КВАРТИРЫ?
+
+		.includes-tabs__controls
+			.includes-tabs__tabs-swiper.swiper
+				.includes-tabs__tabs.includes-tabs__tabs--track.swiper-wrapper(style="--i-left:0px;--i-top:0px;--i-width:0px;--i-height:0px;")
+					button.swiper-slide.includes-tabs__btn.is-active(type="button" data-tab="" aria-controls="" aria-selected="true") В тарифе
+					button.swiper-slide.includes-tabs__btn(type="button" data-tab="" aria-controls="" aria-selected="false") Мытье окон
+					button.swiper-slide.includes-tabs__btn(type="button" data-tab="" aria-controls="" aria-selected="false") Химчистка
+					button.swiper-slide.includes-tabs__btn(type="button" data-tab="" aria-controls="" aria-selected="false") Дополнительные услуги
+					span.includes-tabs__indicator
+
+		.includes-tabs__panels
+			.includes-tabs__panel(id="" data-tab-content="" role="tabpanel")
+				.includes-tabs__grid
+					.includes-tabs__col
+						h3.includes-tabs__subtitle Все жилые комнаты, спальня, гостиная:
+						ul.includes-tabs__list
+							li Удаление пыли со всех поверхностей (мебель, техника, подоконники, светильники, карнизы).
+							li Мытье радиаторов отопления.
+							li Влажная уборка полов, плинтусов.
+							li Чистка зеркал и стеклянных поверхностей.
+							li Сухая чистка ковров (при наличии).
+							li Удаление следов и разводов с дверей и выключателей.
+
+					.includes-tabs__col
+						h3.includes-tabs__subtitle Кухня:
+						ul.includes-tabs__list
+							li Мойка фасадов кухонного гарнитура снаружи.
+							li Очистка кухонной техники (плита, холодильник, микроволновка — снаружи).
+							li Мойка рабочих фартуков и столешниц.
+							li Очистка и дезинфекция раковины, смесителя.
+							li Мытье полов, стен и плитки и плинтусов.
+							li Вынос мусора.
+
+					.includes-tabs__col
+						h3.includes-tabs__subtitle Ванная комната и санузел:
+						ul.includes-tabs__list
+							li Очистка и дезинфекция всей сантехники (ванна/душевая кабина, раковина, унитаз).
+							li Мойка кафеля на стенах, удаление известкового налета.
+							li Чистка зеркал, полочек, светильников.
+							li Мытье полов, плинтусов.
+							li Очистка швов плитки.
+
+					.includes-tabs__col
+						h3.includes-tabs__subtitle Балкон / Лоджия:
+						ul.includes-tabs__list
+							li Уборка пыли с пола, стен, перил.
+							li Мытье пола.
+
+			.includes-tabs__panel(id="" data-tab-content="" role="tabpanel" hidden)
+				.includes-tabs__grid
+					.includes-tabs__col
+						h3.includes-tabs__subtitle Мытье окон:
+						ul.includes-tabs__list
+							li Мытье стекол (внутри/снаружи).
+							li Очистка рам и откосов.
+							li Мытье подоконников.
+							li Удаление загрязнений с фурнитуры.
+
+			.includes-tabs__panel(id="" data-tab-content="" role="tabpanel" hidden)
+				.includes-tabs__grid
+					.includes-tabs__col
+						h3.includes-tabs__subtitle Химчистка:
+						ul.includes-tabs__list
+							li Диваны, кресла, стулья.
+							li Матрасы.
+							li Ковры и ковровые покрытия.
+							li Шторы (по запросу).
+
+			.includes-tabs__panel(id="" data-tab-content="" role="tabpanel" hidden)
+				.includes-tabs__grid
+					.includes-tabs__col
+						h3.includes-tabs__subtitle Дополнительные услуги:
+						ul.includes-tabs__list
+							li Уборка после ремонта.
+							li Мытье люстр / сложных светильников.
+							li Глубокая чистка кухонной техники внутри.
+							li Уборка балкона/лоджии “под ключ”.

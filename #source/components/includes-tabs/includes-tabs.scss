@@ -1,0 +1,131 @@
+.includes-tabs {
+	margin: 86px 0;
+
+	&__controls {
+		margin-top: 24px;
+	}
+
+	&__tabs-swiper {
+		min-width: 0;
+	}
+
+	&__tabs {
+		position: relative;
+		display: flex;
+		gap: 18px;
+		align-items: center;
+
+        @media (min-width:768px) {
+            flex-direction: row;
+            flex-wrap: nowrap;
+        }
+		@media (max-width: 767px) {
+			
+			gap: 12px;
+		}
+	}
+
+	&__btn {
+		position: relative;
+		z-index: 2;
+
+		border: 1px solid rgba(38, 53, 126, 0.35);
+		background: transparent;
+		color: #26357e;
+
+		height: 49px;
+		padding: 0 26px;
+		border-radius: 999px;
+
+        width: auto;
+
+        font-family: $font-family;
+        font-weight: 400;
+        font-size: 17px;
+        text-align: center;
+        color: #26357e;
+		white-space: nowrap;
+
+		transition: color 200ms ease;
+
+		&.is-active {
+			color: #fff;
+			
+		}
+
+		@media (max-width: 767px) {
+			padding: 0 18px;
+			font-size: 15px;
+		}
+	}
+
+	&__indicator {
+		position: absolute;
+		left: var(--i-left);
+		top: var(--i-top);
+		width: var(--i-width, 0px);
+		height: var(--i-height);
+
+		border-radius: 999px;
+		background: #26357e;
+		z-index: 1;
+
+		transition:
+			left 240ms ease,
+			top 240ms ease,
+			width 240ms ease,
+			height 240ms ease;
+
+
+		@media (prefers-reduced-motion: reduce) {
+			transition: none;
+		}
+	}
+
+	&__panels {
+		margin-top: 28px;
+	}
+
+	&__grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 54px 80px;
+
+		@media (max-width: 1024px) {
+			gap: 32px 42px;
+		}
+
+		@media (max-width: 767px) {
+			grid-template-columns: 1fr;
+			gap: 22px;
+		}
+	}
+
+	&__subtitle {
+		margin: 0 0 14px;
+        font-family: $font-family;
+        font-weight: 700;
+        font-size: 18px;
+        color: #26357e;
+	}
+
+	&__list {
+		margin: 0 0 0 8px;
+		padding-left: 18px;
+        list-style: disc;
+
+		li {
+            font-family: $font-family;
+            font-weight: 300;
+            font-size: 18px;
+            color: #26357e;
+			& + li {
+				margin-top: 8px;
+			}
+		}
+	}
+
+	@media (max-width: 767px) {
+		margin: 56px 0;
+	}
+}

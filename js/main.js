@@ -1,3 +1,5 @@
+
+// sections animations
 document.addEventListener('DOMContentLoaded', function() {
     const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
@@ -22,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-
+// hero-swiper
 document.addEventListener('DOMContentLoaded', () => {
   const BP = 468;
   const el = document.querySelector('.hero-swiper');
@@ -52,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('resize', check);
 });
 
-
+// service-features__swiper
 document.addEventListener('DOMContentLoaded', () => {
     const BP = 468;
     const el = document.querySelector('.service-features__swiper');
@@ -80,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('resize', check);
 });
 
-
+// .services-tabs
 document.addEventListener('DOMContentLoaded', () => {
     const tabs = document.querySelector('.services-tabs');
     if (!tabs) return;
@@ -604,7 +606,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			watchOverflow: true,
 			wrapperClass: 'before-after__list',
 			slideClass: 'before-after__slide',
-			slidesPerView: 2,
+			slidesPerView: 1,
 			spaceBetween: 110,
 			navigation: { prevEl: prev, nextEl: next, disabledClass: 'is-disabled' },
       breakpoints: {
@@ -613,16 +615,27 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         467: {
           slidesPerView: 1,
-          spaceBetween: 64,
+          spaceBetween: 26,
+        },
+        567: {
+          slidesPerView: 2,
+          spaceBetween: 26,
         },
         767: {
           slidesPerView: 2,
         },
         1024: {
           slidesPerView: 2,
+          spaceBetween: 26,
+        },
+        1279: {
+            slidesPerView: 1,
+        },
+        1440: {
+            slidesPerView: 1,
         },
         1920: {
-          slidesPerView: 2,
+          slidesPerView: 1,
         },
       }
 		});
@@ -709,4 +722,590 @@ document.addEventListener('DOMContentLoaded', () => {
 			setPos(pointerToPos(e));
 		});
 	}
+});
+
+
+// footer.js
+document.addEventListener('DOMContentLoaded', () => {
+	const BP = 767;
+	const cols = Array.from(document.querySelectorAll('.footer-col'));
+	if (!cols.length) return;
+
+	const isMobile = () => window.innerWidth <= BP;
+
+	const closeAll = (except) => {
+		cols.forEach((c) => {
+			if (c === except) return;
+			c.classList.remove('is-open');
+			const btn = c.querySelector('[data-footer-acc]');
+			if (btn) btn.setAttribute('aria-expanded', 'false');
+		});
+	};
+
+	const setA11y = () => {
+		cols.forEach((c, i) => {
+			const btn = c.querySelector('[data-footer-acc]');
+			const body = c.querySelector('.footer-col__body');
+			if (!btn || !body) return;
+
+			const id = body.id || `footer-col-${i + 1}`;
+			body.id = id;
+
+			btn.setAttribute('aria-controls', id);
+			btn.setAttribute('aria-expanded', c.classList.contains('is-open') ? 'true' : 'false');
+		});
+	};
+
+	const enableMobileAcc = () => {
+		cols.forEach((c) => c.classList.remove('is-open')); // старт: всё закрыто как в макете
+		setA11y();
+	};
+
+	const disableMobileAcc = () => {
+		cols.forEach((c) => c.classList.remove('is-open')); // на десктопе аккордеон не нужен
+		setA11y();
+	};
+
+	const onClick = (e) => {
+		const btn = e.target.closest('[data-footer-acc]');
+		if (!btn) return;
+
+		// на десктопе клики по "шапке" не должны ломать ссылки/структуру
+		if (!isMobile()) return;
+
+		const col = btn.closest('.footer-col');
+		if (!col) return;
+
+		const willOpen = !col.classList.contains('is-open');
+		closeAll(col);
+
+		col.classList.toggle('is-open', willOpen);
+		btn.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+	};
+
+	document.addEventListener('click', onClick);
+
+	// init by breakpoint
+	const sync = () => {
+		if (isMobile()) enableMobileAcc();
+		else disableMobileAcc();
+	};
+	sync();
+	window.addEventListener('resize', sync);
+});
+
+
+
+// blog-overview.js
+document.addEventListener('DOMContentLoaded', () => {
+	const root = document.querySelector('.blog-overview');
+	if (!root) return;
+
+	const grid = root.querySelector('.blog-overview__grid');
+	const pager = root.querySelector('.blog-pager');
+	if (!grid || !pager) return;
+
+	const btns = Array.from(pager.querySelectorAll('.blog-pager__btn'));
+	const prev = pager.querySelector('.blog-pager__nav--prev');
+	const next = pager.querySelector('.blog-pager__nav--next');
+
+	const getActive = () => pager.querySelector('.blog-pager__btn.is-active') || btns[0];
+	const setActive = (page) => {
+		btns.forEach((b) => b.classList.toggle('is-active', b.getAttribute('data-page') === String(page)));
+	};
+
+	const setNavDisabled = () => {
+		const active = Number(getActive()?.getAttribute('data-page') || 1);
+		const pages = btns.map((b) => Number(b.getAttribute('data-page'))).filter((n) => !Number.isNaN(n));
+		const max = Math.max(...pages, active);
+
+		if (prev) prev.disabled = active <= 1;
+		if (next) next.disabled = active >= max;
+	};
+
+	// тут ты подключишь реальный бек/шаблонизатор.
+	// я делаю "мок" с плавным рефрешем контента без лома верстки.
+	const renderMockPage = (page) => {
+		root.classList.add('is-switching');
+
+		// минимально: обновим aria + сместим фокус
+		grid.setAttribute('aria-busy', 'true');
+
+		// имитация загрузки (в реале — fetch/рендер)
+		window.setTimeout(() => {
+			// ⚠️ тут ничего не меняю в DOM намеренно — ты сам подставишь статьи
+			grid.setAttribute('aria-busy', 'false');
+
+			// перезапуск анимации
+			root.classList.remove('is-switching');
+			// reflow чтобы повторно проигрывалась
+			void root.offsetWidth;
+			root.classList.add('is-switching');
+
+			window.setTimeout(() => root.classList.remove('is-switching'), 280);
+		}, 40);
+	};
+
+	const goTo = (page) => {
+		const p = Number(page);
+		if (Number.isNaN(p)) return;
+
+		setActive(p);
+		setNavDisabled();
+		renderMockPage(p);
+
+		// nice: прокрутка к началу секции при пагинации
+		root.scrollIntoView({ behavior: 'smooth', block: 'start' });
+	};
+
+	btns.forEach((btn) => {
+		btn.addEventListener('click', () => goTo(btn.getAttribute('data-page')));
+	});
+
+	if (prev) {
+		prev.addEventListener('click', () => {
+			const current = Number(getActive()?.getAttribute('data-page') || 1);
+			goTo(Math.max(1, current - 1));
+		});
+	}
+
+	if (next) {
+		next.addEventListener('click', () => {
+			const current = Number(getActive()?.getAttribute('data-page') || 1);
+			goTo(current + 1);
+		});
+	}
+
+	// init
+	setNavDisabled();
+});
+
+
+
+// blog-article.js
+document.addEventListener('DOMContentLoaded', () => {
+	const post = document.querySelector('.blog-article__post');
+	if (!post) return;
+
+	// nice: внешний линк в контенте — безопасно + UX
+	const content = post.querySelector('.wysiwyg');
+	if (!content) return;
+
+	content.querySelectorAll('a[href]').forEach((a) => {
+		const href = a.getAttribute('href') || '';
+		if (!href) return;
+
+		const isHash = href.startsWith('#');
+		const isTel = href.startsWith('tel:');
+		const isMail = href.startsWith('mailto:');
+		const isExternal = !isHash && !isTel && !isMail && (() => {
+			try {
+				const url = new URL(href, window.location.href);
+				return url.origin !== window.location.origin;
+			} catch {
+				return false;
+			}
+		})();
+
+		if (isExternal) {
+			a.target = '_blank';
+			a.rel = 'noopener noreferrer';
+		}
+	});
+
+	// optional: плавный скролл по якорям внутри статьи
+	content.addEventListener('click', (e) => {
+		const a = e.target.closest('a[href^="#"]');
+		if (!a) return;
+
+		const id = a.getAttribute('href');
+		if (!id || id === '#') return;
+
+		const target = document.querySelector(id);
+		if (!target) return;
+
+		e.preventDefault();
+		target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+	});
+});
+
+
+// breadcrumbs.js
+document.addEventListener('DOMContentLoaded', () => {
+	const bc = document.querySelector('.breadcrumbs');
+	if (!bc) return;
+
+	const items = Array.from(bc.querySelectorAll('.breadcrumbs__item'));
+	const prefersReduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+	if (prefersReduce) return;
+
+	// лёгкая "stagger" анимация на вход (без библиотек)
+	items.forEach((it, i) => {
+		it.style.opacity = '0';
+		it.style.transform = 'translateY(6px)';
+		it.style.transition = 'opacity 260ms ease, transform 260ms ease';
+		it.style.transitionDelay = `${i * 70}ms`;
+	});
+
+	requestAnimationFrame(() => {
+		items.forEach((it) => {
+			it.style.opacity = '1';
+			it.style.transform = 'translateY(0)';
+		});
+	});
+});
+
+// includes-tabs
+document.addEventListener('DOMContentLoaded', () => {
+	const BP = 767;
+
+	const root = document.querySelector('.includes-tabs');
+	if (!root) return;
+
+	const tabsTrack = root.querySelector('.includes-tabs__tabs');
+	const btns = Array.from(root.querySelectorAll('.includes-tabs__btn'));
+	const panels = Array.from(root.querySelectorAll('.includes-tabs__panel'));
+	const swiperEl = root.querySelector('.includes-tabs__tabs-swiper');
+
+	if (!tabsTrack || !btns.length || !panels.length) return;
+
+	let tabsSwiper = null;
+
+	// --- utils
+	const normText = (s) =>
+		(s || '')
+			.replace(/\u00A0/g, ' ')
+			.replace(/\s+/g, ' ')
+			.trim();
+
+	const slugifyRu = (s) => {
+		const map = {
+			а: 'a', б: 'b', в: 'v', г: 'g', д: 'd', е: 'e', ё: 'yo', ж: 'zh', з: 'z',
+			и: 'i', й: 'y', к: 'k', л: 'l', м: 'm', н: 'n', о: 'o', п: 'p', р: 'r',
+			с: 's', т: 't', у: 'u', ф: 'f', х: 'h', ц: 'ts', ч: 'ch', ш: 'sh', щ: 'sch',
+			ъ: '', ы: 'y', ь: '', э: 'e', ю: 'yu', я: 'ya',
+		};
+
+		const str = normText(s).toLowerCase();
+
+		const tr = str
+			.split('')
+			.map((ch) => (map[ch] !== undefined ? map[ch] : ch))
+			.join('');
+
+		return tr
+			.replace(/&/g, ' and ')
+			.replace(/[^a-z0-9]+/g, '-')
+			.replace(/-+/g, '-')
+			.replace(/^-|-$/g, '');
+	};
+
+	const ensureUnique = (base, used) => {
+		let key = base || 'tab';
+		let i = 2;
+		while (used.has(key)) {
+			key = `${base}-${i}`;
+			i += 1;
+		}
+		used.add(key);
+		return key;
+	};
+
+	// --- AUTOLINK: buttons[i] <-> panels[i]
+	// если панелей меньше/больше — не падаем, просто связываем по min
+	const used = new Set();
+	const count = Math.min(btns.length, panels.length);
+
+	for (let i = 0; i < count; i++) {
+		const btn = btns[i];
+		const panel = panels[i];
+
+		const txt = normText(btn.textContent);
+		const base = slugifyRu(txt);
+		const key = ensureUnique(base, used);
+
+		// проставляем кнопке
+		btn.dataset.tab = key;
+
+		const panelId = `includes-tab-${key}`;
+		btn.setAttribute('aria-controls', panelId);
+
+		// проставляем панели
+		panel.id = panelId;
+		panel.dataset.tabContent = key;
+		panel.setAttribute('role', 'tabpanel');
+
+		// a11y норм: связываем панель с кнопкой
+		if (!btn.id) btn.id = `includes-tabbtn-${key}`;
+		panel.setAttribute('aria-labelledby', btn.id);
+	}
+
+	// если панелей больше — остальным хотя бы роль выставим
+	panels.slice(count).forEach((p) => p.setAttribute('role', 'tabpanel'));
+
+	// --- indicator
+	const getActiveBtn = () => root.querySelector('.includes-tabs__btn.is-active') || btns[0];
+
+	const setIndicator = (btn) => {
+		if (!btn) return;
+
+		const trackRect = tabsTrack.getBoundingClientRect();
+		const r = btn.getBoundingClientRect();
+
+		tabsTrack.style.setProperty('--i-left', `${r.left - trackRect.left}px`);
+		tabsTrack.style.setProperty('--i-top', `${r.top - trackRect.top}px`);
+		tabsTrack.style.setProperty('--i-width', `${r.width}px`);
+		tabsTrack.style.setProperty('--i-height', `${r.height}px`);
+	};
+
+	// --- show/hide
+	const showPanelById = (panelId) => {
+		panels.forEach((p) => {
+			p.hidden = p.id !== panelId;
+		});
+	};
+
+	const activate = (btn) => {
+		if (!btn) return;
+
+		btns.forEach((b) => {
+			const isActive = b === btn;
+			b.classList.toggle('is-active', isActive);
+			b.setAttribute('aria-selected', isActive ? 'true' : 'false');
+		});
+
+		const panelId = btn.getAttribute('aria-controls');
+		if (panelId) showPanelById(panelId);
+
+		requestAnimationFrame(() => setIndicator(btn));
+
+		if (tabsSwiper && typeof tabsSwiper.slideTo === 'function') {
+			const idx = btns.indexOf(btn);
+			if (idx >= 0) tabsSwiper.slideTo(idx, 220);
+		}
+	};
+
+	btns.forEach((btn) => btn.addEventListener('click', () => activate(btn)));
+
+	// --- swiper only <= 767
+	const initTabsSwiper = () => {
+		if (!swiperEl || tabsSwiper) return;
+
+		tabsSwiper = new Swiper(swiperEl, {
+			slidesPerView: 'auto',
+			
+			speed: 350,
+			freeMode: true,
+			resistanceRatio: 0.6,
+			watchOverflow: true,
+		});
+	};
+
+	const destroyTabsSwiper = () => {
+		if (!tabsSwiper) return;
+		tabsSwiper.destroy(true, true);
+		tabsSwiper = null;
+	};
+
+	const check = () => {
+		if (window.innerWidth <= BP) initTabsSwiper();
+		else destroyTabsSwiper();
+
+		requestAnimationFrame(() => setIndicator(getActiveBtn()));
+	};
+
+	// --- init state
+	const initial = getActiveBtn();
+	const initialPanelId = initial.getAttribute('aria-controls');
+
+	// если панель не скрыта/не выставлено hidden — мы всё равно приводим к одному открытому
+	if (initialPanelId) showPanelById(initialPanelId);
+
+	requestAnimationFrame(() => setIndicator(initial));
+	check();
+
+	window.addEventListener('resize', check);
+});
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+	const BP = 767;
+
+	const root = document.querySelector('.works-examples');
+	if (!root) return;
+
+	const sliderEl = root.querySelector('.works-examples__slider');
+	const cards = Array.from(root.querySelectorAll('.work-card'));
+
+	
+	const prevBtn = root.querySelector('.works-examples__btn--prev');
+	const nextBtn = root.querySelector('.works-examples__btn--next');
+
+	let cardsSwiper = null;
+	const mediaSwipers = new Map();
+
+	// --- inner media sliders
+	const initMediaSwiper = (card) => {
+		const mediaEl = card.querySelector('.work-card__media');
+		if (!mediaEl || mediaSwipers.has(mediaEl)) return;
+
+		const slides = mediaEl.querySelectorAll('.work-card__media-item.swiper-slide');
+		const paginationEl = card.querySelector('.work-card__media-pagination');
+
+		const swiper = new Swiper(mediaEl, {
+			slidesPerView: 1,
+			speed: 400,
+			watchOverflow: true,
+			// если фоток 1 — пагинация будет залочена через swiper-pagination-lock
+           
+			pagination: paginationEl 
+				? {
+						el: paginationEl,
+						clickable: true,
+                        type: 'progressbar',
+				  }
+				: undefined,
+		});
+
+		// если внутри 0/1 фото — можно скрыть пагинацию руками (на всякий)
+		if (paginationEl && slides.length <= 1) paginationEl.style.display = 'none';
+
+		mediaSwipers.set(mediaEl, swiper);
+	};
+
+	const destroyMediaSwipers = () => {
+		mediaSwipers.forEach((sw) => sw.destroy(true, true));
+		mediaSwipers.clear();
+	};
+
+	// --- outer buttons show/hide
+	const toggleOuterNav = (show) => {
+		if (!prevBtn || !nextBtn) return;
+		prevBtn.style.display = show ? '' : 'none';
+		nextBtn.style.display = show ? '' : 'none';
+	};
+
+	// --- cards swiper
+	const initCardsSwiper = () => {
+		if (cardsSwiper) return;
+
+		cardsSwiper = new Swiper(sliderEl, {
+			slidesPerView: 1,
+			
+			speed: 450,
+			watchOverflow: true,
+			navigation:
+				prevBtn && nextBtn
+					? { prevEl: prevBtn, nextEl: nextBtn, disabledClass: 'is-disabled' }
+					: undefined,
+			breakpoints: {
+				768: {
+					slidesPerView: 3,
+					spaceBetween: 28,
+				},
+			},
+		});
+	};
+
+	const destroyCardsSwiper = () => {
+		if (!cardsSwiper) return;
+		cardsSwiper.destroy(true, true);
+		cardsSwiper = null;
+	};
+
+	const check = () => {
+		const isMobile = window.innerWidth <= BP;
+		const needOuterSwiper = isMobile || cards.length > 3;
+
+		// inner sliders always
+		cards.forEach(initMediaSwiper);
+
+		// outer slider by your rules
+		if (needOuterSwiper) initCardsSwiper();
+		else destroyCardsSwiper();
+
+		// nav visibility by your criteria:
+		// показываем кнопки только если свайпер реально есть
+		// и (мобилка ИЛИ карточек больше 3)
+		toggleOuterNav(needOuterSwiper);
+	};
+
+	check();
+	window.addEventListener('resize', check);
+});
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+	const BP = 767;
+
+	const root = document.querySelector('.equipment');
+	if (!root) return;
+
+	const swiperEl = root.querySelector('.equipment__swiper');
+	const slides = root.querySelectorAll('.equipment-card');
+	const prev = root.querySelector('.equipment__nav--prev');
+	const next = root.querySelector('.equipment__nav--next');
+
+	if (!swiperEl || !slides.length) return;
+
+	let swiper = null;
+
+	const setNavVisibility = (show) => {
+		if (!prev || !next) return;
+		prev.classList.toggle('is-hidden', !show);
+		next.classList.toggle('is-hidden', !show);
+	};
+
+	const init = () => {
+		if (swiper) return;
+
+		swiper = new Swiper(swiperEl, {
+			speed: 450,
+			watchOverflow: true,
+			slidesPerView: 1,
+			spaceBetween: 18,
+			navigation: prev && next ? { prevEl: prev, nextEl: next, disabledClass: 'is-disabled' } : undefined,
+
+			breakpoints: {
+				768: { slidesPerView: 3, spaceBetween: 34 },
+			},
+		});
+
+		// если по факту overflow нет — скрываем навигацию
+		const updateNav = () => setNavVisibility(swiper && !swiper.isLocked);
+		updateNav();
+		swiper.on('lock', updateNav);
+		swiper.on('unlock', updateNav);
+	};
+
+	const destroy = () => {
+		if (!swiper) return;
+		swiper.destroy(true, true);
+		swiper = null;
+		setNavVisibility(false);
+	};
+
+	const check = () => {
+		const isMobile = window.innerWidth <= BP;
+
+		if (isMobile) {
+			init();
+			setNavVisibility(false); // на мобиле стрелки скрыты по макету/логике
+			return;
+		}
+
+		// desktop: включаем swiper только если > 3
+		if (slides.length > 3) {
+			init();
+			setNavVisibility(true);
+		} else {
+			destroy();
+		}
+	};
+
+	check();
+	window.addEventListener('resize', check);
 });

@@ -19,6 +19,36 @@
         align-items: center;
 
         padding: 24px 16px 24px 36px;
+
+        margin-bottom: 16px;
+    }
+
+    &__additional {
+        display: flex;
+        justify-content: center;
+
+        @media (max-width:991px) {
+            display: none;
+        }
+
+        nav.header__nav-alt {
+            display: flex;
+            
+
+            ul {
+                display: flex;
+                gap: 20px;
+                @include adaptive-value(gap, 62px, 32px, 1920px, 767px) ;
+            }
+
+            a {
+                font-family: $font3;
+                font-weight: 400;
+                font-size: 12px;
+                color: #26357e;
+
+            }
+        }
     }
 
     &__logo {

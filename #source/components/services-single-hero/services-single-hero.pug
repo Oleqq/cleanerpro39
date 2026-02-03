@@ -1,0 +1,37 @@
+//- services-single-hero.pug
+section.services-single-hero
+	.container.services-single-hero__container
+		nav.breadcrumbs(aria-label="Хлебные крошки")
+			ol.breadcrumbs__list
+				li.breadcrumbs__item
+					a.breadcrumbs__link(href="#") Главная
+				li.breadcrumbs__sep(aria-hidden="true")
+				li.breadcrumbs__item
+					a.breadcrumbs__link(href="#") Наши услуги
+				li.breadcrumbs__sep(aria-hidden="true")
+				li.breadcrumbs__item
+					span.breadcrumbs__current(aria-current="page") Генеральная уборка квартиры в Калининграде
+
+		h1.services-single-hero__title
+			| ГЕНЕРАЛЬНАЯ УБОРКА
+			br
+			| КВАРТИРЫ В КАЛИНИНГРАДЕ
+
+		.services-single-hero__media
+			.services-single-hero__img-wrap.services-single-hero__img-wrap--main
+				img.services-single-hero__img(
+					src="https://placehold.co/980x420"
+					width="980"
+					height="420"
+					loading="eager"
+					alt="Генеральная уборка квартиры"
+				)
+
+			.services-single-hero__img-wrap.services-single-hero__img-wrap--side
+				img.services-single-hero__img(
+					src="https://placehold.co/420x420"
+					width="420"
+					height="420"
+					loading="lazy"
+					alt="Процесс уборки"
+				)

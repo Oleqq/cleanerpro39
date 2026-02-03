@@ -1,0 +1,240 @@
+.works-examples {
+	margin: 86px 0;
+
+	&__head {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 28px;
+
+		@media (max-width: 767px) {
+			flex-direction: column;
+			align-items: flex-start;
+			gap: 18px;
+		}
+	}
+
+	&__slider {
+		overflow: visible;
+        overflow: hidden;
+        position: relative;
+
+
+	}
+
+    &__nav {
+        position: absolute;
+        width: 100%;
+        z-index: 12;
+        display: flex;
+        justify-content: space-between;
+        top: 20%;
+
+        .works-examples__btn.works-examples__btn--prev, .works-examples__btn.works-examples__btn--next {
+            transition: .2s ease;
+        }
+
+        .works-examples__btn.is-disabled {
+            opacity: .5;
+            transition: .2s ease;
+        }
+    }
+
+
+	&__list {
+		min-width: 0;
+	}
+
+	@media (max-width: 767px) {
+		margin: 56px 0;
+	}
+}
+
+.work-card {
+	background: #fff;
+	
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+
+	
+	min-width: 0;
+
+	&__media {
+		position: relative;
+		border-radius: 32px;
+		overflow: visible;
+         width: 100%;
+
+		
+		aspect-ratio: 16 / 9;
+		background: #f2f2f2;
+
+		img {
+			position: absolute;
+			inset: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			display: block;
+            border-radius: 32px;
+		}
+	}
+
+	&__media-pagination {
+		position: absolute;
+	
+	    bottom: -16px !important;
+        top: unset !important;
+        background-color: #f7f7f7;
+        border-radius: 35px;
+
+		.swiper-pagination-bullet {
+			background: rgba(255, 255, 255, 0.6);
+			opacity: 1;
+
+			&-active {
+				background: #b71375;
+			}
+		}
+
+        .swiper-pagination-progressbar-fill {
+            background-color: #b71375;
+            border-radius: 35px;
+        }
+	}
+
+	&__body {
+		padding: 22px 6px 0;
+	}
+
+	&__title {
+        font-family: $third-family;
+        font-weight: 500;
+        font-size: 17px;
+        @include adaptive-value(font-size, 17px, 15px, 1920px, 767px);
+        color: #26357e;
+        margin-bottom: 16px;
+        @include adaptive-value(margin-bottom, 16px, 8px, 1920px, 767px);
+	}
+
+	&__meta {
+        font-family: $font-family;
+        font-weight: 300;
+        font-size: 14px;
+        color: #26357e;
+
+        display: flex;
+        justify-content: space-between;
+
+        flex-wrap: wrap;
+
+        margin-bottom: 26px;
+        @include adaptive-value(margin-bottom, 26px, 8px, 1920px, 767px);
+
+        span {
+            font-weight: 300;
+        }
+
+        b {
+            font-weight: 600;
+        }
+	}
+
+	&__subtitle {
+        font-family: $third-family;
+        font-weight: 500;
+        font-size: 17px;
+        @include adaptive-value(font-size, 17px, 12px, 1920px, 767px);
+        color: #26357e;
+        margin-bottom: 16px;
+        @include adaptive-value(margin-bottom, 16px, 8px, 1920px, 767px);
+	}
+
+	&__list {
+		display: grid;
+		gap: 4px;
+		padding-left: 18px;
+
+		li {
+			font-family: $font-family;
+            font-weight: 300;
+            font-size: 14px;
+            @include adaptive-value(font-size, 14px, 12px, 1920px, 767px);
+            color: #26357e;
+            position: relative;
+
+            &::before {
+                content: "";
+                width: 14px;
+                height: 14px;
+                display: inline-block;
+                position: absolute;
+                left: -20px;
+                top: 2px;
+
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: contain;
+
+                background-image: url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 6.99439C0 5.42729 0.615898 3.97961 1.56383 2.85862C1.80036 2.57892 2.22641 2.53831 2.51516 2.7674C2.80391 2.99656 2.84675 3.40928 2.6102 3.68901C1.83719 4.60314 1.35174 5.76323 1.35174 6.99439C1.35181 9.84727 3.8758 12.2223 7.04385 12.2223C8.22953 12.2222 9.33747 11.9047 10.2173 11.3442C10.5291 11.1455 10.9485 11.2296 11.1536 11.5317C11.3585 11.8338 11.2717 12.2393 10.96 12.438C9.84371 13.1493 8.47376 13.5318 7.04385 13.5318C3.19043 13.5318 6.61139e-05 10.6284 0 6.99439Z' fill='%23B71375'/%3E%3Cpath d='M12.6175 6.74985C12.6175 3.71672 10.2139 1.30966 7.33897 1.30966C6.9567 1.30967 6.59518 1.34014 6.2442 1.42305C5.88155 1.50871 5.51595 1.29267 5.42752 0.94135C5.33935 0.590147 5.56134 0.235807 5.92386 0.150173C6.4095 0.0354594 6.88462 0.000135223 7.33897 0.00012207C11.0296 0.00012207 13.9692 3.06235 13.9692 6.74985C13.9692 7.80598 13.7197 8.78413 13.3338 9.646C13.1852 9.97748 12.7873 10.13 12.445 9.98617C12.1025 9.84226 11.9453 9.45598 12.0938 9.12423C12.4159 8.40499 12.6174 7.60419 12.6175 6.74985Z' fill='%23B71375'/%3E%3Cpath d='M9.20845 4.55689C9.47239 4.30119 9.90023 4.30119 10.1642 4.55689C10.4281 4.81259 10.4281 5.22707 10.1642 5.48277L6.55952 8.97486C6.29558 9.23056 5.86774 9.23056 5.6038 8.97486L3.80147 7.22882C3.53753 6.97311 3.53753 6.55864 3.80147 6.30293C4.06542 6.04723 4.49325 6.04723 4.7572 6.30293L6.08166 7.58604L9.20845 4.55689Z' fill='%23B71375'/%3E%3C/svg%3E");
+            }
+
+		}
+	}
+}
+
+/* =========================================
+   DESKTOP LOGIC via :has()
+   <=3 cards => grid layout like screenshot
+   >=4 cards => leave for swiper (no hard widths)
+========================================= */
+
+@media (min-width: 768px) {
+
+	
+	.works-examples__list:not(:has(.work-card:nth-child(4))) {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 34px;
+        @include adaptive-value(gap, 34px, 8px, 1920px, 768px); 
+
+
+		.work-card {
+			
+			max-width: 445px;
+			width: 100%;
+		}
+	}
+
+	
+	.works-examples__list:has(.work-card:nth-child(4)) {
+		display: flex; 
+
+		.work-card {
+			max-width: none;
+			width: auto;
+		}
+	}
+}
+
+/* =========================================
+   MOBILE
+   swiper always => никаких фиксированных ширин
+========================================= */
+
+@media (max-width: 767px) {
+	.works-examples__list {
+		
+		display: flex;
+	}
+
+	.work-card {
+	
+
+		&__media {
+			border-radius: 28px;
+			aspect-ratio: 16 / 10;
+		}
+	}
+}

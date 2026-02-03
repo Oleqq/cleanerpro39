@@ -1,0 +1,254 @@
+.blog-overview {
+	margin: 86px 0;
+
+	&__grid {
+		margin-top: 28px;
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 46px 72px;
+
+		@media (max-width: 1024px) {
+			grid-template-columns: repeat(2, 1fr);
+			gap: 28px 32px;
+		}
+
+		@media (max-width: 767px) {
+			grid-template-columns: 1fr;
+			gap: 18px;
+		}
+	}
+
+	@media (max-width: 767px) {
+		margin: 56px 0;
+	}
+}
+
+.blog-card {
+	--r: 22px;
+
+    padding: 30px;
+    @include adaptive-value(padding, 30px, 1px, 1920px, 767px);
+    @media (max-width:767px) {
+        padding: 0;
+    }
+
+	min-width: 0;
+
+	&__link {
+		display: grid;
+		gap: 14px;
+		text-decoration: none;
+		color: inherit;
+
+		transition: transform 220ms ease;
+	}
+
+	&__media {
+		position: relative;
+		border-radius: var(--r);
+		overflow: hidden;
+		background: #f3f3f3;
+		box-shadow: 0 14px 30px rgba(15, 23, 66, 0.10);
+		transform: translateZ(0);
+
+		// hover overlay
+		&::after {
+			content: "";
+			position: absolute;
+			inset: 0;
+			background: radial-gradient(120% 120% at 60% 40%, rgba(183, 19, 117, 0.14) 0%, rgba(38, 53, 126, 0) 60%);
+			opacity: 0;
+			transition: opacity 220ms ease;
+			pointer-events: none;
+		}
+	}
+
+	&__img {
+		width: 100%;
+		height: auto;
+		display: block;
+		aspect-ratio: 16 / 9;
+		object-fit: cover;
+		transition: transform 260ms ease;
+	}
+
+	&__body {
+		display: grid;
+		grid-template-columns: 1fr auto;
+		align-items: center;
+		gap: 14px;
+	}
+
+	&__title {
+		margin: 0;
+        font-family: $third-family;
+        font-weight: 500;
+        font-size: 17px;
+        color: #26357e;
+	}
+
+	&__more {
+		width: 34px;
+		height: 34px;
+		border-radius: 999px;
+		background: #26357e;
+		display: grid;
+		place-items: center;
+		box-shadow: 0 12px 22px rgba(15, 23, 66, 0.14);
+		transition: transform 220ms ease, background-color 220ms ease;
+	}
+
+	&__link:hover {
+		transform: translateY(-2px);
+	}
+
+	&__link:hover &__img {
+		transform: scale(1.03);
+	}
+
+	&__link:hover &__media::after {
+		opacity: 1;
+	}
+
+	&__link:hover &__more {
+		transform: translateX(2px);
+		background: #b71375;
+	}
+
+	&__link:focus-visible {
+		outline: none;
+
+		.blog-card__media {
+			box-shadow:
+				0 14px 30px rgba(15, 23, 66, 0.10),
+				0 0 0 4px rgba(183, 19, 117, 0.18);
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		&__link,
+		&__img,
+		&__media::after,
+		&__more {
+			transition: none;
+		}
+	}
+}
+
+.blog-pager {
+	margin-top: 34px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 14px;
+
+	&__nav {
+		width: 42px;
+		height: 42px;
+		border-radius: 999px;
+		border: 1px solid rgba(38, 53, 126, 0.18);
+		background: #fff;
+		cursor: pointer;
+
+		display: grid;
+		place-items: center;
+
+		transition: transform 200ms ease, border-color 200ms ease, box-shadow 200ms ease;
+
+		&:hover {
+			transform: translateY(-1px);
+			border-color: rgba(38, 53, 126, 0.35);
+			box-shadow: 0 10px 22px rgba(15, 23, 66, 0.10);
+		}
+
+		&:active {
+			transform: translateY(0);
+		}
+
+		&:disabled {
+			opacity: 0.45;
+			cursor: default;
+			box-shadow: none;
+			transform: none;
+		}
+
+		&:focus-visible {
+			outline: none;
+			box-shadow: 0 0 0 4px rgba(183, 19, 117, 0.18);
+		}
+	}
+
+	&__list {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		padding: 0;
+		margin: 0;
+		list-style: none;
+	}
+
+	&__btn {
+		min-width: 28px;
+		height: 28px;
+		padding: 0 6px;
+		border: 0;
+		background: transparent;
+		cursor: pointer;
+
+        font-family: $second-family;
+       
+        font-size: 20px;
+        line-height: 95%;
+        text-transform: uppercase;
+        color: $general;
+
+		border-radius: 10px;
+		transition: transform 180ms ease, background-color 180ms ease, color 180ms ease;
+
+		&:hover {
+			background: rgba(38, 53, 126, 0.06);
+			transform: translateY(-1px);
+		}
+
+		&.is-active {
+			font-family: $font3;
+            font-weight: 700;
+		}
+
+		&:focus-visible {
+			outline: none;
+			box-shadow: 0 0 0 4px rgba(183, 19, 117, 0.18);
+		}
+	}
+
+	&__dots {
+		color: rgba(38, 53, 126, 0.7);
+		font-weight: 900;
+	}
+
+	@media (max-width: 767px) {
+		margin-top: 22px;
+	}
+}
+
+// анимация появления карточек при переключении страницы
+.blog-overview.is-switching .blog-card {
+	animation: blogFade 260ms ease both;
+}
+
+@keyframes blogFade {
+	from {
+		opacity: 0;
+		transform: translateY(6px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.blog-overview.is-switching .blog-card {
+		animation: none;
+	}
+}

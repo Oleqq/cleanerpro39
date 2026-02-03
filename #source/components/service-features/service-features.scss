@@ -26,6 +26,9 @@
         @media (max-width:467px) {
             display: flex;
             flex-direction: column;
+            background: #f7f7f7;
+            padding: 16px 24px;
+            border-radius: 16px;
         }
     }
 
@@ -52,6 +55,8 @@
         }
         @media (max-width:467px) {
             text-align: left;
+            
+            
         }
     }
 
