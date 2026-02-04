@@ -4084,9 +4084,6 @@ section.animated {
 .blog-article {
   margin: 86px 0;
 }
-.blog-article__container {
-  max-width: 1200px;
-}
 .blog-article__title {
   margin: 0 0 28px;
   font-family: "Benzin", sans-serif;
