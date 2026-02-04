@@ -1,0 +1,335 @@
+.services-accordion {
+	margin: 86px 0;
+
+	&__list {
+		margin-top: 28px;
+		display: grid;
+		gap: 36px;
+		@include adaptive-value(gap, 36px, 24px, 1920px, 767px);
+		@media (max-width:767px) {
+			gap: 24px;
+		}
+	}
+
+	@media (max-width: 767px) {
+		margin: 56px 0;
+
+		
+	}
+}
+
+.sa-item {
+	border-top: 1px solid $general;
+	border-bottom: 1px solid $general;
+    transition: .2s ease;
+
+    &.is-open {
+        border-bottom: 1px solid transparent;
+        transition: .2s ease;
+
+        .sa-item__content {
+            padding: 54px 0 28px;
+            transition: .2s ease;
+        }
+
+        &:last-of-type {
+            border-bottom: 1px solid $general;
+        }
+    }
+
+    .sa-item__content {
+        padding: 0;
+        transition: .2s ease;
+    }
+
+    &:first-of-type {
+        border-bottom: 1px solid transparent;
+        transition: .2s ease;
+    }
+
+    &:last-of-type {
+        padding-bottom: 36px;
+
+		@include adaptive-value(padding-bottom, 36px, 24px, 1920px, 767px);
+		@media (max-width:767px) {
+			padding-bottom: 24px;
+		}
+    }
+
+	&__head {
+		width: 100%;
+		background: transparent;
+		border: 0;
+		padding: 36px 0 0;
+		cursor: pointer;
+
+		display: grid;
+		grid-template-columns: 1fr 28px;
+		align-items: center;
+		gap: 36px;
+
+		@include adaptive-value(padding-top, 36px, 24px, 1920px, 767px);
+		@media (max-width:767px) {
+			padding-top: 24px;
+		}
+
+		&:focus-visible {
+			outline: none;
+			box-shadow: 0 0 0 4px rgba(183, 19, 117, 0.16);
+			border-radius: 18px;
+			padding-left: 10px;
+			padding-right: 10px;
+			margin-left: -10px;
+			margin-right: -10px;
+		}
+	}
+
+	&__title {
+        font-family: $second-family;
+        font-weight: 600;
+        font-size: 36px;
+        @include adaptive-value(font-size, 36px, 24px, 1920px, 767px);
+        text-transform: uppercase;
+        color: #26357e;
+		text-transform: uppercase;
+        text-align: left;
+	}
+
+	
+
+	// раскрывашка через grid-rows, чтобы анимировалось без JS-магии
+	&__body {
+		display: grid;
+		grid-template-rows: 0fr;
+		transition: grid-template-rows 260ms ease;
+	}
+
+	&__content {
+		overflow: hidden;
+		
+		opacity: 0;
+		transform: translateY(-6px);
+		transition: opacity 220ms ease, transform 220ms ease;
+	}
+
+	&.is-open {
+		.sa-item__body {
+			grid-template-rows: 1fr;
+		}
+
+		.sa-item__content {
+			opacity: 1;
+			transform: none;
+		}
+
+		.sa-item__ico {
+			transform: rotate(180deg);
+		}
+	}
+
+	@media (max-width: 767px) {
+		&__title {
+			font-size: 22px;
+			@include adaptive-value(font-size, 22px, 18px, 767px, 467px);
+		}
+
+		
+	}
+}
+
+// --- inner grid with cards (reusable for any content)
+.services-grid {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 28px 22px;
+
+	@media (max-width: 1200px) {
+		grid-template-columns: repeat(3, 1fr);
+	}
+
+	@media (max-width: 1024px) {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	@media (max-width: 767px) {
+		grid-template-columns: 1fr;
+		gap: 18px;
+	}
+}
+
+.service-card {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+
+	&__media {
+		border-radius: 26px;
+		overflow: hidden;
+
+		img {
+			width: 100%;
+			height: auto;
+			display: block;
+			aspect-ratio: 16 / 9;
+			object-fit: cover;
+		}
+	}
+
+	&__title {
+		margin: 0;
+        font-family: $third-family;
+        font-weight: 500;
+        font-size: 17px;
+        @include adaptive-value(font-size, 17px, 15px, 1920px, 767px);
+        color: #26357e;
+	}
+
+	&__list {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		display: grid;
+		gap: 8px;
+
+		li {
+			position: relative;
+			padding-left: 22px;
+            font-family: $font-family;
+            font-weight: 300;
+            font-size: 14px;
+            @include adaptive-value(font-size, 14px, 12px, 1920px, 767px);
+            color: #26357e;
+
+			&::before {
+				content: "";
+				position: absolute;
+				left: 0;
+				top: 5px;
+				width: 14px;
+				height: 14px;
+				border-radius: 999px;
+				box-shadow: 0 0 0 2px rgba(183, 19, 117, 0.22) inset;
+			}
+		}
+	}
+
+	&__price {
+		margin: 4px 0 0;
+        font-family: $third-family;
+        font-weight: 400;
+        font-size: 17px;
+        @include adaptive-value(font-size, 17px, 15px, 1920px, 767px);
+        color: #b71375;
+		text-transform: lowercase;
+	}
+
+	&__actions {
+		margin-top: 8px;
+		display: flex;
+		align-items: center;
+		gap: 18px;
+	}
+
+	&__more {
+        font-family: $font-family;
+        font-weight: 500;
+        font-size: 17px;
+        @include adaptive-value(font-size, 17px, 15px, 1920px, 767px);
+        color: #26357e;
+		text-decoration: none;
+		position: relative;
+
+        transition: .2s ease;
+
+		&::after {
+			content: "";
+			position: absolute;
+			left: 0;
+			right: 0;
+			bottom: -3px;
+			height: 2px;
+			
+			opacity: 1;
+			transform: scaleX(0);
+			transform-origin: left;
+			transition: transform 220ms ease;
+            transition: .5s ease;
+		}
+
+		&:hover::after {
+			transform: scaleX(1);
+            background: #192252;
+            transition: .2s ease;
+		}
+        &:hover { 
+            transition: .2s easy;
+            color: #192252;
+        }
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.sa-item__body,
+	.sa-item__content,
+	.sa-item__ico,
+	.service-card__more::after {
+		transition: none !important;
+	}
+}
+
+
+.sa-item__ico {
+	position: relative;
+	width: 28px;
+	height: 28px;
+	flex-shrink: 0;
+
+
+	display: block;
+
+	
+	&::before,
+	&::after {
+		content: "";
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 16px;          
+		height: 4px;
+		background-color: #26357e;
+		
+		transform: translate(-50%, -50%);
+		transition: transform 220ms ease, opacity 220ms ease;
+	}
+
+	
+	&::after {
+		transform: translate(-50%, -50%) rotate(90deg);
+	}
+}
+
+/* --- OPEN STATE → превращаем плюс в минус */
+.sa-item.is-open {
+	.sa-item__ico {
+		&::after {
+			opacity: 0;
+			transform: translate(-50%, -50%) rotate(90deg) scaleY(0);
+		}
+	}
+}
+
+/* optional: hover feel */
+.sa-item__head:hover .sa-item__ico {
+	&::before,
+	&::after {
+		background-color: #b71375;
+	}
+}
+
+/* reduced motion respect */
+@media (prefers-reduced-motion: reduce) {
+	.sa-item__ico::before,
+	.sa-item__ico::after {
+		transition: none;
+	}
+}

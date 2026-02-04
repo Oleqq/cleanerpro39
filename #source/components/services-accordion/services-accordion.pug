@@ -1,0 +1,117 @@
+//- services-accordion.pug
+section.services-accordion
+	.container.services-accordion__container
+
+		nav.breadcrumbs(aria-label="Хлебные крошки")
+			ol.breadcrumbs__list
+				li.breadcrumbs__item
+					a.breadcrumbs__link(href="#") Главная
+				li.breadcrumbs__sep(aria-hidden="true")
+				li.breadcrumbs__item
+					span.breadcrumbs__current(aria-current="page") Наши услуги
+
+		h2.section__title НАШИ УСЛУГИ
+
+		.services-accordion__list
+
+			//- ITEM (open by default: добавь .is-open)
+			article.sa-item.is-open
+				button.sa-item__head(type="button" aria-expanded="true")
+					span.sa-item__title КЛИНИНГ КВАРТИР
+					span.sa-item__ico(aria-hidden="true")
+
+				.sa-item__body
+					.sa-item__content
+						.services-grid
+							//- CARD
+							article.service-card
+								.service-card__media
+									img(src="https://placehold.co/330x220" alt="")
+								h3.service-card__title Генеральная уборка
+								ul.service-card__list
+									li Среднее время уборки 5-8 часов
+									li Количество клинеров 1-10 чел.
+									li Привозим все оборудование
+								p.service-card__price от 140 руб/м²
+								.service-card__actions
+									a.ui__button-noarrow.blue(href="#") Заказать
+									a.service-card__more(href="#") Подробнее
+
+							article.service-card
+								.service-card__media
+									img(src="https://placehold.co/330x220" alt="")
+								h3.service-card__title Уборка после ремонта
+								ul.service-card__list
+									li Среднее время уборки 5-8 часов
+									li Количество клинеров 1-10 чел.
+									li Привозим все оборудование
+								p.service-card__price от 150 руб/м²
+								.service-card__actions
+									a.ui__button-noarrow.blue(href="#") Заказать
+									a.service-card__more(href="#") Подробнее
+
+							article.service-card
+								.service-card__media
+									img(src="https://placehold.co/330x220" alt="")
+								h3.service-card__title Поддерживающая уборка
+								ul.service-card__list
+									li Среднее время уборки 5-8 часов
+									li Количество клинеров 1-10 чел.
+									li Привозим все оборудование
+								p.service-card__price от 80 руб/м²
+								.service-card__actions
+									a.ui__button-noarrow.blue(href="#") Заказать
+									a.service-card__more(href="#") Подробнее
+
+							article.service-card
+								.service-card__media
+									img(src="https://placehold.co/330x220" alt="")
+								h3.service-card__title Срочная уборка
+								ul.service-card__list
+									li Среднее время уборки 5-8 часов
+									li Количество клинеров 1-10 чел.
+									li Привозим все оборудование
+								p.service-card__price от 140 руб/м²
+								.service-card__actions
+									a.ui__button-noarrow.blue(href="#") Заказать
+									a.service-card__more(href="#") Подробнее
+
+							article.service-card
+								.service-card__media
+									img(src="https://placehold.co/330x220" alt="")
+								h3.service-card__title Комплексная уборка
+								ul.service-card__list
+									li Среднее время уборки 5-8 часов
+									li Количество клинеров 1-10 чел.
+									li Привозим все оборудование
+								p.service-card__price от 140 руб/м²
+								.service-card__actions
+									a.ui__button-noarrow.blue(href="#") Заказать
+									a.service-card__more(href="#") Подробнее
+
+							article.service-card
+								.service-card__media
+									img(src="https://placehold.co/330x220" alt="")
+								h3.service-card__title Уборка запущенных квартир
+								ul.service-card__list
+									li Среднее время уборки 5-8 часов
+									li Количество клинеров 1-10 чел.
+									li Привозим все оборудование
+								p.service-card__price от 200 руб/м²
+								.service-card__actions
+									a.ui__button-noarrow.blue(href="#") Заказать
+									a.service-card__more(href="#") Подробнее
+
+			//- ITEM (closed)
+			article.sa-item
+				button.sa-item__head(type="button" aria-expanded="false")
+					span.sa-item__title КЛИНИНГ ЧАСТНЫХ ДОМОВ, КОТТЕДЖЕЙ, ДАЧ
+					span.sa-item__ico(aria-hidden="true")
+
+				.sa-item__body
+					.sa-item__content
+						
+						p.section__subtitle Контент для второго аккордеона.
+
+
+		

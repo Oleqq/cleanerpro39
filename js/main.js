@@ -1309,3 +1309,49 @@ document.addEventListener('DOMContentLoaded', () => {
 	check();
 	window.addEventListener('resize', check);
 });
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+	const root = document.querySelector('.services-accordion');
+	if (!root) return;
+
+	const items = Array.from(root.querySelectorAll('.sa-item'));
+	if (!items.length) return;
+
+	const closeItem = (item) => {
+		item.classList.remove('is-open');
+		const head = item.querySelector('.sa-item__head');
+		if (head) head.setAttribute('aria-expanded', 'false');
+	};
+
+	const openItem = (item) => {
+		item.classList.add('is-open');
+		const head = item.querySelector('.sa-item__head');
+		if (head) head.setAttribute('aria-expanded', 'true');
+	};
+
+	// init a11y state
+	items.forEach((item) => {
+		const head = item.querySelector('.sa-item__head');
+		if (!head) return;
+		head.setAttribute('aria-expanded', item.classList.contains('is-open') ? 'true' : 'false');
+	});
+
+	// if none open -> open first
+	if (!items.some((i) => i.classList.contains('is-open'))) openItem(items[0]);
+
+	items.forEach((item) => {
+		const head = item.querySelector('.sa-item__head');
+		if (!head) return;
+
+		head.addEventListener('click', () => {
+			const isOpen = item.classList.contains('is-open');
+
+			// only one open (accordion behavior)
+			items.forEach(closeItem);
+
+			if (!isOpen) openItem(item);
+		});
+	});
+});
