@@ -1,0 +1,44 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Document
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+
+
+        link(rel="stylesheet", href="./css/style.css")
+    body 
+
+
+
+        //- Header
+        include ../components/header/header.pug
+        
+        main
+
+            //- portfolio.pug
+            include ../components/portfolio/portfolio.pug
+
+            //- steps-4
+            include ../components/steps-4/steps-4.pug
+
+            //- cta-text-photo
+            include ../components/cta-text-photo/cta-text-photo.pug
+
+            //- text-section-2
+            include ../components/text-section-2/text-section-2.pug
+
+
+            //- ticker
+            include ../components/ticker/ticker.pug
+
+
+        //- Footer
+        include ../components/footer/footer.pug
+
+        
+    
+    script(src="./js/main.js")

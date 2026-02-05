@@ -1355,3 +1355,43 @@ document.addEventListener('DOMContentLoaded', () => {
 		});
 	});
 });
+
+
+
+
+// portfolio.js
+document.addEventListener('DOMContentLoaded', () => {
+	const root = document.querySelector('.portfolio');
+	if (!root) return;
+
+	// -----------------------------
+	// Show more (+3) with animation
+	// -----------------------------
+	const btn = root.querySelector('[data-portfolio-more]');
+	const hiddenCards = () => Array.from(root.querySelectorAll('.portfolio-card.is-hidden'));
+
+	if (!btn) return;
+	if (hiddenCards().length === 0) btn.hidden = true;
+
+	const revealBatch = (count = 3) => {
+		const batch = hiddenCards().slice(0, count);
+		if (!batch.length) return;
+
+		batch.forEach((card) => {
+			card.classList.remove('is-hidden');
+			card.classList.add('is-revealing');
+
+			// даём браузеру применить display, потом анимируем
+			requestAnimationFrame(() => {
+				card.classList.add('is-visible');
+				card.classList.remove('is-revealing');
+			});
+		});
+
+		if (hiddenCards().length === 0) {
+			btn.hidden = true;
+		}
+	};
+
+	btn.addEventListener('click', () => revealBatch(3));
+});

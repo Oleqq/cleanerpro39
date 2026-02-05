@@ -146,11 +146,11 @@
       position: absolute;
       top: 0;
       left: calc(var(--pos) * 1%);
-      width: 2px;
+      width: 4px;
       height: 100%;
       background: rgba(255, 255, 255, 0.95);
       box-shadow: 0 0 0 1px rgba(38, 53, 126, 0.06);
-      transform: translateX(-1px);
+      transform: translateX(-4px);
       pointer-events: none;
     }
   }
@@ -159,6 +159,10 @@
 		position: absolute;
 		bottom: 18px;
 		padding: 12px 30px;
+		@include adaptive-value(padding-top, 12px, 6px, 1920px, 467px);
+		@include adaptive-value(padding-bottom, 12px, 6px, 1920px, 467px);
+		@include adaptive-value(padding-right, 30px, 15px, 1920px, 467px);
+		@include adaptive-value(padding-left, 30px, 15px, 1920px, 467px);
 		border-radius: 999px;
 		background: rgba(0, 0, 0, 0.35);
 		backdrop-filter: blur(6px);
@@ -167,6 +171,7 @@
         font-family: $font-family;
         font-weight: 500;
         font-size: 17px;
+		@include adaptive-value(font-size, 17px, 12px, 1920px, 467px);
         color: #fff;
 		line-height: 1;
 		z-index: 3;
@@ -204,21 +209,24 @@
 			box-shadow: 0 0 0 1px rgba(38, 53, 126, 0.10);
 		}
 
-		// "|||" без svg
 		&::after {
 			content: "";
 			position: absolute;
 			left: 50%;
 			top: 50%;
 			transform: translate(-50%, -50%);
-			width: 18px;
-			height: 18px;
-			background:
-				linear-gradient(#26357e, #26357e) 0 50% / 2px 18px no-repeat,
-				linear-gradient(#26357e, #26357e) 50% 50% / 2px 18px no-repeat,
-				linear-gradient(#26357e, #26357e) 100% 50% / 2px 18px no-repeat;
+
+			width: 24px;
+			height: 28px;
+
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: contain;
 			opacity: 0.95;
+
+			background-image: url("data:image/svg+xml,%3Csvg width='24' height='28' viewBox='0 0 24 28' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.6406 1.00214V26.7849' stroke='%2326357E' stroke-width='2.00427' stroke-linecap='round'/%3E%3Cpath d='M22.2812 6.52704V21.26' stroke='%2326357E' stroke-width='2.00427' stroke-linecap='round'/%3E%3Cpath d='M1.00391 6.52704V21.26' stroke='%2326357E' stroke-width='2.00427' stroke-linecap='round'/%3E%3C/svg%3E");
 		}
+
 	}
 
 	&__range {

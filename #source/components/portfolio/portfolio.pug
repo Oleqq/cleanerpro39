@@ -1,0 +1,166 @@
+//- portfolio.pug
+section.portfolio
+	.container.portfolio__container
+		h2.section__title НАШИ РАБОТЫ
+
+		.portfolio__box
+			.portfolio__list
+				//- CARD 1
+				article.portfolio-card
+					.portfolio-card__ba
+						.ba(data-start="50")
+							.ba__frame
+								img.ba__img.ba__img--before(src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/photoshop-face-before.jpg" alt="До")
+								.ba__after
+									img.ba__img.ba__img--after(src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/photoshop-face-after.jpg" alt="После")
+
+								.ba__label.ba__label--before До
+								.ba__label.ba__label--after После
+
+								.ba__handle(aria-hidden="true")
+								input.ba__range(type="range" min="0" max="100" value="50" aria-label="Сравнение до и после")
+
+					.portfolio-card__content
+						.portfolio-card__meta
+							span Площадь: 55 м2
+							span Сроки: 5 ч
+							span Цена: 10 590 Р
+
+						h3.portfolio-card__subtitle Виды выполненных работ:
+						ul.portfolio-card__list
+							li Мытье полов на кухне, в санузле и комнате
+							li Мойка холодильника, СВЧ, плиты, поверхностей
+							li Удаление мусора в труднодоступных местах
+							li Мытье сантехники, уборка пыли
+
+				//- CARD 2
+				article.portfolio-card
+					.portfolio-card__ba
+						.ba(data-start="55")
+							.ba__frame
+								img.ba__img.ba__img--before(src="https://placehold.co/600x420" alt="До")
+								.ba__after
+									img.ba__img.ba__img--after(src="https://placehold.co/600x420" alt="После")
+
+								.ba__label.ba__label--before До
+								.ba__label.ba__label--after После
+
+								.ba__handle(aria-hidden="true")
+								input.ba__range(type="range" min="0" max="100" value="55" aria-label="Сравнение до и после")
+
+					.portfolio-card__content
+						.portfolio-card__meta
+							span Площадь: 55 м2
+							span Сроки: 5 ч
+							span Цена: 10 590 Р
+
+						h3.portfolio-card__subtitle Виды выполненных работ:
+						ul.portfolio-card__list
+							li Мытье полов на кухне, в санузле и комнате
+							li Мойка холодильника, СВЧ, плиты, поверхностей
+							li Удаление мусора в труднодоступных местах
+							li Мытье сантехники, уборка пыли
+
+				//- CARD 3
+				article.portfolio-card
+					.portfolio-card__ba
+						.ba(data-start="45")
+							.ba__frame
+								img.ba__img.ba__img--before(src="https://placehold.co/600x420" alt="До")
+								.ba__after
+									img.ba__img.ba__img--after(src="https://placehold.co/600x420" alt="После")
+
+								.ba__label.ba__label--before До
+								.ba__label.ba__label--after После
+
+								.ba__handle(aria-hidden="true")
+								input.ba__range(type="range" min="0" max="100" value="45" aria-label="Сравнение до и после")
+
+					.portfolio-card__content
+						.portfolio-card__meta
+							span Площадь: 55 м2
+							span Сроки: 5 ч
+							span Цена: 10 590 Р
+
+						h3.portfolio-card__subtitle Виды выполненных работ:
+						ul.portfolio-card__list
+							li Мытье полов на кухне, в санузле и комнате
+							li Мойка холодильника, СВЧ, плиты, поверхностей
+							li Удаление мусора в труднодоступных местах
+							li Мытье сантехники, уборка пыли
+
+				//- HIDDEN: +3
+				article.portfolio-card.is-hidden
+					.portfolio-card__ba
+						.ba(data-start="50")
+							.ba__frame
+								img.ba__img.ba__img--before(src="https://placehold.co/600x420" alt="До")
+								.ba__after
+									img.ba__img.ba__img--after(src="https://placehold.co/600x420" alt="После")
+								.ba__label.ba__label--before До
+								.ba__label.ba__label--after После
+								.ba__handle(aria-hidden="true")
+								input.ba__range(type="range" min="0" max="100" value="50" aria-label="Сравнение до и после")
+
+					.portfolio-card__content
+						.portfolio-card__meta
+							span Площадь: 62 м2
+							span Сроки: 6 ч
+							span Цена: 12 900 Р
+						h3.portfolio-card__subtitle Виды выполненных работ:
+						ul.portfolio-card__list
+							li Генеральная уборка кухни
+							li Мытье окон
+							li Чистка санузла
+							li Сбор и вынос мусора
+
+				article.portfolio-card.is-hidden
+					.portfolio-card__ba
+						.ba(data-start="52")
+							.ba__frame
+								img.ba__img.ba__img--before(src="https://placehold.co/600x420" alt="До")
+								.ba__after
+									img.ba__img.ba__img--after(src="https://placehold.co/600x420" alt="После")
+								.ba__label.ba__label--before До
+								.ba__label.ba__label--after После
+								.ba__handle(aria-hidden="true")
+								input.ba__range(type="range" min="0" max="100" value="52" aria-label="Сравнение до и после")
+
+					.portfolio-card__content
+						.portfolio-card__meta
+							span Площадь: 40 м2
+							span Сроки: 4 ч
+							span Цена: 8 500 Р
+						h3.portfolio-card__subtitle Виды выполненных работ:
+						ul.portfolio-card__list
+							li Уборка после ремонта
+							li Мытье плинтусов
+							li Обеспыливание стен
+							li Чистка ванной
+
+				article.portfolio-card.is-hidden
+					.portfolio-card__ba
+						.ba(data-start="48")
+							.ba__frame
+								img.ba__img.ba__img--before(src="https://placehold.co/600x420" alt="До")
+								.ba__after
+									img.ba__img.ba__img--after(src="https://placehold.co/600x420" alt="После")
+								.ba__label.ba__label--before До
+								.ba__label.ba__label--after После
+								.ba__handle(aria-hidden="true")
+								input.ba__range(type="range" min="0" max="100" value="48" aria-label="Сравнение до и после")
+
+					.portfolio-card__content
+						.portfolio-card__meta
+							span Площадь: 75 м2
+							span Сроки: 7 ч
+							span Цена: 15 400 Р
+						h3.portfolio-card__subtitle Виды выполненных работ:
+						ul.portfolio-card__list
+							li Комплексная уборка
+							li Мытье техники
+							li Чистка стекол и зеркал
+							li Дезинфекция санузла
+
+			.portfolio__more
+				button.ui__button-noarrow.blue(type="button" data-portfolio-more) Показать все
