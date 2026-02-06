@@ -1,0 +1,49 @@
+//- equipment-secondary.pug
+section.equipment-secondary
+	.container.equipment-secondary__container
+		
+
+		button.equipment-secondary__nav.equipment-secondary__nav--prev(type="button" aria-label="Назад")
+			<svg width="45" height="45" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<circle cx="22.412" cy="22.412" r="22.412" transform="matrix(-1 0 0 1 44.8242 0)" fill="#26357E" />
+				<path d="M26.2136 15.3051C25.5393 14.7996 24.5836 14.9364 24.078 15.6106L19.4997 21.7146C19.0929 22.2571 19.0929 23.0021 19.4997 23.5446L24.078 29.6487C24.5836 30.3228 25.5393 30.4596 26.2136 29.9542C26.8878 29.4485 27.0246 28.4929 26.5191 27.8186L22.957 23.0685L22.6279 22.6296L22.957 22.1908L26.5191 17.4406C27.0246 16.7664 26.8878 15.8107 26.2136 15.3051Z" fill="white" />
+			</svg>
+
+		button.equipment-secondary__nav.equipment-secondary__nav--next(type="button" aria-label="Вперёд")
+			<svg width="45" height="45" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<circle cx="22.412" cy="22.412" r="22.412" transform="matrix(1 1.74846e-07 1.74846e-07 -1 0 44.8242)" fill="#26357E" />
+				<path d="M18.6106 29.5191C19.2849 30.0246 20.2406 29.8878 20.7463 29.2137L25.3246 23.1096C25.7313 22.5671 25.7313 21.8221 25.3246 21.2796L20.7463 15.1756C20.2406 14.5014 19.2849 14.3646 18.6106 14.8701C17.9364 15.3757 17.7996 16.3314 18.3051 17.0056L21.8673 21.7558L22.1964 22.1946L21.8673 22.6335L18.3051 27.3836C17.7996 28.0579 17.9364 29.0135 18.6106 29.5191Z" fill="white" />
+			</svg>
+
+		.equipment-secondary__box
+			
+
+			.equipment-secondary__swiper-secondary.swiper
+				.equipment-secondary__list-secondary.swiper-wrapper
+					article.equipment-secondary-card.swiper-slide
+						.equipment-secondary-card__media
+							img(src="./assets/img/image 32.png" alt="Профессиональные моющие средства")
+						h3.equipment-secondary-card__title Строительный пылесос<br>Karcher
+						p 
+							| Применяется для быстрого и эффективного удаления строительной пыли и крупного мусора после ремонта. Его мощная фильтрация предотвращает повторное оседание мельчайших частиц в воздухе.
+					article.equipment-secondary-card.swiper-slide
+						.equipment-secondary-card__media
+							img(src="./assets/img/image 33.png" alt="Поломоечные машины")
+						h3.equipment-secondary-card__title Моющий пылесос<br>Karcher
+						p 
+							| Идеален для глубокой чистки ковров, ковролина и мягкой мебели с одновременной влажной уборкой. Он не только собирает грязь, но и эффективно удаляет пятна и запахи, благодаря встроенной системе подачи моющего раствора.
+
+					article.equipment-secondary-card.swiper-slide
+						.equipment-secondary-card__media
+							img(src="./assets/img/image 34.png" alt="Парогенераторы")
+						h3.equipment-secondary-card__title Парогенератор<br>Karcher
+						p 
+							| Используется для экологичной дезинфекции и очистки поверхностей без химии, особенно в санузлах и на кухне. Мощный поток пара растворяет сложные загрязнения, жир и известковый налет в труднодоступных местах.
+
+					//- доп карточка (чтобы проверить >3)
+					article.equipment-secondary-card.swiper-slide
+						.equipment-secondary-card__media
+							img(src="https://placehold.co/520x300" alt="Пылесосы")
+						h3.equipment-secondary-card__title Паровая швабра<br>Karcher
+						p 
+							|  Обеспечивает идеальную гигиеническую чистоту твердых напольных покрытий — ламината, плитки, линолеума. Она бережно удаляет грязь и бактерии, оставляя поверхности сухими и безопасными для детей и домашних животных.

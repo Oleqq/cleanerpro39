@@ -1,0 +1,55 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Document
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+
+
+        link(rel="stylesheet", href="./css/style.css")
+    body 
+
+
+
+        //- Header
+        include ../components/header/header.pug
+        
+        main
+
+            //- text-quote
+            include ../components/text-quote/text-quote.pug
+
+            //- equipment-secondary
+            include ../components/equipment-secondary/equipment-secondary.pug
+
+            //- text-banner
+            include ../components/text-banner/text-banner.pug
+
+            //- cta-text-photo
+            include ../components/cta-text-photo/cta-text-photo.pug
+
+            //- equipment
+            include ../components/equipment/equipment.pug
+
+            //- reviews 
+            include ../components/reviews/reviews.pug
+
+            //- callback-form
+            include ../components/callback-form/callback-form.pug
+
+            //- services-text-photo
+            include ../components/services-text-photo/services-text-photo.pug
+
+            //- ticker
+            include ../components/ticker/ticker.pug
+
+
+        //- Footer
+        include ../components/footer/footer.pug
+
+        
+    
+    script(src="./js/main.js")

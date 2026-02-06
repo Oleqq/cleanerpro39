@@ -1,0 +1,125 @@
+.text-banner {
+	margin: 86px 0;
+    @include adaptive-value(margin-bottom, 86px, 50px, 1920px, 767px);
+
+	@media (max-width: 767px) {
+		margin: 56px 0;
+	}
+
+	&__grid {
+		display: grid;
+		grid-template-columns: 1.1fr 0.9fr;
+		gap: 34px;
+		align-items: center;
+
+        position: relative;
+
+		@media (max-width: 1024px) {
+			grid-template-columns: 1fr;
+			gap: 22px;
+		}
+	}
+
+	&__panel {
+		background: #26357e;
+		border-radius: 35px;
+		padding: 44px 44px;
+        @include adaptive-value(padding, 44px, 32px, 1920px, 767px);
+
+        width: 100%;
+        max-width: 900px;
+
+		
+        h2 {
+            width: 100%;
+        }
+
+        p {
+            width: 620px;
+            @include adaptive-value(width, 620px, 390px, 1920px, 467px);
+
+            @media (max-width:1024px) {
+                width: 100%;
+            }
+        }
+	}
+
+	&__title {
+		color: #fff;
+		margin: 0;
+		max-width: 520px;
+	}
+
+	&__subtitle {
+		margin: 22px 0 0;
+		color: rgba(255, 255, 255, 0.92);
+		max-width: 640px;
+
+		@media (max-width: 767px) {
+			margin-top: 16px;
+		}
+	}
+
+	&__media {
+		display: grid;
+		place-items: center;
+        
+         position: absolute;
+
+        aspect-ratio: 690 / 590;
+        right: 0;
+        bottom: -96px;
+
+		@media (max-width: 1024px) {
+			place-items: start;
+            position: unset;
+            aspect-ratio: 4 / 3;
+		}
+	}
+
+	&__img {
+		width: 100%;
+		max-width: 690px;
+        @include adaptive-value(max-width, 690px, 390px, 1920px, 1024px);
+		height: auto;
+		display: block;
+
+        @media (max-width:1024px) {
+            max-width: 100%;
+        }
+       
+	}
+}
+
+
+@media (prefers-reduced-motion: no-preference) {
+	.text-banner__panel {
+		opacity: 0;
+		transform: translateY(10px);
+		animation: textBannerIn 0.55s ease forwards;
+	}
+
+	.text-banner__img {
+		opacity: 0;
+		transform: translateY(10px);
+		animation: textBannerIn 0.55s ease 0.08s forwards;
+	}
+
+	@keyframes textBannerIn {
+		to {
+			opacity: 1;
+			transform: none;
+		}
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.text-banner__panel,
+	.text-banner__img {
+		animation: none !important;
+		opacity: 1 !important;
+		transform: none !important;
+	}
+}
+
+

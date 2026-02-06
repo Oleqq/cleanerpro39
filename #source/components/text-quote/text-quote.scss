@@ -1,0 +1,126 @@
+.text-quote {
+	margin: 85px 0;
+    cursor: default;
+
+    @include adaptive-value(margin-bottom, 85px, 50px, 1920px, 767px);
+    
+	@media (max-width: 767px) {
+		margin:50px 0;
+	}
+
+	&__inner {
+		display: grid;
+		grid-template-columns: 1.4fr 1fr;
+		gap: 50px;
+        @include adaptive-value(gap, 64px, 26px, 1920px, 767px);
+		align-items: start;
+
+		@media (max-width: 1024px) {
+			grid-template-columns: 1fr;
+			
+		}
+	}
+
+	&__content {
+		max-width: 820px;
+	}
+
+	&__text {
+		margin-top: 28px;
+		display: grid;
+		gap: 22px;
+
+		p {
+            font-family: $font-family;
+            font-weight: 300;
+            font-size: 18px;
+            @include adaptive-value(font-size, 18px, 15px, 1920px, 767px);
+            color: #26357e;
+
+            cursor: default;
+
+			@media (max-width: 767px) {
+				font-size: 15px;
+			}
+		}
+	}
+
+	&__aside {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        height: 100%;
+
+		@media (max-width: 1024px) {
+			justify-content: flex-start;
+		}
+	}
+
+	&__quote {
+		position: relative;
+		padding-left: 64px;
+		max-width: 520px;
+
+		font-family: $second-family;
+		font-weight: 800;
+		font-size: 28px;
+		line-height: 1.25;
+		color: #26357e;
+		text-transform: uppercase;
+
+		@media (max-width: 1024px) {
+			font-size: 24px;
+			padding-left: 56px;
+		}
+
+		@media (max-width: 767px) {
+			font-size: 20px;
+			padding-left: 48px;
+		}
+
+        p {
+            font-family: $second-family;
+            font-weight: 700;
+            font-size: 20px;
+            @include adaptive-value(font-size, 20px, 15px, 1920px, 767px);
+            text-transform: uppercase;
+            color: #26357e;
+        }
+	}
+
+	&__mark {
+		position: absolute;
+		left: -12px;
+		top: -10px;
+
+		font-size: 96px;
+		line-height: 1;
+		color: #b71375;
+		font-family: $second-family;
+		font-weight: 900;
+	}
+}
+
+
+
+.text-quote {
+	opacity: 0;
+	transform: translateY(16px);
+	animation: textQuoteIn 0.6s ease forwards;
+}
+
+@keyframes textQuoteIn {
+	to {
+		opacity: 1;
+		transform: none;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.text-quote {
+		animation: none;
+		opacity: 1;
+		transform: none;
+	}
+}

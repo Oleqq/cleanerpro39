@@ -1462,4 +1462,214 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-        
+
+
+// document.addEventListener('DOMContentLoaded', () => {
+// 	const root = document.querySelector('.text-banner');
+// 	if (!root) return;
+
+// 	const media = root.querySelector('.text-banner__media');
+// 	const img = root.querySelector('.text-banner__img');
+// 	if (!media || !img) return;
+
+// 	const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+// 	if (reduceMotion.matches) return;
+
+// 	// настройки (очень мягко)
+// 	const MAX_X = 10; // px
+// 	const MAX_Y = 10; // px
+// 	const ROT_X = 2.5; // deg
+// 	const ROT_Y = 2.5; // deg
+
+// 	let raf = 0;
+// 	let target = { x: 0, y: 0, rx: 0, ry: 0 };
+// 	let current = { x: 0, y: 0, rx: 0, ry: 0 };
+
+// 	const lerp = (a, b, t) => a + (b - a) * t;
+
+// 	const apply = () => {
+// 		raf = 0;
+
+// 		// сглаживание
+// 		current.x = lerp(current.x, target.x, 0.12);
+// 		current.y = lerp(current.y, target.y, 0.12);
+// 		current.rx = lerp(current.rx, target.rx, 0.12);
+// 		current.ry = lerp(current.ry, target.ry, 0.12);
+
+// 		img.style.transform =
+// 			`translate3d(${current.x}px, ${current.y}px, 0) rotateX(${current.rx}deg) rotateY(${current.ry}deg)`;
+
+// 		// продолжаем пока не “доползло”
+// 		const done =
+// 			Math.abs(current.x - target.x) < 0.05 &&
+// 			Math.abs(current.y - target.y) < 0.05 &&
+// 			Math.abs(current.rx - target.rx) < 0.02 &&
+// 			Math.abs(current.ry - target.ry) < 0.02;
+
+// 		if (!done) raf = requestAnimationFrame(apply);
+// 	};
+
+// 	const schedule = () => {
+// 		if (!raf) raf = requestAnimationFrame(apply);
+// 	};
+
+// 	const setFromPointer = (clientX, clientY) => {
+// 		const r = media.getBoundingClientRect();
+
+// 		// нормализуем -1..1 относительно центра media
+// 		const nx = ((clientX - (r.left + r.width / 2)) / (r.width / 2));
+// 		const ny = ((clientY - (r.top + r.height / 2)) / (r.height / 2));
+
+// 		const clamp = (v) => Math.max(-1, Math.min(1, v));
+// 		const x = clamp(nx);
+// 		const y = clamp(ny);
+
+// 		target.x = x * MAX_X;
+// 		target.y = y * MAX_Y;
+
+// 		// rotation: по Y мышь вправо => rotateY(+), вверх => rotateX(-)
+// 		target.ry = x * ROT_Y;
+// 		target.rx = -y * ROT_X;
+
+// 		schedule();
+// 	};
+
+// 	// mouse
+// 	const onMove = (e) => setFromPointer(e.clientX, e.clientY);
+
+// 	// reset
+// 	const reset = () => {
+// 		target = { x: 0, y: 0, rx: 0, ry: 0 };
+// 		schedule();
+// 	};
+
+// 	// делаем активным только когда реально навели на область
+// 	media.addEventListener('mouseenter', () => {
+// 		img.style.transition = 'transform 120ms ease';
+// 	});
+// 	media.addEventListener('mousemove', onMove, { passive: true });
+// 	media.addEventListener('mouseleave', reset);
+
+// 	// мобилка: чуть-чуть от гироскопа (если доступно)
+// 	const hasPointerFine = window.matchMedia('(pointer:fine)').matches;
+// 	if (!hasPointerFine) {
+// 		let started = false;
+
+// 		const onOrient = (e) => {
+// 			// beta: -180..180 (наклон вперёд-назад), gamma: -90..90 (влево-вправо)
+// 			const beta = e.beta ?? 0;
+// 			const gamma = e.gamma ?? 0;
+
+// 			const norm = (v, max) => Math.max(-1, Math.min(1, v / max));
+// 			const x = norm(gamma, 25);
+// 			const y = norm(beta, 25);
+
+// 			target.x = x * (MAX_X * 0.7);
+// 			target.y = y * (MAX_Y * 0.7);
+// 			target.ry = x * (ROT_Y * 0.7);
+// 			target.rx = -y * (ROT_X * 0.7);
+
+// 			schedule();
+// 		};
+
+// 		// стартуем “лениво”, только если есть события
+// 		window.addEventListener('deviceorientation', (e) => {
+// 			if (started) return;
+// 			started = true;
+// 			window.addEventListener('deviceorientation', onOrient);
+// 		}, { passive: true });
+// 	}
+
+// 	// если вкладка скрылась — сброс
+// 	document.addEventListener('visibilitychange', () => {
+// 		if (document.hidden) reset();
+// 	});
+// });
+
+
+// equipment-secondary.js
+
+
+
+// equipment-secondary.js
+document.addEventListener('DOMContentLoaded', () => {
+	const BP = 767;
+
+	const root = document.querySelector('.equipment-secondary');
+	if (!root) return;
+
+	const swiperEl = root.querySelector('.equipment-secondary__swiper-secondary');
+	const slides = Array.from(root.querySelectorAll('.equipment-secondary-card'));
+	const prev = root.querySelector('.equipment-secondary__nav--prev');
+	const next = root.querySelector('.equipment-secondary__nav--next');
+
+	if (!swiperEl || !slides.length) return;
+
+	let swiper = null;
+
+	const setNavVisibility = (show) => {
+		if (!prev || !next) return;
+		prev.classList.toggle('is-hidden', !show);
+		next.classList.toggle('is-hidden', !show);
+	};
+
+	const init = () => {
+		if (swiper) return;
+
+		swiper = new Swiper(swiperEl, {
+			speed: 450,
+			watchOverflow: true,
+			slidesPerView: 1,
+			spaceBetween: 18,
+			navigation:
+				prev && next
+					? { prevEl: prev, nextEl: next, disabledClass: 'is-disabled' }
+					: undefined,
+
+			breakpoints: {
+				0: { slidesPerView: 1, spaceBetween: 34 },
+				467: { slidesPerView: 2, spaceBetween: 34 },
+				767: { slidesPerView: 2, spaceBetween: 34 },
+				1024: { slidesPerView: 3, spaceBetween: 34 },
+				1199: { slidesPerView: 4, spaceBetween: 34 },
+				1440: { slidesPerView: 4, spaceBetween: 34 },
+				1920: { slidesPerView: 4, spaceBetween: 34 },
+			},
+		});
+
+		// если по факту листать нечего — скрываем стрелки
+		const updateNav = () => setNavVisibility(swiper && !swiper.isLocked);
+		updateNav();
+		swiper.on('lock', updateNav);
+		swiper.on('unlock', updateNav);
+	};
+
+	const destroy = () => {
+		if (!swiper) return;
+		swiper.destroy(true, true);
+		swiper = null;
+		setNavVisibility(false);
+	};
+
+	const check = () => {
+		const isMobile = window.innerWidth <= BP;
+
+		// мобилка: свайпер всегда, стрелки прячем
+		if (isMobile) {
+			init();
+			setNavVisibility(false);
+			return;
+		}
+
+		// десктоп: свайпер только если карточек > 3
+		if (slides.length > 3) {
+			init();
+			setNavVisibility(swiper && !swiper.isLocked);
+		} else {
+			destroy();
+		}
+	};
+
+	check();
+	window.addEventListener('resize', check);
+});
