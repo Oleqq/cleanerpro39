@@ -35,11 +35,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const check = () => {
     if (window.innerWidth < BP && !swiper) {
       swiper = new Swiper(el, {
-        slidesPerView: 1.5, // 👈 видно 1.5 слайда
+        slidesPerView: 1.5, 
         spaceBetween: 12,
         pagination: {
-          el: el.querySelector('.swiper-pagination'),
+          el: el.querySelector('.hero__gifts-pagination'),
           clickable: true,
+		  type: 'progressbar',
         },
       });
     }
@@ -1672,4 +1673,179 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	check();
 	window.addEventListener('resize', check);
+});
+
+
+// header-menu.js
+document.addEventListener('DOMContentLoaded', () => {
+	const header = document.querySelector('.header');
+	if (!header) return;
+
+	const btn = header.querySelector('.burger-menu-button');
+	const menu = document.querySelector('#header-menu');
+
+	if (!btn || !menu) return;
+
+	const overlayEl = menu.querySelector('.header-menu__overlay');
+	const panel = menu.querySelector('.header-menu__panel');
+	const closeBtns = Array.from(menu.querySelectorAll('[data-menu-close]'));
+
+	const targetPrimary = menu.querySelector('[data-menu-primary]');
+	const targetAlt = menu.querySelector('[data-menu-alt]');
+
+	const sourcePrimary = header.querySelector('.header__nav ul');
+	const sourceAlt = header.querySelector('.header__nav-alt ul');
+
+	let lastActiveEl = null;
+
+	// --- utils
+	const norm = (s) => (s || '').replace(/\u00A0/g, ' ').replace(/\s+/g, ' ').trim();
+	const isOpen = () => menu.classList.contains('is-open');
+
+	const getFocusable = () =>
+		Array.from(menu.querySelectorAll('a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])')).filter(
+			(el) => el.offsetParent !== null
+		);
+
+	// --- build lists (auto)
+	const buildList = (srcUl, dstUl) => {
+		if (!dstUl) return;
+		dstUl.innerHTML = '';
+		if (!srcUl) return;
+
+		const links = Array.from(srcUl.querySelectorAll('a[href]'));
+		links.forEach((a) => {
+			const li = document.createElement('li');
+			li.className = 'header-menu__item';
+
+			const link = document.createElement('a');
+			link.className = 'header-menu__link';
+			link.href = a.getAttribute('href') || '#';
+			link.textContent = norm(a.textContent);
+
+			li.appendChild(link);
+			dstUl.appendChild(li);
+		});
+	};
+
+	buildList(sourcePrimary, targetPrimary);
+	buildList(sourceAlt, targetAlt);
+
+	// --- stagger animation (JS-driven)
+	const getItems = () => Array.from(menu.querySelectorAll('.header-menu__item'));
+
+	const resetItems = () => {
+		getItems().forEach((el) => el.classList.remove('is-in'));
+	};
+
+	let staggerTimer = null;
+
+	const runStaggerIn = () => {
+		clearTimeout(staggerTimer);
+
+		const items = getItems();
+		resetItems();
+
+		let i = 0;
+		const step = () => {
+			// если меню уже закрыли — не продолжаем
+			if (!isOpen()) return;
+
+			const el = items[i];
+			if (!el) return;
+
+			el.classList.add('is-in');
+			i += 1;
+
+			// скорость появления (можешь крутить)
+			staggerTimer = setTimeout(step, 100);
+		};
+
+		step();
+	};
+
+	// --- a11y
+	const setA11y = (open) => {
+		menu.setAttribute('aria-hidden', open ? 'false' : 'true');
+		btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+		btn.setAttribute('aria-controls', 'header-menu');
+	};
+
+	// --- open / close
+	const openMenu = () => {
+		if (isOpen()) return;
+		lastActiveEl = document.activeElement;
+
+		menu.classList.add('is-open');
+		setA11y(true);
+
+		document.documentElement.style.overflow = 'hidden';
+
+		// стартуем стэггер после того как панель уже "въехала" (чтобы было вкуснее)
+		requestAnimationFrame(() => {
+			runStaggerIn();
+
+			const focusables = getFocusable();
+			(focusables[0] || panel)?.focus?.();
+		});
+	};
+
+	const closeMenu = () => {
+		if (!isOpen()) return;
+
+		clearTimeout(staggerTimer);
+		resetItems();
+
+		menu.classList.remove('is-open');
+		setA11y(false);
+
+		document.documentElement.style.overflow = '';
+
+		requestAnimationFrame(() => {
+			(lastActiveEl || btn)?.focus?.();
+		});
+	};
+
+	// --- events
+	btn.addEventListener('click', () => (isOpen() ? closeMenu() : openMenu()));
+	closeBtns.forEach((x) => x.addEventListener('click', closeMenu));
+
+	// overlay click
+	if (overlayEl) {
+		overlayEl.addEventListener('click', closeMenu);
+	}
+
+	// esc + focus trap
+	document.addEventListener('keydown', (e) => {
+		if (!isOpen()) return;
+
+		if (e.key === 'Escape') {
+			e.preventDefault();
+			closeMenu();
+			return;
+		}
+
+		if (e.key !== 'Tab') return;
+
+		const focusables = getFocusable();
+		if (!focusables.length) return;
+
+		const first = focusables[0];
+		const last = focusables[focusables.length - 1];
+
+		if (e.shiftKey && document.activeElement === first) {
+			e.preventDefault();
+			last.focus();
+		} else if (!e.shiftKey && document.activeElement === last) {
+			e.preventDefault();
+			first.focus();
+		}
+	});
+
+	// close on link click
+	menu.addEventListener('click', (e) => {
+		const a = e.target.closest('a.header-menu__link');
+		if (!a) return;
+		closeMenu();
+	});
 });

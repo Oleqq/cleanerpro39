@@ -1,5 +1,6 @@
 .steps-4 {
 	margin: 86px 0;
+	@include adaptive-value(margin-bottom, 86px, 50px, 1920px, 767px);
 
 	&__box {
 		margin-top: 28px;
@@ -27,7 +28,7 @@
 	}
 
 	@media (max-width: 767px) {
-		margin: 56px 0;
+		
 
 		
 		&__grid {
@@ -38,6 +39,9 @@
 }
 
 .step-card {
+	position: relative;
+	
+
 	&:first-of-type {
 		height: 440px;
 		@media (max-width:767px) {
@@ -55,13 +59,42 @@
 		max-height: 370px;
 	}
 
+	&::after {
+		content: "";
+		position: absolute;
+		right: -32px; // подстрой под макет
+		top: 50%;
+		transform: translateY(-50%);
+		width: 45px;
+		height: 45px;
+		z-index: 10;
+
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position: center;
+
+		background-image: url("data:image/svg+xml,%3Csvg width='45' height='45' viewBox='0 0 45 45' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='22.3642' cy='22.3642' r='21.0357' fill='white' stroke='%23B71375' stroke-width='2.65699'/%3E%3Cpath d='M20.6308 14.8166C21.3036 14.3122 22.2573 14.4488 22.7619 15.1215L27.3304 21.2125C27.7363 21.7538 27.7363 22.4973 27.3304 23.0386L22.7619 29.1296C22.2573 29.8024 21.3036 29.9389 20.6308 29.4345C19.958 28.9299 19.8215 27.9763 20.3259 27.3035L23.8805 22.5635L24.2089 22.1256L23.8805 21.6876L20.3259 16.9476C19.8215 16.2748 19.958 15.3212 20.6308 14.8166Z' fill='%23B71375'/%3E%3C/svg%3E");
+
+
+		@media (max-width:1024px) {
+			display: none;
+		}
+	}
+
+	&:first-child::after {
+		top: 42.5%;
+	}
+	&:last-child::after {
+		display: none;
+	}
+
 	--radius: 30px;
 
 	position: relative;
 	border-radius: var(--radius);
 	background: #fff;
 	padding: 0;
-	overflow: hidden;
+	overflow: visible;
 	box-shadow: 0 0 0 1px rgba(38, 53, 126, 0.04);
 	transition: transform 220ms ease, box-shadow 220ms ease;
 

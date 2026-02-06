@@ -5,6 +5,7 @@
     white-space: nowrap;
 
     margin-bottom: 86px;
+    @include adaptive-value(margin-bottom, 86px, 50px, 1920px, 767px);
 
     &__track {
         display: flex;

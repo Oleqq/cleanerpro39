@@ -10,7 +10,7 @@
 		padding: 22px;
         height: 100%;
 
-        overflow:hidden;
+       
 	}
 
 	&__swiper {
@@ -83,6 +83,20 @@
 				height: 100%;
 				gap: 26px;
 				
+			}
+		}
+
+		&.swiper-slide-active {
+			@media (min-width:1279px) {
+				transition: .2s ease;
+				opacity: 1;
+			}
+		}
+
+		&.swiper-slide-next, &.swiper-slide-prev {
+			@media (min-width:1279px) {
+				transition: .2s ease;
+				opacity: 0;
 			}
 		}
 	}

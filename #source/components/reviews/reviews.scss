@@ -16,6 +16,28 @@
 		align-items: center;
 		gap: 16px;
 		flex: 0 0 auto;
+		
+		&.desktop {
+			@media (max-width:567px) {
+				display: none;
+			}
+		}
+		&.mobile {
+			display: none;
+			@media (max-width:567px) {
+				display: flex;
+				flex-direction: column;
+				margin-top: 24px;
+			}
+
+			a {
+				@media (max-width:567px) {
+					width: 100%;
+					justify-content: center;
+					align-items: center;
+				}
+			}
+		}
 	}
 
 	&__grid {

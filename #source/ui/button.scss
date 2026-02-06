@@ -20,8 +20,22 @@
 
             cursor: pointer;
 
+            position: relative;
+
+            @media (max-width:767px) {
+                width: 100% !important;
+                justify-content: center;
+                align-items: center;
+                padding-right: 30px;
+            }
+
             svg {
                 flex-shrink: 0;
+
+                @media (max-width:767px) {
+                    position: absolute;
+                    right: 8px;
+                }
             }
 
             &.blue {

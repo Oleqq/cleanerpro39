@@ -26,6 +26,7 @@
             font-family: $font-family;
             font-weight: 300;
             font-size: 18px;
+			@include adaptive-value(font-size, 18px, 15px, 1920px, 767px);
             color: #26357e;
 		}
 	}

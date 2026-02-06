@@ -82,11 +82,10 @@
 		font-family: $font-family;
         font-weight: 500;
         font-size: 18px;
+		@include adaptive-value(font-size, 18px, 15px, 1920px, 767px);
         color: #26357e;
 
-		@media (max-width: 767px) {
-			font-size: 18px;
-		}
+		
 	}
 
 	&__ico {
@@ -141,6 +140,7 @@
             font-family: $font-family;
             font-weight: 300;
             font-size: 16px;
+			@include adaptive-value(font-size, 16px, 12px, 1920px, 767px);
             color: #26357e;
 		}
 	}
