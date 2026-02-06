@@ -1,0 +1,213 @@
+[
+  {
+    "key": "group_price_page",
+    "title": "Price: Страница цен",
+    "fields": [
+      {
+        "key": "field_price_tab_hero",
+        "label": "Заголовок",
+        "name": "",
+        "type": "tab",
+        "instructions": "Настройки верхнего заголовка страницы.",
+        "placement": "top",
+        "endpoint": 0
+      },
+      {
+        "key": "field_price_title",
+        "label": "Заголовок страницы",
+        "name": "price_title",
+        "type": "textarea",
+        "instructions": "Можно переносы строк. В шаблоне переносы будут сохранены через <br>.",
+        "required": 0,
+        "wrapper": { "width": "", "class": "", "id": "" },
+        "default_value": "цены на услуги клининга\nв калининграде",
+        "placeholder": "",
+        "maxlength": ""
+      },
+
+      {
+        "key": "field_price_tab_accordion",
+        "label": "Прайс-аккордеон",
+        "name": "",
+        "type": "tab",
+        "instructions": "Категории (аккордеоны) и строки прайса внутри.",
+        "placement": "top",
+        "endpoint": 0
+      },
+      {
+        "key": "field_price_accordions",
+        "label": "Категории прайса",
+        "name": "price_accordions",
+        "type": "repeater",
+        "instructions": "Одна категория = один аккордеон (например: КВАРТИРЫ, ДОМА, ОФИСЫ).",
+        "required": 0,
+        "wrapper": { "width": "", "class": "", "id": "" },
+        "layout": "block",
+        "pagination": 0,
+        "min": 0,
+        "max": 0,
+        "collapsed": "field_price_acc_title",
+        "button_label": "Добавить категорию",
+        "sub_fields": [
+          {
+            "key": "field_price_acc_title",
+            "label": "Заголовок категории",
+            "name": "acc_title",
+            "type": "text",
+            "instructions": "Например: КВАРТИРЫ / ДОМА / ОФИСЫ / Коммерческие помещения.",
+            "required": 1,
+            "wrapper": { "width": "70", "class": "", "id": "" },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": ""
+          },
+          {
+            "key": "field_price_acc_open",
+            "label": "Открыта по умолчанию",
+            "name": "acc_is_open",
+            "type": "true_false",
+            "instructions": "Если включено — блок будет с классом is-open и aria-expanded=true.",
+            "required": 0,
+            "wrapper": { "width": "30", "class": "", "id": "" },
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "Да",
+            "ui_off_text": "Нет"
+          },
+          {
+            "key": "field_price_rows",
+            "label": "Строки прайса",
+            "name": "rows",
+            "type": "repeater",
+            "instructions": "Одна строка = услуга + цена. Скидку/бейдж задавай отдельным полем.",
+            "required": 0,
+            "wrapper": { "width": "", "class": "", "id": "" },
+            "layout": "row",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "field_price_row_name",
+            "button_label": "Добавить строку",
+            "sub_fields": [
+              {
+                "key": "field_price_row_name",
+                "label": "Название",
+                "name": "name",
+                "type": "text",
+                "instructions": "Текст услуги (может быть длинный).",
+                "required": 1,
+                "wrapper": { "width": "55", "class": "", "id": "" },
+                "default_value": "",
+                "placeholder": "",
+                "maxlength": ""
+              },
+              {
+                "key": "field_price_row_price",
+                "label": "Цена",
+                "name": "price",
+                "type": "text",
+                "instructions": "Например: 130 руб/м2 или от 130 руб/м2.",
+                "required": 1,
+                "wrapper": { "width": "25", "class": "", "id": "" },
+                "default_value": "",
+                "placeholder": "",
+                "maxlength": ""
+              },
+              {
+                "key": "field_price_row_badge",
+                "label": "Бейдж (необязательно)",
+                "name": "badge",
+                "type": "text",
+                "instructions": "Например: - 30 % или - 15 %. Если пусто — бейджа не будет.",
+                "required": 0,
+                "wrapper": { "width": "20", "class": "", "id": "" },
+                "default_value": "",
+                "placeholder": "",
+                "maxlength": ""
+              }
+            ]
+          }
+        ]
+      },
+
+      {
+        "key": "field_price_tab_featured",
+        "label": "Популярные услуги",
+        "name": "",
+        "type": "tab",
+        "instructions": "Выбор карточек услуг для блока со слайдером.",
+        "placement": "top",
+        "endpoint": 0
+      },
+      {
+        "key": "field_price_featured_services",
+        "label": "Выбранные услуги (карточки)",
+        "name": "price_featured_services",
+        "type": "relationship",
+        "instructions": "Выбери услуги (CPT service), которые будут показаны в блоке «популярные услуги по уборке».",
+        "required": 0,
+        "wrapper": { "width": "", "class": "", "id": "" },
+        "post_type": ["service"],
+        "taxonomy": [],
+        "filters": ["search", "post_type"],
+        "elements": ["featured_image"],
+        "min": 0,
+        "max": 0,
+        "return_format": "id"
+      },
+
+      {
+        "key": "field_price_tab_text",
+        "label": "Текстовый блок",
+        "name": "",
+        "type": "tab",
+        "instructions": "Нижний контент-блок.",
+        "placement": "top",
+        "endpoint": 0
+      },
+      {
+        "key": "field_price_text_title",
+        "label": "Заголовок блока",
+        "name": "price_text_title",
+        "type": "textarea",
+        "instructions": "Можно переносы строк. В шаблоне переносы будут сохранены через <br>.",
+        "required": 0,
+        "wrapper": { "width": "", "class": "", "id": "" },
+        "default_value": "Убедитесь в качестве на практике:\nваш дом — наш следующий кейс",
+        "placeholder": "",
+        "maxlength": ""
+      },
+      {
+        "key": "field_price_text_content",
+        "label": "Текст",
+        "name": "price_text_content",
+        "type": "wysiwyg",
+        "instructions": "Основной контент (как на статике).",
+        "required": 0,
+        "wrapper": { "width": "", "class": "", "id": "" },
+        "default_value": "",
+        "tabs": "all",
+        "toolbar": "full",
+        "media_upload": 0,
+        "delay": 0
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "page_template",
+          "operator": "==",
+          "value": "price.php"
+        }
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": ["the_content"],
+    "active": true,
+    "description": ""
+  }
+]

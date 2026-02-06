@@ -305,20 +305,36 @@
         font-family: $font-family;
         font-weight: 500;
         font-size: 17px;
+        @include adaptive-value(font-size, 17px, 15px, 1920px, 767px);
         color: #26357e;
-        text-decoration: none;
+		text-decoration: none;
+		position: relative;
+
         transition: .2s ease;
-        
 
+		&::after {
+			content: "";
+			position: absolute;
+			left: 0;
+			right: 0;
+			bottom: -3px;
+			height: 2px;
+			
+			opacity: 1;
+			transform: scaleX(0);
+			transform-origin: left;
+			transition: transform 220ms ease;
+            transition: .5s ease;
+		}
 
-        &:hover {
+		&:hover::after {
+			transform: scaleX(1);
+            background: #192252;
             transition: .2s ease;
-            text-decoration: underline;
-            color: #26357e;
+		}
+        &:hover { 
+            transition: .2s easy;
+            color: #192252;
         }
-        &:focus {
-            transition: .2s ease;
-            color: $pressed-general;
-        }
-    }
+	}
 }

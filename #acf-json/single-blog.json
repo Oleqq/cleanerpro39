@@ -1,0 +1,132 @@
+[
+  {
+    "key": "group_blog_article_fields_010",
+    "title": "Статья (CPT: blog) — поля макета",
+    "fields": [
+      {
+        "key": "field_blog_tab_intro_010",
+        "label": "Первый экран",
+        "name": "",
+        "type": "tab",
+        "instructions": "Поля для блока над основным контентом: картинка (через Изображение записи), вводный текст и заголовок как на макете.",
+        "required": 0,
+        "placement": "top",
+        "endpoint": 0
+      },
+      {
+        "key": "field_blog_intro_group_010",
+        "label": "Интро-блок",
+        "name": "blog_intro",
+        "type": "group",
+        "instructions": "Заполняй строго по макету: 1) абзац, 2) заголовок H2, 3) абзац. Картинка — это «Миниатюра записи» (Featured Image).",
+        "required": 0,
+        "layout": "block",
+        "sub_fields": [
+          {
+            "key": "field_blog_intro_p1_010",
+            "label": "Вступление (абзац 1)",
+            "name": "p1",
+            "type": "wysiwyg",
+            "instructions": "Это первый текстовый абзац справа от картинки (как в статике).",
+            "required": 0,
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 0
+          },
+          {
+            "key": "field_blog_intro_h2_010",
+            "label": "Заголовок (H2) в интро",
+            "name": "h2",
+            "type": "text",
+            "instructions": "Один заголовок H2, который идёт сразу после первого абзаца (как в статике).",
+            "required": 0,
+            "default_value": "",
+            "placeholder": "Например: Чем опасны пылевые клещи…",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+          },
+          {
+            "key": "field_blog_intro_p2_010",
+            "label": "Интро-текст (абзац 2)",
+            "name": "p2",
+            "type": "wysiwyg",
+            "instructions": "Второй абзац в интро под H2 (как в статике).",
+            "required": 0,
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 0
+          }
+        ]
+      },
+      {
+        "key": "field_blog_tab_content_010",
+        "label": "Контент статьи",
+        "name": "",
+        "type": "tab",
+        "instructions": "Основной WYSIWYG (1 колонка). Тут делай h2, списки ul/ol и т.д. — как в статике.",
+        "required": 0,
+        "placement": "top",
+        "endpoint": 0
+      },
+      {
+        "key": "field_blog_content_wysiwyg_010",
+        "label": "Основной контент (WYSIWYG)",
+        "name": "blog_content",
+        "type": "wysiwyg",
+        "instructions": "Это блок .blog-article__content.wysiwyg. Верстай внутри редактора заголовками H2, списками, абзацами — как в макете/статике.",
+        "required": 0,
+        "tabs": "all",
+        "toolbar": "full",
+        "media_upload": 1,
+        "delay": 0
+      },
+      {
+        "key": "field_blog_tab_settings_010",
+        "label": "Опционально",
+        "name": "",
+        "type": "tab",
+        "instructions": "Аккуратные доп. настройки, если понадобятся позже.",
+        "required": 0,
+        "placement": "top",
+        "endpoint": 0
+      },
+      {
+        "key": "field_blog_show_next_010",
+        "label": "Показывать «Следующая статья»",
+        "name": "blog_show_next",
+        "type": "true_false",
+        "instructions": "Если выключить — кнопка «Следующая статья» не выводится.",
+        "required": 0,
+        "message": "",
+        "default_value": 1,
+        "ui": 1,
+        "ui_on_text": "Да",
+        "ui_off_text": "Нет"
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "post_type",
+          "operator": "==",
+          "value": "blog"
+        }
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+      "the_content",
+      "excerpt"
+    ],
+    "active": true,
+    "description": "Поля под макет single-blog.php: интро (p + h2 + p) и основной контент WYSIWYG.",
+    "show_in_rest": 0
+  }
+]

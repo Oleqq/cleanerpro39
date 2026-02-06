@@ -1,0 +1,92 @@
+[
+  {
+    "key": "group_text_photo_options",
+    "title": "Блок: CTA-Блок (глобально)",
+    "fields": [
+      {
+        "key": "field_tp_tab_main",
+        "label": "Контент блока",
+        "name": "",
+        "type": "tab",
+        "instructions": "Эти данные используются в компоненте text-photo на сайте. Меняется один раз — применяется везде.",
+        "required": 0,
+        "placement": "top",
+        "endpoint": 0
+      },
+      {
+        "key": "field_tp_title",
+        "label": "Заголовок",
+        "name": "tp_title",
+        "type": "textarea",
+        "instructions": "Заголовок секции. Можно переносы строк — они превратятся в <br>.",
+        "required": 0,
+        "wrapper": { "width": "", "class": "", "id": "" },
+        "default_value": "",
+        "new_lines": ""
+      },
+      {
+        "key": "field_tp_subtitle",
+        "label": "Подзаголовок / текст",
+        "name": "tp_subtitle",
+        "type": "textarea",
+        "instructions": "Текст под заголовком. Переносы строк тоже ок.",
+        "required": 0,
+        "wrapper": { "width": "", "class": "", "id": "" },
+        "default_value": "",
+        "new_lines": ""
+      },
+      {
+        "key": "field_tp_button_text",
+        "label": "Текст кнопки",
+        "name": "tp_button_text",
+        "type": "text",
+        "instructions": "Например: «Написать в Telegram». Если пусто — кнопки не будет.",
+        "required": 0,
+        "wrapper": { "width": "50", "class": "", "id": "" },
+        "default_value": "",
+        "placeholder": "Написать в Telegram"
+      },
+      {
+        "key": "field_tp_button_url",
+        "label": "Ссылка кнопки",
+        "name": "tp_button_url",
+        "type": "url",
+        "instructions": "Например: ссылка на Telegram/WhatsApp. Если пусто — кнопки не будет.",
+        "required": 0,
+        "wrapper": { "width": "50", "class": "", "id": "" },
+        "default_value": "",
+        "placeholder": ""
+      },
+      {
+        "key": "field_tp_image",
+        "label": "Картинка справа",
+        "name": "tp_image",
+        "type": "image",
+        "instructions": "Картинка для блока (правая часть).",
+        "required": 0,
+        "return_format": "array",
+        "preview_size": "medium",
+        "library": "all",
+        "wrapper": { "width": "", "class": "", "id": "" }
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "options_page",
+          "operator": "==",
+          "value": "acf-options-cta-block"
+        }
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0
+  }
+]

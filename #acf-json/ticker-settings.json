@@ -1,0 +1,117 @@
+[
+  {
+    "key": "group_ticker_settings",
+    "title": "Бегущая строка",
+    "fields": [
+      {
+        "key": "field_ticker_tab_content",
+        "label": "Контент",
+        "name": "",
+        "type": "tab",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "placement": "top",
+        "endpoint": 0
+      },
+      {
+        "key": "field_ticker_items",
+        "label": "Пункты строки",
+        "name": "ticker_items",
+        "type": "repeater",
+        "instructions": "Добавляй фразы, которые будут повторяться в бегущей строке. Разделители рисуются автоматически.",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "layout": "table",
+        "pagination": 0,
+        "min": 0,
+        "max": 0,
+        "collapsed": "field_ticker_item_text",
+        "button_label": "Добавить пункт",
+        "rows_per_page": 20,
+        "sub_fields": [
+          {
+            "key": "field_ticker_item_text",
+            "label": "Текст пункта",
+            "name": "ticker_item_text",
+            "type": "text",
+            "instructions": "Например: «Менеджер будет на связи с вами 24/7»",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+              "width": "100",
+              "class": "",
+              "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": 0
+          }
+        ]
+      },
+      {
+        "key": "field_ticker_tab_notes",
+        "label": "Заметки",
+        "name": "",
+        "type": "tab",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "placement": "top",
+        "endpoint": 0
+      },
+      {
+        "key": "field_ticker_note",
+        "label": "Подсказка",
+        "name": "ticker_note",
+        "type": "message",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "message": "Эти пункты используются по умолчанию в компоненте тикера. На отдельных страницах можно переопределить список через get_template_part(..., ['items' =&gt; [...] ])",
+        "new_lines": "wpautop",
+        "esc_html": 0
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "options_page",
+          "operator": "==",
+          "value": "ticker-settings"
+        }
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0
+  }
+]

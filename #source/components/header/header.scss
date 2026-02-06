@@ -155,7 +155,8 @@
         a {
             font-family: $font3;
             font-weight: 400;
-            font-size: 10px;
+            font-size: 12px;
+			@include adaptive-value(font-size, 12px, 10px, 1920px, 1359px);
             color: #26357e;
 
             display: flex;

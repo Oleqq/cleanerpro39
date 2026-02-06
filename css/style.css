@@ -1336,7 +1336,31 @@ section.animated {
 .header__nav a {
   font-family: "Benzin", sans-serif;
   font-weight: 400;
-  font-size: 10px;
+  font-size: 12px;
+}
+@media (min-width: 1920px) {
+  .header__nav a {
+    font-size: 12px;
+  }
+}
+@media (min-width: 1359px) and (max-width: 1920px) {
+  @supports (font-size: clamp(0.625pxrem, calc(5.1550802139px + 0.3565062389 * 1vw), 0.75pxrem)) {
+    .header__nav a {
+      font-size: clamp(0.625pxrem, calc(5.1550802139px + 0.3565062389 * 1vw), 0.75pxrem);
+    }
+  }
+  @supports not (font-size: clamp(0.625pxrem, calc(5.1550802139px + 0.3565062389 * 1vw), 0.75pxrem)) {
+    .header__nav a {
+      font-size: calc(10px + (100vw - 1359px) * 0.0035650624);
+    }
+  }
+}
+@media (max-width: 1359px) {
+  .header__nav a {
+    font-size: 10px;
+  }
+}
+.header__nav a {
   color: #26357e;
   display: flex;
   align-items: center;
@@ -2859,17 +2883,55 @@ section.animated {
   font-family: "Geologica", sans-serif;
   font-weight: 500;
   font-size: 17px;
+}
+@media (min-width: 1920px) {
+  .service-card__link {
+    font-size: 17px;
+  }
+}
+@media (min-width: 767px) and (max-width: 1920px) {
+  @supports (font-size: clamp(0.9375pxrem, calc(13.6695576756px + 0.1734605377 * 1vw), 1.0625pxrem)) {
+    .service-card__link {
+      font-size: clamp(0.9375pxrem, calc(13.6695576756px + 0.1734605377 * 1vw), 1.0625pxrem);
+    }
+  }
+  @supports not (font-size: clamp(0.9375pxrem, calc(13.6695576756px + 0.1734605377 * 1vw), 1.0625pxrem)) {
+    .service-card__link {
+      font-size: calc(15px + (100vw - 767px) * 0.0017346054);
+    }
+  }
+}
+@media (max-width: 767px) {
+  .service-card__link {
+    font-size: 15px;
+  }
+}
+.service-card__link {
   color: #26357e;
   text-decoration: none;
+  position: relative;
+  transition: 0.2s ease;
+}
+.service-card__link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -3px;
+  height: 2px;
+  opacity: 1;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 220ms ease;
+  transition: 0.5s ease;
+}
+.service-card__link:hover::after {
+  transform: scaleX(1);
+  background: #192252;
   transition: 0.2s ease;
 }
 .service-card__link:hover {
-  transition: 0.2s ease;
-  text-decoration: underline;
-  color: #26357e;
-}
-.service-card__link:focus {
-  transition: 0.2s ease;
+  transition: 0.2s easy;
   color: #192252;
 }
 

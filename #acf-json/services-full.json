@@ -1,0 +1,528 @@
+[
+  {
+    "key": "group_services_full",
+    "title": "Услуга — все поля (services-full)",
+    "fields": [
+      {
+        "key": "field_services_tab_card",
+        "label": "Карточка / Архив",
+        "name": "",
+        "type": "tab",
+        "instructions": "Поля, которые используются в карточках услуги (archive-service) и базовой информации.",
+        "placement": "top",
+        "endpoint": 0
+      },
+
+      {
+        "key": "field_service_intro",
+        "label": "Интро (короткий текст сверху)",
+        "name": "service_intro",
+        "type": "textarea",
+        "instructions": "Короткий вводный текст для страницы услуги (single). Если не нужен — оставь пустым.",
+        "required": 0,
+        "wrapper": { "width": "", "class": "", "id": "" },
+        "new_lines": "br"
+      },
+      {
+        "key": "field_service_features",
+        "label": "Пункты списка на карточке",
+        "name": "service_features",
+        "type": "repeater",
+        "instructions": "Это список под заголовком услуги на карточке (обычно 3 пункта).",
+        "required": 0,
+        "min": 0,
+        "max": 6,
+        "layout": "row",
+        "button_label": "Добавить пункт",
+        "sub_fields": [
+          {
+            "key": "field_service_features_text",
+            "label": "Текст пункта",
+            "name": "text",
+            "type": "text",
+            "instructions": "Пример: «Среднее время уборки 5-8 часов»",
+            "required": 1,
+            "wrapper": { "width": "", "class": "", "id": "" },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+          }
+        ]
+      },
+      {
+        "key": "field_service_price",
+        "label": "Цена (текстом)",
+        "name": "service_price",
+        "type": "text",
+        "instructions": "Как на макете: «от 140 руб/м²» (тут именно текст, чтобы не ломать формат).",
+        "required": 0,
+        "wrapper": { "width": "50", "class": "", "id": "" },
+        "default_value": "",
+        "placeholder": "от 140 руб/м²",
+        "prepend": "",
+        "append": ""
+      },
+      {
+        "key": "field_service_order_link",
+        "label": "Ссылка «Заказать»",
+        "name": "service_order_link",
+        "type": "url",
+        "instructions": "Ссылка на форму/мессенджер/страницу заказа. Можно поставить # если потом подтянешь JS.",
+        "required": 0,
+        "wrapper": { "width": "50", "class": "", "id": "" },
+        "default_value": "",
+        "placeholder": ""
+      },
+      {
+        "key": "field_service_content",
+        "label": "Основной контент (WYSIWYG)",
+        "name": "service_content",
+        "type": "wysiwyg",
+        "instructions": "Основной текст для страницы услуги (single). Сюда пишем заголовки/списки/параграфы как в статике.",
+        "required": 0,
+        "wrapper": { "width": "", "class": "", "id": "" },
+        "tabs": "all",
+        "toolbar": "full",
+        "media_upload": 1,
+        "delay": 0
+      },
+
+      {
+        "key": "field_services_tab_hero",
+        "label": "Hero",
+        "name": "",
+        "type": "tab",
+        "instructions": "Шапка страницы услуги: H1 и 2 изображения.",
+        "placement": "top",
+        "endpoint": 0
+      },
+
+      {
+        "key": "field_service_hero_title",
+        "label": "H1 (заголовок вверху страницы)",
+        "name": "service_hero_title",
+        "type": "textarea",
+        "instructions": "Заголовок как в макете. Переносы строк можно делать через Enter (в шаблоне выводим через nl2br).",
+        "required": 0,
+        "new_lines": "br"
+      },
+      {
+        "key": "field_service_hero_main_image",
+        "label": "Hero — главное изображение (980×420)",
+        "name": "service_hero_main_image",
+        "type": "image",
+        "instructions": "Главное фото в шапке услуги. Рекомендованный размер 980×420.",
+        "required": 0,
+        "return_format": "array",
+        "preview_size": "medium",
+        "library": "all"
+      },
+      {
+        "key": "field_service_hero_main_alt",
+        "label": "Hero — alt главного изображения",
+        "name": "service_hero_main_alt",
+        "type": "text",
+        "instructions": "Alt для главной картинки (SEO/доступность). Если пусто — подставим заголовок услуги.",
+        "required": 0
+      },
+      {
+        "key": "field_service_hero_side_image",
+        "label": "Hero — боковое изображение (420×420)",
+        "name": "service_hero_side_image",
+        "type": "image",
+        "instructions": "Боковое фото в шапке услуги. Рекомендованный размер 420×420.",
+        "required": 0,
+        "return_format": "array",
+        "preview_size": "medium",
+        "library": "all"
+      },
+      {
+        "key": "field_service_hero_side_alt",
+        "label": "Hero — alt бокового изображения",
+        "name": "service_hero_side_alt",
+        "type": "text",
+        "instructions": "Alt для боковой картинки. Если пусто — подставим заголовок услуги.",
+        "required": 0
+      },
+
+      {
+        "key": "field_services_tab_intro_block",
+        "label": "Блок «Текст + фото»",
+        "name": "",
+        "type": "tab",
+        "instructions": "Большой блок после Hero (заголовок + текст + картинка справа).",
+        "placement": "top",
+        "endpoint": 0
+      },
+
+      {
+        "key": "field_service_intro_block",
+        "label": "Блок «Текст + фото» (после Hero)",
+        "name": "service_intro_block",
+        "type": "group",
+        "instructions": "Большой текстовый блок с картинкой справа, как в макете.",
+        "sub_fields": [
+          {
+            "key": "field_service_intro_title",
+            "label": "Заголовок блока",
+            "name": "title",
+            "type": "textarea",
+            "instructions": "Заголовок как в макете. Переносы строк можно делать через Enter.",
+            "new_lines": "br"
+          },
+          {
+            "key": "field_service_intro_text",
+            "label": "Текст блока",
+            "name": "text",
+            "type": "wysiwyg",
+            "instructions": "Текст под заголовком. Можно вставлять переносы/абзацы как в статике.",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0
+          },
+          {
+            "key": "field_service_intro_image",
+            "label": "Изображение блока (630×540)",
+            "name": "image",
+            "type": "image",
+            "instructions": "Картинка справа. Рекомендованный размер 630×540.",
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all"
+          },
+          {
+            "key": "field_service_intro_alt",
+            "label": "Alt изображения",
+            "name": "alt",
+            "type": "text",
+            "instructions": "Alt для картинки. Если пусто — подставим заголовок услуги."
+          }
+        ]
+      },
+
+      {
+        "key": "field_services_tab_includes",
+        "label": "Табы «Что входит»",
+        "name": "",
+        "type": "tab",
+        "instructions": "Табы: кнопки + панели (колонки со списками).",
+        "placement": "top",
+        "endpoint": 0
+      },
+
+      {
+        "key": "field_service_includes_tabs",
+        "label": "Блок «Что входит» (табы)",
+        "name": "service_includes_tabs",
+        "type": "group",
+        "instructions": "Табы: кнопки + панели. Всё редактируется в админке.",
+        "sub_fields": [
+          {
+            "key": "field_service_includes_title",
+            "label": "Заголовок блока",
+            "name": "title",
+            "type": "textarea",
+            "instructions": "Заголовок над табами. Переносы строк можно делать через Enter.",
+            "new_lines": "br"
+          },
+          {
+            "key": "field_service_includes_tabs_items",
+            "label": "Табы",
+            "name": "tabs",
+            "type": "repeater",
+            "instructions": "Каждый таб = кнопка + контент (колонки). Первый таб будет активным по умолчанию.",
+            "layout": "block",
+            "button_label": "Добавить таб",
+            "sub_fields": [
+              {
+                "key": "field_service_includes_tab_label",
+                "label": "Название таба (кнопка)",
+                "name": "label",
+                "type": "text",
+                "instructions": "Например: «В тарифе», «Мытье окон», «Химчистка», «Дополнительные услуги»."
+              },
+              {
+                "key": "field_service_includes_tab_columns",
+                "label": "Колонки внутри таба",
+                "name": "columns",
+                "type": "repeater",
+                "instructions": "Колонка = подзаголовок + список пунктов.",
+                "layout": "block",
+                "button_label": "Добавить колонку",
+                "sub_fields": [
+                  {
+                    "key": "field_service_includes_col_title",
+                    "label": "Подзаголовок колонки",
+                    "name": "title",
+                    "type": "text",
+                    "instructions": "Например: «Кухня:», «Ванная комната и санузел:»."
+                  },
+                  {
+                    "key": "field_service_includes_col_list",
+                    "label": "Список пунктов",
+                    "name": "items",
+                    "type": "repeater",
+                    "instructions": "Пункты списка как в макете.",
+                    "layout": "row",
+                    "button_label": "Добавить пункт",
+                    "sub_fields": [
+                      {
+                        "key": "field_service_includes_item_text",
+                        "label": "Текст пункта",
+                        "name": "text",
+                        "type": "text"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+
+      {
+        "key": "field_services_tab_works",
+        "label": "Примеры работ",
+        "name": "",
+        "type": "tab",
+        "instructions": "Слайдер кейсов (work-card): внутренняя галерея + мета + список выполненных работ.",
+        "placement": "top",
+        "endpoint": 0
+      },
+
+      {
+        "key": "field_service_works_examples",
+        "label": "Блок «Примеры работ»",
+        "name": "service_works_examples",
+        "type": "group",
+        "instructions": "Слайдер кейсов, как в статике. Внутри кейса — галерея и текстовые поля.",
+        "sub_fields": [
+          {
+            "key": "field_service_works_title",
+            "label": "Заголовок блока",
+            "name": "title",
+            "type": "textarea",
+            "instructions": "Заголовок блока. Переносы строк можно делать через Enter.",
+            "new_lines": "br"
+          },
+          {
+            "key": "field_service_works_all_link",
+            "label": "Ссылка «Все наши работы»",
+            "name": "all_link",
+            "type": "url",
+            "instructions": "Куда ведёт кнопка «Все наши работы». Можно оставить пустым — тогда кнопку скрываем."
+          },
+          {
+            "key": "field_service_works_items",
+            "label": "Кейсы (карточки работ)",
+            "name": "items",
+            "type": "repeater",
+            "instructions": "Каждый кейс = карточка work-card (слайд).",
+            "layout": "block",
+            "button_label": "Добавить кейс",
+            "sub_fields": [
+              {
+                "key": "field_service_work_gallery",
+                "label": "Галерея кейса",
+                "name": "gallery",
+                "type": "gallery",
+                "instructions": "Фото для мини-слайдера внутри карточки.",
+                "return_format": "array",
+                "preview_size": "medium",
+                "library": "all"
+              },
+              {
+                "key": "field_service_work_title",
+                "label": "Название работы",
+                "name": "title",
+                "type": "text",
+                "instructions": "Например: «Клининг квартиры»."
+              },
+              {
+                "key": "field_service_work_area",
+                "label": "Площадь (мета)",
+                "name": "area",
+                "type": "text",
+                "instructions": "Например: «55 м²»."
+              },
+              {
+                "key": "field_service_work_time",
+                "label": "Сроки (мета)",
+                "name": "time",
+                "type": "text",
+                "instructions": "Например: «5 ч»."
+              },
+              {
+                "key": "field_service_work_price",
+                "label": "Цена (мета)",
+                "name": "price",
+                "type": "text",
+                "instructions": "Например: «11 900 ₽»."
+              },
+              {
+                "key": "field_service_work_list_title",
+                "label": "Подзаголовок списка работ",
+                "name": "list_title",
+                "type": "text",
+                "instructions": "По умолчанию в макете: «Виды выполненных работ:». Можно оставить пустым — поставим дефолт."
+              },
+              {
+                "key": "field_service_work_list",
+                "label": "Список выполненных работ",
+                "name": "list",
+                "type": "repeater",
+                "layout": "row",
+                "button_label": "Добавить пункт",
+                "sub_fields": [
+                  {
+                    "key": "field_service_work_list_item",
+                    "label": "Пункт",
+                    "name": "text",
+                    "type": "text"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+
+      {
+        "key": "field_services_tab_equipment",
+        "label": "Оборудование",
+        "name": "",
+        "type": "tab",
+        "instructions": "Слайдер карточек оборудования.",
+        "placement": "top",
+        "endpoint": 0
+      },
+
+      {
+        "key": "field_service_equipment",
+        "label": "Блок «Оборудование»",
+        "name": "service_equipment",
+        "type": "group",
+        "instructions": "Слайдер карточек оборудования (картинка + заголовок).",
+        "sub_fields": [
+          {
+            "key": "field_service_equipment_title",
+            "label": "Заголовок блока",
+            "name": "title",
+            "type": "text",
+            "instructions": "Например: «ОБОРУДОВАНИЕ»."
+          },
+          {
+            "key": "field_service_equipment_items",
+            "label": "Карточки оборудования",
+            "name": "items",
+            "type": "repeater",
+            "layout": "block",
+            "button_label": "Добавить карточку",
+            "sub_fields": [
+              {
+                "key": "field_service_equipment_image",
+                "label": "Картинка",
+                "name": "image",
+                "type": "image",
+                "return_format": "array",
+                "preview_size": "medium",
+                "library": "all",
+                "instructions": "Картинка оборудования."
+              },
+              {
+                "key": "field_service_equipment_alt",
+                "label": "Alt картинки",
+                "name": "alt",
+                "type": "text",
+                "instructions": "Alt для картинки. Если пусто — можно подставить заголовок карточки."
+              },
+              {
+                "key": "field_service_equipment_card_title",
+                "label": "Заголовок карточки",
+                "name": "title",
+                "type": "textarea",
+                "instructions": "Текст как в макете. Переносы строк можно делать через Enter.",
+                "new_lines": "br"
+              }
+            ]
+          }
+        ]
+      },
+
+      {
+        "key": "field_services_tab_bottom",
+        "label": "Нижний блок",
+        "name": "",
+        "type": "tab",
+        "instructions": "Финальный блок «текст + фото».",
+        "placement": "top",
+        "endpoint": 0
+      },
+
+      {
+        "key": "field_service_bottom_text_photo",
+        "label": "Нижний блок «Текст + фото»",
+        "name": "service_bottom_text_photo",
+        "type": "group",
+        "instructions": "Большой текстовый блок ближе к концу страницы (как в статике).",
+        "sub_fields": [
+          {
+            "key": "field_service_bottom_title",
+            "label": "Заголовок",
+            "name": "title",
+            "type": "textarea",
+            "instructions": "Заголовок как в макете. Переносы строк можно делать через Enter.",
+            "new_lines": "br"
+          },
+          {
+            "key": "field_service_bottom_text",
+            "label": "Текст (можно несколькими абзацами)",
+            "name": "text",
+            "type": "wysiwyg",
+            "instructions": "Текст/абзацы как в статике. Можно 2–4 абзаца.",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0
+          },
+          {
+            "key": "field_service_bottom_image",
+            "label": "Картинка",
+            "name": "image",
+            "type": "image",
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all"
+          },
+          {
+            "key": "field_service_bottom_alt",
+            "label": "Alt картинки",
+            "name": "alt",
+            "type": "text",
+            "instructions": "Alt для картинки. Если пусто — подставим заголовок услуги."
+          }
+        ]
+      }
+    ],
+    "location": [
+      [
+        { "param": "post_type", "operator": "==", "value": "service" }
+      ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+      "the_content",
+      "excerpt",
+      "discussion",
+      "comments",
+      "format"
+    ],
+    "active": true,
+    "description": "Единая группа полей услуги с табами, без переименования существующих name."
+  }
+]

@@ -1,0 +1,192 @@
+[
+  {
+    "key": "group_callback_form_options",
+    "title": "Callback form (Глобально)",
+    "fields": [
+      {
+        "key": "field_cb_tab_main",
+        "label": "Основное",
+        "name": "",
+        "type": "tab",
+        "instructions": "Глобальные настройки компонента callback-form (по умолчанию на всех страницах).",
+        "placement": "top",
+        "endpoint": 0
+      },
+      {
+        "key": "field_cb_title",
+        "label": "Заголовок",
+        "name": "cb_title",
+        "type": "textarea",
+        "instructions": "Можно использовать <br>. Пример как в макете.",
+        "required": 0,
+        "new_lines": "br"
+      },
+      {
+        "key": "field_cb_subtitle",
+        "label": "Подзаголовок",
+        "name": "cb_subtitle",
+        "type": "textarea",
+        "instructions": "Можно использовать <br>.",
+        "required": 0,
+        "new_lines": "br"
+      },
+      {
+        "key": "field_cb_cf7_shortcode",
+        "label": "Contact Form 7 шорткод",
+        "name": "cb_cf7_shortcode",
+        "type": "text",
+        "instructions": "Пример: [contact-form-7 id=\"123\" title=\"Callback\"]",
+        "required": 0
+      },
+      {
+        "key": "field_cb_image",
+        "label": "Картинка справа",
+        "name": "cb_image",
+        "type": "image",
+        "instructions": "Изображение справа от формы.",
+        "required": 0,
+        "return_format": "array",
+        "preview_size": "medium",
+        "library": "all"
+      },
+      {
+        "key": "field_cb_anchor_id",
+        "label": "ID секции",
+        "name": "cb_anchor_id",
+        "type": "text",
+        "instructions": "Если нужно ссылаться якорем (например: callback). Оставь пустым если не нужно.",
+        "required": 0
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "options_page",
+          "operator": "==",
+          "value": "theme-callback-form"
+        }
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true
+  },
+  {
+    "key": "group_callback_form_override",
+    "title": "Callback form (Переопределение на странице)",
+    "fields": [
+      {
+        "key": "field_cb_override_tab",
+        "label": "Callback form",
+        "name": "",
+        "type": "tab",
+        "instructions": "Если включишь — эти значения заменят глобальные из настроек.",
+        "placement": "top",
+        "endpoint": 0
+      },
+      {
+        "key": "field_cb_override_enable",
+        "label": "Переопределить на этой странице",
+        "name": "cb_override_enable",
+        "type": "true_false",
+        "instructions": "Включи, если нужен уникальный текст/картинка/форма именно на этой странице.",
+        "required": 0,
+        "ui": 1,
+        "default_value": 0
+      },
+      {
+        "key": "field_cb_override_title",
+        "label": "Заголовок (override)",
+        "name": "cb_override_title",
+        "type": "textarea",
+        "instructions": "Можно использовать <br>.",
+        "required": 0,
+        "new_lines": "br",
+        "conditional_logic": [
+          [
+            {
+              "field": "field_cb_override_enable",
+              "operator": "==",
+              "value": "1"
+            }
+          ]
+        ]
+      },
+      {
+        "key": "field_cb_override_subtitle",
+        "label": "Подзаголовок (override)",
+        "name": "cb_override_subtitle",
+        "type": "textarea",
+        "instructions": "Можно использовать <br>.",
+        "required": 0,
+        "new_lines": "br",
+        "conditional_logic": [
+          [
+            {
+              "field": "field_cb_override_enable",
+              "operator": "==",
+              "value": "1"
+            }
+          ]
+        ]
+      },
+      {
+        "key": "field_cb_override_cf7",
+        "label": "CF7 шорткод (override)",
+        "name": "cb_override_cf7_shortcode",
+        "type": "text",
+        "instructions": "Если пусто — возьмём глобальный.",
+        "required": 0,
+        "conditional_logic": [
+          [
+            {
+              "field": "field_cb_override_enable",
+              "operator": "==",
+              "value": "1"
+            }
+          ]
+        ]
+      },
+      {
+        "key": "field_cb_override_image",
+        "label": "Картинка (override)",
+        "name": "cb_override_image",
+        "type": "image",
+        "instructions": "Если пусто — возьмём глобальную.",
+        "required": 0,
+        "return_format": "array",
+        "preview_size": "medium",
+        "library": "all",
+        "conditional_logic": [
+          [
+            {
+              "field": "field_cb_override_enable",
+              "operator": "==",
+              "value": "1"
+            }
+          ]
+        ]
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "post_type",
+          "operator": "==",
+          "value": "page"
+        }
+      ]
+    ],
+    "menu_order": 20,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true
+  }
+]

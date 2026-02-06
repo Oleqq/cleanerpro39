@@ -1,0 +1,101 @@
+[
+  {
+    "key": "group_service_fields",
+    "title": "Услуга — контент и карточка",
+    "fields": [
+      {
+        "key": "field_service_intro",
+        "label": "Интро (короткий текст сверху)",
+        "name": "service_intro",
+        "type": "textarea",
+        "instructions": "Короткий вводный текст для страницы услуги (single). Если не нужен — оставь пустым.",
+        "required": 0,
+        "wrapper": { "width": "", "class": "", "id": "" },
+        "new_lines": "br"
+      },
+      {
+        "key": "field_service_features",
+        "label": "Пункты списка на карточке",
+        "name": "service_features",
+        "type": "repeater",
+        "instructions": "Это список под заголовком услуги на карточке (обычно 3 пункта).",
+        "required": 0,
+        "min": 0,
+        "max": 6,
+        "layout": "row",
+        "button_label": "Добавить пункт",
+        "sub_fields": [
+          {
+            "key": "field_service_features_text",
+            "label": "Текст пункта",
+            "name": "text",
+            "type": "text",
+            "instructions": "Пример: «Среднее время уборки 5-8 часов»",
+            "required": 1,
+            "wrapper": { "width": "", "class": "", "id": "" },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+          }
+        ]
+      },
+      {
+        "key": "field_service_price",
+        "label": "Цена (текстом)",
+        "name": "service_price",
+        "type": "text",
+        "instructions": "Как на макете: «от 140 руб/м²» (тут именно текст, чтобы не ломать формат).",
+        "required": 0,
+        "wrapper": { "width": "50", "class": "", "id": "" },
+        "default_value": "",
+        "placeholder": "от 140 руб/м²",
+        "prepend": "",
+        "append": ""
+      },
+      {
+        "key": "field_service_order_link",
+        "label": "Ссылка «Заказать»",
+        "name": "service_order_link",
+        "type": "url",
+        "instructions": "Ссылка на форму/мессенджер/страницу заказа. Можно поставить # если потом подтянешь JS.",
+        "required": 0,
+        "wrapper": { "width": "50", "class": "", "id": "" },
+        "default_value": "",
+        "placeholder": ""
+      },
+      {
+        "key": "field_service_content",
+        "label": "Основной контент (WYSIWYG)",
+        "name": "service_content",
+        "type": "wysiwyg",
+        "instructions": "Основной текст для страницы услуги (single). Сюда пишем заголовки/списки/параграфы как в статике.",
+        "required": 0,
+        "wrapper": { "width": "", "class": "", "id": "" },
+        "tabs": "all",
+        "toolbar": "full",
+        "media_upload": 1,
+        "delay": 0
+      }
+    ],
+    "location": [
+      [
+        { "param": "post_type", "operator": "==", "value": "service" }
+      ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+      "the_content",
+      "excerpt",
+      "discussion",
+      "comments",
+      "format"
+    ],
+    "active": true,
+    "description": ""
+  }
+]
