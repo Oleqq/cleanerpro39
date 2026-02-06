@@ -1,0 +1,87 @@
+//- services.pug
+section.services
+    .container.services__container
+
+        h2.section__title-big
+            | популярные услуги по уборке
+        .services__head
+           
+
+           
+        .services__slider.services__slider-secondary.services-swiper.swiper
+            button.services__nav.services__nav--prev(type="button" aria-label="Назад")
+                span.services__nav-ico
+
+            .services__list.services__list-secondary.swiper-wrapper
+                .service-card.swiper-slide
+                    .service-card__media
+                        img.service-card__img(src="https://placehold.co/320x220" alt="")
+
+                    .service-card__body
+                        h3.service-card__title Генеральная уборка
+
+                        ul.service-card__meta
+                            li.service-card__meta-item Среднее время уборки 5-8 часов
+                            li.service-card__meta-item Количество клинеров 1-10 чел.
+                            li.service-card__meta-item Привозим все оборудование
+
+                        p.service-card__price от 140 руб/м²
+
+                        .service-card__actions
+                            a.ui__button-noarrow.blue(href="#") Telegram
+                            a.service-card__link(href="#") Что входит?
+
+                .service-card.swiper-slide
+                    .service-card__media
+                        img.service-card__img(src="img/services/2.jpg" alt="")
+                    .service-card__body
+                        h3.service-card__title Уборка после ремонта
+                        ul.service-card__meta
+                            li.service-card__meta-item Среднее время уборки 5-8 часов
+                            li.service-card__meta-item Количество клинеров 1-10 чел.
+                            li.service-card__meta-item Привозим все оборудование
+                        p.service-card__price от 150 руб/м²
+                        .service-card__actions
+                            a.ui__button-noarrow.blue(href="#") Telegram
+                            a.service-card__link(href="#") Что входит?
+
+                .service-card.swiper-slide
+                    .service-card__media
+                        img.service-card__img(src="img/services/3.jpg" alt="")
+                    .service-card__body
+                        h3.service-card__title Поддерживающая уборка
+                        ul.service-card__meta
+                            li.service-card__meta-item Среднее время уборки 5-8 часов
+                            li.service-card__meta-item Количество клинеров 1-10 чел.
+                            li.service-card__meta-item Привозим все оборудование
+                        p.service-card__price от 80 руб/м²
+                        .service-card__actions
+                            a.ui__button-noarrow.blue(href="#") Telegram
+                            a.service-card__link(href="#") Что входит?
+
+                .service-card.swiper-slide
+                    .service-card__media
+                        img.service-card__img(src="img/services/4.jpg" alt="")
+                    .service-card__body
+                        h3.service-card__title Срочная уборка
+                        ul.service-card__meta
+                            li.service-card__meta-item Среднее время уборки 5-8 часов
+                            li.service-card__meta-item Количество клинеров 1-10 чел.
+                            li.service-card__meta-item Привозим все оборудование
+                        p.service-card__price от 140 руб/м²
+                        .service-card__actions
+                            a.ui__button-noarrow.blue(href="#") Telegram
+                            a.service-card__link(href="#") Что входит?
+
+                
+            button.services__nav.services__nav--next(type="button" aria-label="Вперёд")
+                span.services__nav-ico
+
+
+       
+        a.ui__button-arrow.mobile.ui__button-arrow.pink.services__all(href="#")
+            | Все услуги по уборке
+            <svg width="33" height="33" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="16.5" cy="16.5" r="16.5" fill="white"></circle>
+                <path d="M14.4001 12.1999C14.8419 11.8687 15.4682 11.9583 15.7995 12.4001L18.7995 16.4001C19.066 16.7556 19.066 17.2438 18.7995 17.5993L15.7995 21.5993C15.4682 22.0411 14.8419 22.1308 14.4001 21.7995C13.9583 21.4682 13.8687 20.8419 14.1999 20.4001L16.5341 17.2873L16.7497 16.9997L16.5341 16.7121L14.1999 13.5993C13.8687 13.1575 13.9583 12.5312 14.4001 12.1999Z" fill="#B71375"></path>
+            </svg>

@@ -1,0 +1,598 @@
+
+//- services-accordion.pug
+section.services-accordion
+	.container.services-accordion__container
+
+		nav.breadcrumbs(aria-label="Хлебные крошки")
+			ol.breadcrumbs__list
+				li.breadcrumbs__item
+					a.breadcrumbs__link(href="#") Главная
+				li.breadcrumbs__sep(aria-hidden="true")
+				li.breadcrumbs__item
+					span.breadcrumbs__current(aria-current="page") Прайс
+
+		h2.section__title-big цены на услуги клининга<br> в калининграде
+
+		.services-accordion__list
+
+			//- ITEM (open by default: добавь .is-open)
+			article.sa-item.is-open
+				button.sa-item__head(type="button" aria-expanded="true")
+					span.sa-item__title КВАРТИРЫ
+					span.sa-item__ico(aria-hidden="true")
+
+				.sa-item__body
+					.price-accordion__content
+						ul.price-accordion__rows
+							li.price-row
+								span.price-row__name Генеральная
+								span.price-row__price 130 руб/м2
+
+							li.price-row
+								span.price-row__name Поддерживающая (полы сухая + влажная, пыль с поверхностей (без расстановки предметов))
+								span.price-row__price 130 руб/м2
+
+							li.price-row
+								span.price-row__name
+									| Комплексная
+									span.price-row__badge - 30 %
+								span.price-row__price 130 руб/м2
+
+							li.price-row
+								span.price-row__name Срочная
+								span.price-row__price 130 руб/м2
+
+							li.price-row
+								span.price-row__name После ремонта
+								span.price-row__price от 130 руб/м2
+
+							li.price-row
+								span.price-row__name Уборка запущенных квартир
+								span.price-row__price от 130 руб/м2
+
+							li.price-row
+								span.price-row__name Перед рождением ребенка
+								span.price-row__price от 130 руб/м2
+
+							li.price-row
+								span.price-row__name Однокомнатная квартира
+								span.price-row__price от 130 руб/м2
+
+							li.price-row
+								span.price-row__name Двухкомнатная квартира
+								span.price-row__price от 130 руб/м2
+
+							li.price-row
+								span.price-row__name Трехкомнатная квартира
+								span.price-row__price от 130 руб/м2
+
+							li.price-row
+								span.price-row__name Четырехкомнатная квартира
+								span.price-row__price от 130 руб/м2
+
+							li.price-row
+								span.price-row__name Студия
+								span.price-row__price от 130 руб/м2
+
+							li.price-row
+								span.price-row__name После квартирантов
+								span.price-row__price 130 руб/м2
+
+							li.price-row
+								span.price-row__name Элитных квартир
+								span.price-row__price 130 руб/м2
+
+							li.price-row
+								span.price-row__name Регулярная
+								span.price-row__price 130 руб/м2
+
+							li.price-row
+								span.price-row__name
+									| После переезда
+									span.price-row__badge - 15 %
+								span.price-row__price 130 руб/м2
+
+							li.price-row
+								span.price-row__name Перед отъездом
+								span.price-row__price 130 руб/м2
+
+							li.price-row
+								span.price-row__name Новых квартир
+								span.price-row__price от 130 руб/м2
+
+							li.price-row
+								span.price-row__name Обработка паром
+								span.price-row__price от 130 руб/м2
+
+							li.price-row
+								span.price-row__name Перед Новым Годом
+								span.price-row__price от 130 руб/м2
+
+							li.price-row
+								span.price-row__name К 8 марта
+								span.price-row__price от 130 руб/м2
+
+			//- ITEM (closed)
+			article.sa-item
+				button.sa-item__head(type="button" aria-expanded="true")
+					span.sa-item__title ДОМА
+					span.sa-item__ico(aria-hidden="true")
+
+				.sa-item__body
+					.price-accordion__content
+						ul.price-accordion__rows
+							li.price-row
+								span.price-row__name Генеральная
+								span.price-row__price 130 руб/м2
+
+							li.price-row
+								span.price-row__name Поддерживающая (полы сухая + влажная, пыль с поверхностей (без расстановки предметов))
+								span.price-row__price 130 руб/м2
+
+							li.price-row
+								span.price-row__name
+									| Комплексная
+									span.price-row__badge - 30 %
+								span.price-row__price 130 руб/м2
+
+							li.price-row
+								span.price-row__name Срочная
+								span.price-row__price 130 руб/м2
+
+							li.price-row
+								span.price-row__name После ремонта
+								span.price-row__price от 130 руб/м2
+
+							li.price-row
+								span.price-row__name Уборка запущенных квартир
+								span.price-row__price от 130 руб/м2
+
+							li.price-row
+								span.price-row__name Перед рождением ребенка
+								span.price-row__price от 130 руб/м2
+
+							li.price-row
+								span.price-row__name Однокомнатная квартира
+								span.price-row__price от 130 руб/м2
+
+							li.price-row
+								span.price-row__name Двухкомнатная квартира
+								span.price-row__price от 130 руб/м2
+
+							li.price-row
+								span.price-row__name Трехкомнатная квартира
+								span.price-row__price от 130 руб/м2
+
+							li.price-row
+								span.price-row__name Четырехкомнатная квартира
+								span.price-row__price от 130 руб/м2
+
+							li.price-row
+								span.price-row__name Студия
+								span.price-row__price от 130 руб/м2
+
+							li.price-row
+								span.price-row__name После квартирантов
+								span.price-row__price 130 руб/м2
+
+							li.price-row
+								span.price-row__name Элитных квартир
+								span.price-row__price 130 руб/м2
+
+							li.price-row
+								span.price-row__name Регулярная
+								span.price-row__price 130 руб/м2
+
+							li.price-row
+								span.price-row__name
+									| После переезда
+									span.price-row__badge - 15 %
+								span.price-row__price 130 руб/м2
+
+							li.price-row
+								span.price-row__name Перед отъездом
+								span.price-row__price 130 руб/м2
+
+							li.price-row
+								span.price-row__name Новых квартир
+								span.price-row__price от 130 руб/м2
+
+							li.price-row
+								span.price-row__name Обработка паром
+								span.price-row__price от 130 руб/м2
+
+							li.price-row
+								span.price-row__name Перед Новым Годом
+								span.price-row__price от 130 руб/м2
+
+							li.price-row
+								span.price-row__name К 8 марта
+								span.price-row__price от 130 руб/м2
+
+			//- ITEM (closed)
+			article.sa-item
+				button.sa-item__head(type="button" aria-expanded="true")
+					span.sa-item__title ОФИСЫ
+					span.sa-item__ico(aria-hidden="true")
+
+				.sa-item__body
+					.price-accordion__content
+						ul.price-accordion__rows
+							li.price-row
+								span.price-row__name Генеральная
+								span.price-row__price 130 руб/м2
+
+							li.price-row
+								span.price-row__name Поддерживающая (полы сухая + влажная, пыль с поверхностей (без расстановки предметов))
+								span.price-row__price 130 руб/м2
+
+							li.price-row
+								span.price-row__name
+									| Комплексная
+									span.price-row__badge - 30 %
+								span.price-row__price 130 руб/м2
+
+							li.price-row
+								span.price-row__name Срочная
+								span.price-row__price 130 руб/м2
+
+							li.price-row
+								span.price-row__name После ремонта
+								span.price-row__price от 130 руб/м2
+
+							li.price-row
+								span.price-row__name Уборка запущенных квартир
+								span.price-row__price от 130 руб/м2
+
+							li.price-row
+								span.price-row__name Перед рождением ребенка
+								span.price-row__price от 130 руб/м2
+
+							li.price-row
+								span.price-row__name Однокомнатная квартира
+								span.price-row__price от 130 руб/м2
+
+							li.price-row
+								span.price-row__name Двухкомнатная квартира
+								span.price-row__price от 130 руб/м2
+
+							li.price-row
+								span.price-row__name Трехкомнатная квартира
+								span.price-row__price от 130 руб/м2
+
+							li.price-row
+								span.price-row__name Четырехкомнатная квартира
+								span.price-row__price от 130 руб/м2
+
+							li.price-row
+								span.price-row__name Студия
+								span.price-row__price от 130 руб/м2
+
+							li.price-row
+								span.price-row__name После квартирантов
+								span.price-row__price 130 руб/м2
+
+							li.price-row
+								span.price-row__name Элитных квартир
+								span.price-row__price 130 руб/м2
+
+							li.price-row
+								span.price-row__name Регулярная
+								span.price-row__price 130 руб/м2
+
+							li.price-row
+								span.price-row__name
+									| После переезда
+									span.price-row__badge - 15 %
+								span.price-row__price 130 руб/м2
+
+							li.price-row
+								span.price-row__name Перед отъездом
+								span.price-row__price 130 руб/м2
+
+							li.price-row
+								span.price-row__name Новых квартир
+								span.price-row__price от 130 руб/м2
+
+							li.price-row
+								span.price-row__name Обработка паром
+								span.price-row__price от 130 руб/м2
+
+							li.price-row
+								span.price-row__name Перед Новым Годом
+								span.price-row__price от 130 руб/м2
+
+							li.price-row
+								span.price-row__name К 8 марта
+								span.price-row__price от 130 руб/м2
+
+			//- ITEM (closed)
+			article.sa-item
+				button.sa-item__head(type="button" aria-expanded="true")
+					span.sa-item__title Коммерческие помещения
+					span.sa-item__ico(aria-hidden="true")
+
+				.sa-item__body
+					.price-accordion__content
+						ul.price-accordion__rows
+							li.price-row
+								span.price-row__name Генеральная
+								span.price-row__price 130 руб/м2
+
+							li.price-row
+								span.price-row__name Поддерживающая (полы сухая + влажная, пыль с поверхностей (без расстановки предметов))
+								span.price-row__price 130 руб/м2
+
+							li.price-row
+								span.price-row__name
+									| Комплексная
+									span.price-row__badge - 30 %
+								span.price-row__price 130 руб/м2
+
+							li.price-row
+								span.price-row__name Срочная
+								span.price-row__price 130 руб/м2
+
+							li.price-row
+								span.price-row__name После ремонта
+								span.price-row__price от 130 руб/м2
+
+							li.price-row
+								span.price-row__name Уборка запущенных квартир
+								span.price-row__price от 130 руб/м2
+
+							li.price-row
+								span.price-row__name Перед рождением ребенка
+								span.price-row__price от 130 руб/м2
+
+							li.price-row
+								span.price-row__name Однокомнатная квартира
+								span.price-row__price от 130 руб/м2
+
+							li.price-row
+								span.price-row__name Двухкомнатная квартира
+								span.price-row__price от 130 руб/м2
+
+							li.price-row
+								span.price-row__name Трехкомнатная квартира
+								span.price-row__price от 130 руб/м2
+
+							li.price-row
+								span.price-row__name Четырехкомнатная квартира
+								span.price-row__price от 130 руб/м2
+
+							li.price-row
+								span.price-row__name Студия
+								span.price-row__price от 130 руб/м2
+
+							li.price-row
+								span.price-row__name После квартирантов
+								span.price-row__price 130 руб/м2
+
+							li.price-row
+								span.price-row__name Элитных квартир
+								span.price-row__price 130 руб/м2
+
+							li.price-row
+								span.price-row__name Регулярная
+								span.price-row__price 130 руб/м2
+
+							li.price-row
+								span.price-row__name
+									| После переезда
+									span.price-row__badge - 15 %
+								span.price-row__price 130 руб/м2
+
+							li.price-row
+								span.price-row__name Перед отъездом
+								span.price-row__price 130 руб/м2
+
+							li.price-row
+								span.price-row__name Новых квартир
+								span.price-row__price от 130 руб/м2
+
+							li.price-row
+								span.price-row__name Обработка паром
+								span.price-row__price от 130 руб/м2
+
+							li.price-row
+								span.price-row__name Перед Новым Годом
+								span.price-row__price от 130 руб/м2
+
+							li.price-row
+								span.price-row__name К 8 марта
+								span.price-row__price от 130 руб/м2
+
+			//- ITEM (closed)
+			article.sa-item
+				button.sa-item__head(type="button" aria-expanded="true")
+					span.sa-item__title Химчистка
+					span.sa-item__ico(aria-hidden="true")
+
+				.sa-item__body
+					.price-accordion__content
+						ul.price-accordion__rows
+							li.price-row
+								span.price-row__name Генеральная
+								span.price-row__price 130 руб/м2
+
+							li.price-row
+								span.price-row__name Поддерживающая (полы сухая + влажная, пыль с поверхностей (без расстановки предметов))
+								span.price-row__price 130 руб/м2
+
+							li.price-row
+								span.price-row__name
+									| Комплексная
+									span.price-row__badge - 30 %
+								span.price-row__price 130 руб/м2
+
+							li.price-row
+								span.price-row__name Срочная
+								span.price-row__price 130 руб/м2
+
+							li.price-row
+								span.price-row__name После ремонта
+								span.price-row__price от 130 руб/м2
+
+							li.price-row
+								span.price-row__name Уборка запущенных квартир
+								span.price-row__price от 130 руб/м2
+
+							li.price-row
+								span.price-row__name Перед рождением ребенка
+								span.price-row__price от 130 руб/м2
+
+							li.price-row
+								span.price-row__name Однокомнатная квартира
+								span.price-row__price от 130 руб/м2
+
+							li.price-row
+								span.price-row__name Двухкомнатная квартира
+								span.price-row__price от 130 руб/м2
+
+							li.price-row
+								span.price-row__name Трехкомнатная квартира
+								span.price-row__price от 130 руб/м2
+
+							li.price-row
+								span.price-row__name Четырехкомнатная квартира
+								span.price-row__price от 130 руб/м2
+
+							li.price-row
+								span.price-row__name Студия
+								span.price-row__price от 130 руб/м2
+
+							li.price-row
+								span.price-row__name После квартирантов
+								span.price-row__price 130 руб/м2
+
+							li.price-row
+								span.price-row__name Элитных квартир
+								span.price-row__price 130 руб/м2
+
+							li.price-row
+								span.price-row__name Регулярная
+								span.price-row__price 130 руб/м2
+
+							li.price-row
+								span.price-row__name
+									| После переезда
+									span.price-row__badge - 15 %
+								span.price-row__price 130 руб/м2
+
+							li.price-row
+								span.price-row__name Перед отъездом
+								span.price-row__price 130 руб/м2
+
+							li.price-row
+								span.price-row__name Новых квартир
+								span.price-row__price от 130 руб/м2
+
+							li.price-row
+								span.price-row__name Обработка паром
+								span.price-row__price от 130 руб/м2
+
+							li.price-row
+								span.price-row__name Перед Новым Годом
+								span.price-row__price от 130 руб/м2
+
+							li.price-row
+								span.price-row__name К 8 марта
+								span.price-row__price от 130 руб/м2
+
+			//- ITEM (closed)
+			article.sa-item
+				button.sa-item__head(type="button" aria-expanded="true")
+					span.sa-item__title Дополнительные услуги
+					span.sa-item__ico(aria-hidden="true")
+
+				.sa-item__body
+					.price-accordion__content
+						ul.price-accordion__rows
+							li.price-row
+								span.price-row__name Генеральная
+								span.price-row__price 130 руб/м2
+
+							li.price-row
+								span.price-row__name Поддерживающая (полы сухая + влажная, пыль с поверхностей (без расстановки предметов))
+								span.price-row__price 130 руб/м2
+
+							li.price-row
+								span.price-row__name
+									| Комплексная
+									span.price-row__badge - 30 %
+								span.price-row__price 130 руб/м2
+
+							li.price-row
+								span.price-row__name Срочная
+								span.price-row__price 130 руб/м2
+
+							li.price-row
+								span.price-row__name После ремонта
+								span.price-row__price от 130 руб/м2
+
+							li.price-row
+								span.price-row__name Уборка запущенных квартир
+								span.price-row__price от 130 руб/м2
+
+							li.price-row
+								span.price-row__name Перед рождением ребенка
+								span.price-row__price от 130 руб/м2
+
+							li.price-row
+								span.price-row__name Однокомнатная квартира
+								span.price-row__price от 130 руб/м2
+
+							li.price-row
+								span.price-row__name Двухкомнатная квартира
+								span.price-row__price от 130 руб/м2
+
+							li.price-row
+								span.price-row__name Трехкомнатная квартира
+								span.price-row__price от 130 руб/м2
+
+							li.price-row
+								span.price-row__name Четырехкомнатная квартира
+								span.price-row__price от 130 руб/м2
+
+							li.price-row
+								span.price-row__name Студия
+								span.price-row__price от 130 руб/м2
+
+							li.price-row
+								span.price-row__name После квартирантов
+								span.price-row__price 130 руб/м2
+
+							li.price-row
+								span.price-row__name Элитных квартир
+								span.price-row__price 130 руб/м2
+
+							li.price-row
+								span.price-row__name Регулярная
+								span.price-row__price 130 руб/м2
+
+							li.price-row
+								span.price-row__name
+									| После переезда
+									span.price-row__badge - 15 %
+								span.price-row__price 130 руб/м2
+
+							li.price-row
+								span.price-row__name Перед отъездом
+								span.price-row__price 130 руб/м2
+
+							li.price-row
+								span.price-row__name Новых квартир
+								span.price-row__price от 130 руб/м2
+
+							li.price-row
+								span.price-row__name Обработка паром
+								span.price-row__price от 130 руб/м2
+
+							li.price-row
+								span.price-row__name Перед Новым Годом
+								span.price-row__price от 130 руб/м2
+
+							li.price-row
+								span.price-row__name К 8 марта
+								span.price-row__price от 130 руб/м2

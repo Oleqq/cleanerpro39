@@ -65,6 +65,9 @@
 	box-shadow: 0 0 0 1px rgba(38, 53, 126, 0.04);
 	transition: transform 220ms ease, box-shadow 220ms ease;
 
+
+	cursor: default;
+
     @media (max-width:467px) {
         background: #f7f7f7;
     }
@@ -93,11 +96,19 @@
 
 	&__icon {
 		width: 92px;
+		@include adaptive-value(width, 92px, 50px, 1920px, 767px);
 		height: 92px;
 		display: grid;
 		place-items: center;
 		margin-bottom: 18px;
+
+		svg {
+			width: 92px;
+			@include adaptive-value(width, 92px, 50px, 1920px, 767px);
+		}
 	}
+
+	
 
 	&__title {
 		margin: 0;

@@ -9,12 +9,43 @@
 		@media (max-width:767px) {
 			gap: 24px;
 		}
+		@media (max-width:467px) {
+			gap: 16px;
+		}
 	}
 
 	@media (max-width: 767px) {
 		margin: 56px 0;
 
 		
+	}
+
+
+	.service-card {
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+
+		&__media {
+			border-radius: 26px;
+			overflow: hidden;
+
+			@media (max-width:467px) {
+				aspect-ratio: 4 / 3;
+			}
+
+			img {
+				width: 100%;
+				height: auto;
+				display: block;
+				aspect-ratio: 16 / 9;
+				object-fit: cover;
+
+				@media (max-width:467px) {
+					aspect-ratio: 4 / 3;
+				}
+			}
+		}
 	}
 }
 
@@ -30,12 +61,20 @@
         .sa-item__content {
             padding: 54px 0 28px;
             transition: .2s ease;
+
+			@media (max-width:467px) {
+				padding-top: 24px;
+			}
         }
 
         &:last-of-type {
             border-bottom: 1px solid $general;
         }
     }
+
+	&:not(:last-of-type) {
+		border-bottom: 1px solid transparent;
+	}
 
     .sa-item__content {
         padding: 0;
@@ -72,6 +111,9 @@
 		@media (max-width:767px) {
 			padding-top: 24px;
 		}
+		@media (max-width:467px) {
+			padding-top: 16px;
+		}
 
 		&:focus-visible {
 			outline: none;
@@ -86,7 +128,7 @@
 
 	&__title {
         font-family: $second-family;
-        font-weight: 600;
+        font-weight: 700;
         font-size: 36px;
         @include adaptive-value(font-size, 36px, 24px, 1920px, 767px);
         text-transform: uppercase;
@@ -162,9 +204,15 @@
 	flex-direction: column;
 	gap: 12px;
 
+	@media (max-width:467px) {
+		background-color: transparent;
+	}
+
 	&__media {
 		border-radius: 26px;
 		overflow: hidden;
+
+		
 
 		img {
 			width: 100%;
@@ -172,6 +220,8 @@
 			display: block;
 			aspect-ratio: 16 / 9;
 			object-fit: cover;
+
+			
 		}
 	}
 

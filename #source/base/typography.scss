@@ -14,9 +14,20 @@
         @include adaptive-value(font-size, 36px, 24px, 1920px, 767px);
         text-transform: uppercase;
         color: #26357e;
+        cursor: default;
 
         @media (max-width:767px) {
             line-height: 101%;
+        }
+
+        &-big {
+            font-family: $second-family;
+            font-weight: 700;
+            font-size: 48px;
+            @include adaptive-value(font-size, 48px, 26px, 1920px, 767px);
+            line-height: 101%;
+            text-transform: uppercase;
+            color: #26357e;
         }
     }
 
@@ -26,5 +37,7 @@
         font-size: 18px;
         @include adaptive-value(font-size, 18px, 15px, 1920px, 767px);
         color: #26357e;
+
+        cursor: default;
     }
 }

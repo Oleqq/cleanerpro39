@@ -99,8 +99,18 @@
             pointer-events: none;
         }
 
-        &--prev { left: -78px; }
-        &--next { right: -78px; }
+        &--prev { 
+            left: -78px;
+            @media (max-width:1660px) {
+                left: 0;
+            }
+        }
+        &--next { 
+            right: -78px;
+            @media (max-width:1660px) {
+                right: 0;
+            } 
+        }
 
         &-ico {
             width: 10px;
@@ -126,7 +136,7 @@
         }
 
         &__nav {
-            display: none;
+            
         }
     }
 
