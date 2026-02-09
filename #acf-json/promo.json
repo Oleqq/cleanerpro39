@@ -1,0 +1,92 @@
+[
+  {
+    "key": "group_promo_article_fields_010",
+    "title": "Акция (CPT: promo) — поля макета",
+    "fields": [
+      {
+        "key": "field_promo_tab_intro_010",
+        "label": "Первый экран",
+        "name": "",
+        "type": "tab",
+        "instructions": "Поля для блока над основным контентом.",
+        "placement": "top"
+      },
+      {
+        "key": "field_promo_intro_group_010",
+        "label": "Интро-блок",
+        "name": "blog_intro",
+        "type": "group",
+        "layout": "block",
+        "sub_fields": [
+          {
+            "key": "field_promo_intro_p1_010",
+            "label": "Вступление (абзац 1)",
+            "name": "p1",
+            "type": "wysiwyg",
+            "toolbar": "basic",
+            "media_upload": 0
+          },
+          {
+            "key": "field_promo_intro_h2_010",
+            "label": "Заголовок (H2) в интро",
+            "name": "h2",
+            "type": "text",
+            "placeholder": "Например: Скидка 20% до конца месяца"
+          },
+          {
+            "key": "field_promo_intro_p2_010",
+            "label": "Интро-текст (абзац 2)",
+            "name": "p2",
+            "type": "wysiwyg",
+            "toolbar": "basic",
+            "media_upload": 0
+          }
+        ]
+      },
+      {
+        "key": "field_promo_tab_content_010",
+        "label": "Контент акции",
+        "name": "",
+        "type": "tab",
+        "placement": "top"
+      },
+      {
+        "key": "field_promo_content_wysiwyg_010",
+        "label": "Основной контент (WYSIWYG)",
+        "name": "blog_content",
+        "type": "wysiwyg",
+        "toolbar": "full",
+        "media_upload": 1
+      },
+      {
+        "key": "field_promo_tab_settings_010",
+        "label": "Опционально",
+        "name": "",
+        "type": "tab",
+        "placement": "top"
+      },
+      {
+        "key": "field_promo_show_next_010",
+        "label": "Показывать «Следующая акция»",
+        "name": "blog_show_next",
+        "type": "true_false",
+        "default_value": 1,
+        "ui": 1,
+        "ui_on_text": "Да",
+        "ui_off_text": "Нет"
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "post_type",
+          "operator": "==",
+          "value": "promo"
+        }
+      ]
+    ],
+    "hide_on_screen": ["the_content", "excerpt"],
+    "active": true,
+    "description": "Поля под макет single-promo.php"
+  }
+]

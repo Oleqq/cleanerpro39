@@ -1,0 +1,126 @@
+{
+  "key": "group_work",
+  "title": "Work — Наши работы",
+  "fields": [
+    {
+      "key": "field_work_tab_card",
+      "label": "Карточка / Архив",
+      "name": "",
+      "type": "tab",
+      "placement": "top"
+    },
+    {
+      "key": "field_work_ba_before",
+      "label": "Фото ДО",
+      "name": "work_ba_before",
+      "type": "image",
+      "return_format": "id",
+      "preview_size": "medium",
+      "library": "all"
+    },
+    {
+      "key": "field_work_ba_after",
+      "label": "Фото ПОСЛЕ",
+      "name": "work_ba_after",
+      "type": "image",
+      "return_format": "id",
+      "preview_size": "medium",
+      "library": "all"
+    },
+    {
+      "key": "field_work_ba_start",
+      "label": "Старт сравнения (0-100)",
+      "name": "work_ba_start",
+      "type": "range",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default_value": 50
+    },
+    {
+      "key": "field_work_area",
+      "label": "Площадь (текстом)",
+      "name": "work_area",
+      "type": "text",
+      "instructions": "Пример: 55 м2"
+    },
+    {
+      "key": "field_work_time",
+      "label": "Сроки (текстом)",
+      "name": "work_time",
+      "type": "text",
+      "instructions": "Пример: 5 ч"
+    },
+    {
+      "key": "field_work_price",
+      "label": "Цена (текстом)",
+      "name": "work_price",
+      "type": "text",
+      "instructions": "Пример: 10 590 Р"
+    },
+    {
+      "key": "field_work_tasks_title",
+      "label": "Заголовок списка работ",
+      "name": "work_tasks_title",
+      "type": "text",
+      "default_value": "Виды выполненных работ:"
+    },
+    {
+      "key": "field_work_tasks",
+      "label": "Список работ",
+      "name": "work_tasks",
+      "type": "repeater",
+      "layout": "row",
+      "button_label": "Добавить пункт",
+      "sub_fields": [
+        {
+          "key": "field_work_tasks_text",
+          "label": "Текст",
+          "name": "text",
+          "type": "text",
+          "required": 1
+        }
+      ]
+    },
+
+    {
+      "key": "field_work_tab_single",
+      "label": "Работа / Single",
+      "name": "",
+      "type": "tab",
+      "placement": "top"
+    },
+    {
+      "key": "field_work_single_title",
+      "label": "Заголовок для single (если нужен другой)",
+      "name": "work_single_title",
+      "type": "text"
+    },
+    {
+      "key": "field_work_single_subtitle",
+      "label": "Подзаголовок",
+      "name": "work_single_subtitle",
+      "type": "textarea",
+      "new_lines": "br"
+    },
+    {
+      "key": "field_work_single_text",
+      "label": "Текст/описание работы",
+      "name": "work_single_text",
+      "type": "wysiwyg",
+      "tabs": "all",
+      "toolbar": "basic",
+      "media_upload": 0
+    }
+  ],
+  "location": [
+    [
+      { "param": "post_type", "operator": "==", "value": "work" }
+    ]
+  ],
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "active": true
+}

@@ -33,7 +33,8 @@ $default_list_title = 'Виды выполненных работ:';
 
 	<section class="services-single-hero">
 		<div class="container services-single-hero__container">
-
+			<!--ХЛЕБНЫЕ КРОШКИ-->
+			<?php get_template_part('template-parts/components/breadcrumbs'); ?>
 			<h1 class="services-single-hero__title">
 				<?php echo wp_kses_post(nl2br($hero_title)); ?>
 			</h1>
@@ -371,6 +372,8 @@ $default_list_title = 'Виды выполненных работ:';
 			</div>
 		</section>
 	<?php endif; ?>
+	
+	<?php get_template_part('template-parts/components/cta-block'); ?>
 
 	<?php
 	$bottom_title = isset($bottom['title']) ? (string) $bottom['title'] : '';
@@ -407,6 +410,9 @@ $default_list_title = 'Виды выполненных работ:';
 			</div>
 		</section>
 	<?php endif; ?>
+	
+	<?php get_template_part('template-parts/components/ticker'); ?>
+
 
 </main>
 

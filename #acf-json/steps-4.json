@@ -1,0 +1,121 @@
+{
+  "key": "group_steps4_options",
+  "title": "Компонент: 4 шага",
+  "fields": [
+    {
+      "key": "field_steps4_tab_main",
+      "label": "Контент",
+      "name": "",
+      "type": "tab",
+      "placement": "top",
+      "endpoint": 0
+    },
+    {
+      "key": "field_steps4_title",
+      "label": "Заголовок секции",
+      "name": "steps4_title",
+      "type": "textarea",
+      "instructions": "Можно с переносами строк (Enter).",
+      "required": 1,
+      "new_lines": "br"
+    },
+    {
+      "key": "field_steps4_steps",
+      "label": "Шаги",
+      "name": "steps4_steps",
+      "type": "repeater",
+      "instructions": "Рекомендуется ровно 4 шага. Первый шаг — lead (с кнопками).",
+      "required": 1,
+      "min": 1,
+      "max": 4,
+      "layout": "row",
+      "button_label": "Добавить шаг",
+      "sub_fields": [
+        {
+          "key": "field_steps4_step_title",
+          "label": "Заголовок шага",
+          "name": "title",
+          "type": "text",
+          "required": 1
+        },
+        {
+          "key": "field_steps4_step_text",
+          "label": "Текст шага",
+          "name": "text",
+          "type": "textarea",
+          "required": 0,
+          "new_lines": "br"
+        },
+        {
+          "key": "field_steps4_step_icon_svg",
+          "label": "SVG иконка",
+          "name": "icon_svg",
+          "type": "textarea",
+          "instructions": "Вставь сюда целиком <svg>...</svg> из макета.",
+          "required": 0,
+          "new_lines": ""
+        },
+        {
+          "key": "field_steps4_step_actions",
+          "label": "Кнопки (только для 1 шага)",
+          "name": "actions",
+          "type": "repeater",
+          "instructions": "Оставь пустым для шагов 2-4. Для первого шага обычно 2 кнопки.",
+          "required": 0,
+          "min": 0,
+          "max": 2,
+          "layout": "row",
+          "button_label": "Добавить кнопку",
+          "sub_fields": [
+            {
+              "key": "field_steps4_action_label",
+              "label": "Текст кнопки",
+              "name": "label",
+              "type": "text",
+              "required": 1
+            },
+            {
+              "key": "field_steps4_action_url",
+              "label": "Ссылка",
+              "name": "url",
+              "type": "url",
+              "required": 1
+            },
+            {
+              "key": "field_steps4_action_style",
+              "label": "Стиль",
+              "name": "style",
+              "type": "select",
+              "required": 1,
+              "choices": {
+                "blue": "Blue",
+                "blue_outline": "Blue outline"
+              },
+              "default_value": "blue",
+              "allow_null": 0,
+              "multiple": 0,
+              "ui": 0
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "options_page",
+        "operator": "==",
+        "value": "steps-4"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "description": ""
+}

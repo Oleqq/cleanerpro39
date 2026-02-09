@@ -1,0 +1,60 @@
+{
+  "key": "group_team_card",
+  "title": "Сотрудник — карточка",
+  "fields": [
+    {
+      "key": "field_team_tab_card",
+      "label": "Карточка сотрудника",
+      "name": "",
+      "type": "tab",
+      "placement": "top",
+      "endpoint": 0
+    },
+    {
+      "key": "field_team_quote",
+      "label": "Цитата",
+      "name": "team_quote",
+      "type": "textarea",
+      "instructions": "Текст в кавычках на карточке. Можно переносы строк, они будут как <br>.",
+      "required": 0,
+      "new_lines": "br"
+    },
+    {
+      "key": "field_team_cleanings",
+      "label": "Количество уборок",
+      "name": "team_cleanings",
+      "type": "number",
+      "instructions": "Например: 350 (на фронте покажем “350 уборок”).",
+      "required": 0,
+      "min": 0,
+      "step": 1
+    },
+    {
+      "key": "field_team_rating",
+      "label": "Рейтинг (текстом)",
+      "name": "team_rating",
+      "type": "text",
+      "instructions": "Например: 5 или 4,9 (оставляем текстом, чтобы не ломать формат).",
+      "required": 0,
+      "default_value": "5",
+      "placeholder": "5"
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "post_type",
+        "operator": "==",
+        "value": "team"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "description": ""
+}

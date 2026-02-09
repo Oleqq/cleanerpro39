@@ -1,0 +1,90 @@
+{
+  "key": "group_reviews_card",
+  "title": "Отзыв — карточка",
+  "fields": [
+    {
+      "key": "field_review_tab_card",
+      "label": "Карточка отзыва",
+      "name": "",
+      "type": "tab",
+      "placement": "top",
+      "endpoint": 0
+    },
+    {
+      "key": "field_review_name",
+      "label": "Имя / подпись",
+      "name": "review_name",
+      "type": "text",
+      "instructions": "Например: «Мария, домохозяйка». Если пусто — возьмём title.",
+      "required": 0,
+      "default_value": "",
+      "placeholder": "Мария, домохозяйка"
+    },
+    {
+      "key": "field_review_rate",
+      "label": "Рейтинг (текстом)",
+      "name": "review_rate",
+      "type": "text",
+      "instructions": "Например: 5 или 4,9 (текстом).",
+      "required": 0,
+      "default_value": "5",
+      "placeholder": "4,9"
+    },
+    {
+      "key": "field_review_text",
+      "label": "Текст отзыва",
+      "name": "review_text",
+      "type": "textarea",
+      "instructions": "Основной текст отзыва.",
+      "required": 1,
+      "new_lines": "br"
+    },
+    {
+      "key": "field_review_source",
+      "label": "Источник",
+      "name": "review_source",
+      "type": "select",
+      "instructions": "Для класса иконки-источника.",
+      "required": 0,
+      "choices": {
+        "yandex": "Яндекс",
+        "gis": "2GIS"
+      },
+      "default_value": "yandex",
+      "return_format": "value",
+      "ui": 1
+    },
+    {
+      "key": "field_review_services",
+      "label": "Привязка к услугам",
+      "name": "review_services",
+      "type": "relationship",
+      "instructions": "Выбери услуги (service), к которым относится отзыв. На странице услуги будут показываться отзывы, где выбрана эта услуга.",
+      "required": 0,
+      "post_type": ["service"],
+      "taxonomy": [],
+      "filters": ["search"],
+      "elements": ["featured_image"],
+      "min": 0,
+      "max": 0,
+      "return_format": "id"
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "post_type",
+        "operator": "==",
+        "value": "review"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "description": ""
+}

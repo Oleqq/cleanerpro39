@@ -21,6 +21,9 @@ $nl2br = static function (string $s): string {
 
 	<section class="services-accordion">
 		<div class="container services-accordion__container">
+			
+			<!--ХЛЕБНЫЕ КРОШКИ-->
+			<?php get_template_part('template-parts/components/breadcrumbs'); ?>
 
 			<h2 class="section__title-big">
 				<?php echo $nl2br($title ?: "цены на услуги клининга\nв калининграде"); ?>
@@ -76,88 +79,101 @@ $nl2br = static function (string $s): string {
 	</section>
 
 	<section class="services">
-		<div class="container services__container">
-			<h2 class="section__title-big">популярные услуги по уборке</h2>
+	<div class="container services__container">
+		<h2 class="section__title-big">популярные услуги по уборке</h2>
 
-			<div class="services__head"></div>
+		<div class="services__head"></div>
 
-			<div class="services__slider services__slider-secondary services-swiper swiper">
-				<button class="services__nav services__nav--prev" type="button" aria-label="Назад">
-					<span class="services__nav-ico"></span>
-				</button>
+		<div class="services__slider services__slider-secondary services-swiper swiper">
+			<button class="services__nav services__nav--prev" type="button" aria-label="Назад">
+				<span class="services__nav-ico"></span>
+			</button>
 
-				<div class="services__list services__list-secondary swiper-wrapper">
-					<?php
-					if (!empty($featured_ids) && is_array($featured_ids)) :
-						foreach ($featured_ids as $service_id) :
-							$service_id = (int) $service_id;
-							if (!$service_id) continue;
+			<div class="services__list services__list-secondary swiper-wrapper">
+				<?php
+				if (!empty($featured_ids) && is_array($featured_ids)) :
+					foreach ($featured_ids as $service_id) :
+						$service_id = (int) $service_id;
+						if (!$service_id) continue;
 
-							$permalink = get_permalink($service_id);
-							$title_s = get_the_title($service_id);
+						$permalink = get_permalink($service_id);
+						$title_s   = get_the_title($service_id);
 
-							// мини-поля (если у тебя уже есть в сервисах)
-							// если нет — будет просто пусто, и верстка не развалится
-							$meta = function_exists('get_field') ? (array) get_field('service_card_meta', $service_id) : [];
-							$price_s = function_exists('get_field') ? (string) get_field('service_card_price', $service_id) : '';
+						// ACF: service_features (repeater: text), service_price (text), service_order_link (url)
+						$features_rows = function_exists('get_field') ? (array) get_field('service_features', $service_id) : [];
+						$price_s       = function_exists('get_field') ? (string) get_field('service_price', $service_id) : '';
+						$order_link    = function_exists('get_field') ? (string) get_field('service_order_link', $service_id) : '';
+						$order_link    = trim($order_link) !== '' ? $order_link : '#';
 
-							$thumb = get_the_post_thumbnail($service_id, 'medium', [
-								'class' => 'service-card__img',
-								'loading' => 'lazy',
-								'alt' => esc_attr($title_s),
-							]);
-					?>
-							<div class="service-card swiper-slide">
-								<div class="service-card__media">
-									<?php if ($thumb) : ?>
-										<?php echo $thumb; ?>
-									<?php else : ?>
-										<img class="service-card__img" src="https://placehold.co/320x220" alt="" loading="lazy" />
-									<?php endif; ?>
-								</div>
+						$thumb = get_the_post_thumbnail($service_id, 'medium', [
+							'class'   => 'service-card__img',
+							'loading' => 'lazy',
+							'alt'     => esc_attr($title_s),
+						]);
+				?>
+						<div class="service-card swiper-slide">
+							<div class="service-card__media">
+								<?php if ($thumb) : ?>
+									<?php echo $thumb; ?>
+								<?php else : ?>
+									<img class="service-card__img" src="https://placehold.co/320x220" alt="" loading="lazy" />
+								<?php endif; ?>
+							</div>
 
-								<div class="service-card__body">
-									<h3 class="service-card__title"><?php echo esc_html($title_s); ?></h3>
+							<div class="service-card__body">
+								<h3 class="service-card__title"><?php echo esc_html($title_s); ?></h3>
 
-									<?php if (!empty($meta)) : ?>
-										<ul class="service-card__meta">
-											<?php foreach ($meta as $m) :
-												$t = is_array($m) ? trim((string) ($m['text'] ?? '')) : trim((string) $m);
-												if ($t === '') continue;
-											?>
-												<li class="service-card__meta-item"><?php echo esc_html($t); ?></li>
-											<?php endforeach; ?>
-										</ul>
-									<?php endif; ?>
+								<?php if (!empty($features_rows)) : ?>
+									<ul class="service-card__meta">
+										<?php foreach ($features_rows as $row) :
+											$t = trim((string) ($row['text'] ?? ''));
+											if ($t === '') continue;
+										?>
+											<li class="service-card__meta-item"><?php echo esc_html($t); ?></li>
+										<?php endforeach; ?>
+									</ul>
+								<?php endif; ?>
 
-									<?php if (trim($price_s) !== '') : ?>
-										<p class="service-card__price"><?php echo esc_html($price_s); ?></p>
-									<?php endif; ?>
+								<?php if (trim($price_s) !== '') : ?>
+									<p class="service-card__price"><?php echo esc_html($price_s); ?></p>
+								<?php endif; ?>
 
-									<div class="service-card__actions">
-										<a class="ui__button-noarrow blue" href="#">Telegram</a>
-										<a class="service-card__link" href="<?php echo esc_url($permalink); ?>">Что входит?</a>
-									</div>
+								<div class="service-card__actions">
+									<a class="ui__button-noarrow blue" href="<?php echo esc_url($order_link); ?>">
+										Telegram
+									</a>
+									<a class="service-card__link" href="<?php echo esc_url($permalink); ?>">
+										Что входит?
+									</a>
 								</div>
 							</div>
-					<?php
-						endforeach;
-					endif;
-					?>
-				</div>
-
-				<button class="services__nav services__nav--next" type="button" aria-label="Вперёд">
-					<span class="services__nav-ico"></span>
-				</button>
+						</div>
+				<?php
+					endforeach;
+				endif;
+				?>
 			</div>
 
-			<a class="ui__button-arrow mobile ui__button-arrow pink services__all" href="<?php echo esc_url(get_post_type_archive_link('service')); ?>">
-				Все услуги по уборке
-				<!-- svg here -->
-			</a>
+			<button class="services__nav services__nav--next" type="button" aria-label="Вперёд">
+				<span class="services__nav-ico"></span>
+			</button>
 		</div>
-	</section>
 
+		<a class="ui__button-arrow mobile ui__button-arrow pink services__all" href="<?php echo esc_url(get_post_type_archive_link('service')); ?>">
+			Все услуги по уборке
+			<!-- svg here -->
+		</a>
+	</div>
+</section>
+
+	<?php
+	get_template_part('template-parts/components/callback-form', null, [
+		'title' => 'Заказать точный расчет уборки',
+		'subtitle' => 'Оставьте свои контактные данные,  мы с Вами свяжемся и обязательно Вам поможем!',
+	]);
+	?>
+
+	
 	<section class="text-section">
 		<div class="text-section__container container">
 			<div class="text-section__wrapper">

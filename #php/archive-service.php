@@ -1,6 +1,145 @@
+<?php
+/**
+ * Archive: Услуги
+ * Файл: archive-service.php
+ *
+ * Логика:
+ * - Аккордеон = термины service_category
+ * - Внутри = услуги (post_type service) в этом терме
+ *
+ * Предполагаем:
+ * - карточка: thumbnail + title + repeater service_features + service_price + service_order_link
+ */
+
+get_header();
+
+$tax = 'service_category';
+
+// Берём все разделы (аккордеоны)
+$terms = get_terms([
+	'taxonomy'   => $tax,
+	'hide_empty' => true,
+	'orderby'    => 'menu_order',
+	'order'      => 'ASC',
+]);
+
+?>
 <main>
 
-    <section class="service-features">
+	<section class="services-accordion">
+		<div class="container services-accordion__container">
+			<!--ХЛЕБНЫЕ КРОШКИ-->
+			<?php get_template_part('template-parts/components/breadcrumbs'); ?>
+			<h2 class="section__title-big">НАШИ УСЛУГИ</h2>
+
+			<div class="services-accordion__list">
+				<?php if (!empty($terms) && !is_wp_error($terms)) : ?>
+					<?php foreach ($terms as $i => $term) : ?>
+						<?php
+						$is_open = ($i === 0);
+						$term_title = $term->name;
+
+						$q = new WP_Query([
+							'post_type'      => 'service',
+							'posts_per_page' => -1,
+							'post_status'    => 'publish',
+							'orderby'        => [
+								'menu_order' => 'ASC',
+								'title'      => 'ASC',
+							],
+							'tax_query'      => [
+								[
+									'taxonomy' => $tax,
+									'field'    => 'term_id',
+									'terms'    => (int) $term->term_id,
+								]
+							],
+							'no_found_rows'  => true,
+						]);
+						?>
+
+						<article class="sa-item<?php echo $is_open ? ' is-open' : ''; ?>">
+							<button class="sa-item__head" type="button" aria-expanded="<?php echo $is_open ? 'true' : 'false'; ?>">
+								<span class="sa-item__title"><?php echo esc_html($term_title); ?></span>
+								<span class="sa-item__ico" aria-hidden="true"></span>
+							</button>
+
+							<div class="sa-item__body">
+								<div class="sa-item__content">
+									<?php if ($q->have_posts()) : ?>
+										<div class="services-grid">
+											<?php while ($q->have_posts()) : $q->the_post(); ?>
+												<?php
+												$post_id = get_the_ID();
+
+												$price = get_field('service_price', $post_id);
+												$order_link = get_field('service_order_link', $post_id);
+
+												$features = get_field('service_features', $post_id);
+												?>
+												<article class="service-card">
+													<div class="service-card__media">
+														<?php if (has_post_thumbnail($post_id)) : ?>
+															<?php
+															echo get_the_post_thumbnail($post_id, 'medium_large', [
+																'loading' => 'lazy',
+																'alt'     => esc_attr(get_the_title($post_id)),
+															]);
+															?>
+														<?php else : ?>
+															<img src="https://placehold.co/330x220" alt="" loading="lazy" />
+														<?php endif; ?>
+													</div>
+
+													<h3 class="service-card__title"><?php the_title(); ?></h3>
+
+													<?php if (!empty($features) && is_array($features)) : ?>
+														<ul class="service-card__list">
+															<?php foreach ($features as $row) : ?>
+																<?php
+																$text = isset($row['text']) ? trim((string) $row['text']) : '';
+																if ($text === '') continue;
+																?>
+																<li><?php echo esc_html($text); ?></li>
+															<?php endforeach; ?>
+														</ul>
+													<?php endif; ?>
+
+													<?php if (!empty($price)) : ?>
+														<p class="service-card__price"><?php echo esc_html($price); ?></p>
+													<?php endif; ?>
+
+													<div class="service-card__actions">
+														<?php if (!empty($order_link)) : ?>
+															<a class="ui__button-noarrow blue" href="<?php echo esc_url($order_link); ?>">Заказать</a>
+														<?php else : ?>
+															<a class="ui__button-noarrow blue" href="#">Заказать</a>
+														<?php endif; ?>
+
+														<a class="service-card__more" href="<?php the_permalink(); ?>">Подробнее</a>
+													</div>
+												</article>
+											<?php endwhile; ?>
+										</div>
+									<?php else : ?>
+										<p class="section__subtitle">В этом разделе пока нет услуг.</p>
+									<?php endif; ?>
+
+									<?php wp_reset_postdata(); ?>
+								</div>
+							</div>
+						</article>
+
+					<?php endforeach; ?>
+				<?php else : ?>
+					<p class="section__subtitle">Разделы услуг пока не созданы.</p>
+				<?php endif; ?>
+			</div>
+
+		</div>
+	</section>
+	
+	    <section class="service-features">
         <div class="container service-features__container">
             <div class="service-features__swiper">
                 <div class="service-features__list swiper-wrapper">
@@ -324,50 +463,7 @@
             </div>
         </div>
     </section>
-    <section class="text-photo">
-        <div class="container text-photo__container">
-            <div class="text-photo__wrapper">
-                <div class="text-photo__content">
-                    <h2 class="section__title">ХОТИТЕ УЗНАТЬ<br />СТОИМОСТЬ УБОРКИ?</h2>
-                    <p class="section__subtitle">
-                        Пришлите нам фото объекта в любой мессенджер, и мы рассчитаем<br />стоимость уборки за несколько
-                        минут.<br />Цена не изменится по приезду!
-                    </p>
-                    <a class="ui__button-arrow ui__button-arrow pink" href="#">
-                        Написать в Telegram<svg
-                            width="33"
-                            height="33"
-                            viewBox="0 0 33 33"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                        >
-                            <circle cx="16.5" cy="16.5" r="16.5" fill="white"></circle>
-                            <path
-                                d="M14.4001 12.1999C14.8419 11.8687 15.4682 11.9583 15.7995 12.4001L18.7995 16.4001C19.066 16.7556 19.066 17.2438 18.7995 17.5993L15.7995 21.5993C15.4682 22.0411 14.8419 22.1308 14.4001 21.7995C13.9583 21.4682 13.8687 20.8419 14.1999 20.4001L16.5341 17.2873L16.7497 16.9997L16.5341 16.7121L14.1999 13.5993C13.8687 13.1575 13.9583 12.5312 14.4001 12.1999Z"
-                                fill="#B71375"
-                            ></path></svg
-                    ></a>
-                </div>
-                <div class="text-photo__media">
-                    <img class="text-photo__img" src="<?php echo get_template_directory_uri(); ?>/assets/img/Group 391.png" alt="Переписка в мессенджере" />
-                </div>
-            </div>
-            <a class="ui__button-arrow mobile ui__button-arrow pink" href="#">
-                Написать в Telegram<svg
-                    width="33"
-                    height="33"
-                    viewBox="0 0 33 33"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                >
-                    <circle cx="16.5" cy="16.5" r="16.5" fill="white"></circle>
-                    <path
-                        d="M14.4001 12.1999C14.8419 11.8687 15.4682 11.9583 15.7995 12.4001L18.7995 16.4001C19.066 16.7556 19.066 17.2438 18.7995 17.5993L15.7995 21.5993C15.4682 22.0411 14.8419 22.1308 14.4001 21.7995C13.9583 21.4682 13.8687 20.8419 14.1999 20.4001L16.5341 17.2873L16.7497 16.9997L16.5341 16.7121L14.1999 13.5993C13.8687 13.1575 13.9583 12.5312 14.4001 12.1999Z"
-                        fill="#B71375"
-                    ></path></svg
-            ></a>
-        </div>
-    </section>
+    <?php get_template_part('template-parts/components/cta-block'); ?>
     <section class="services-text-photo">
         <div class="container services-text-photo__container">
             <div class="services-text-photo__wrapper">
@@ -402,27 +498,10 @@
             </div>
         </div>
     </section>
-    <section class="ticker">
-        <div class="ticker__track">
-            <div class="ticker__group">
-                <span class="ticker__item">Менеджер будет на связи с вами 24/7</span
-                ><span class="ticker__separator"></span><span class="ticker__item">Заключаем договор</span
-                ><span class="ticker__separator"></span
-                ><span class="ticker__item">Дарим сертификат на последующие уборки</span
-                ><span class="ticker__separator"></span
-                ><span class="ticker__item">Используем профессиональное оборудование</span
-                ><span class="ticker__separator"></span><span class="ticker__item">Качественная химия</span>
-            </div>
-            <div class="ticker__group" aria-hidden="true">
-                <span class="ticker__separator"></span
-                ><span class="ticker__item">Менеджер будет на связи с вами 24/7</span
-                ><span class="ticker__separator"></span><span class="ticker__item">Заключаем договор</span
-                ><span class="ticker__separator"></span
-                ><span class="ticker__item">Дарим сертификат на последующие уборки</span
-                ><span class="ticker__separator"></span
-                ><span class="ticker__item">Используем профессиональное оборудование</span
-                ><span class="ticker__separator"></span><span class="ticker__item">Качественная химия</span>
-            </div>
-        </div>
-    </section>
+    
+	<?php get_template_part('template-parts/components/ticker'); ?>
+
+	
 </main>
+<?php
+get_footer();

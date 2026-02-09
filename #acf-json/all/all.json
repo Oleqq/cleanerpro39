@@ -1,0 +1,3900 @@
+[
+    {
+        "key": "group_callback_form_options",
+        "title": "Callback form (Глобально)",
+        "fields": [
+            {
+                "key": "field_cb_tab_main",
+                "label": "Основное",
+                "name": "",
+                "aria-label": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": false,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "top",
+                "endpoint": 0,
+                "selected": 0
+            },
+            {
+                "key": "field_cb_title",
+                "label": "Заголовок",
+                "name": "cb_title",
+                "aria-label": "",
+                "type": "textarea",
+                "instructions": "Можно использовать <br>. Пример как в макете.",
+                "required": 0,
+                "conditional_logic": false,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "new_lines": "br",
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "",
+                "rows": ""
+            },
+            {
+                "key": "field_cb_subtitle",
+                "label": "Подзаголовок",
+                "name": "cb_subtitle",
+                "aria-label": "",
+                "type": "textarea",
+                "instructions": "Можно использовать <br>.",
+                "required": 0,
+                "conditional_logic": false,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "new_lines": "br",
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "",
+                "rows": ""
+            },
+            {
+                "key": "field_cb_cf7_shortcode",
+                "label": "Contact Form 7 шорткод",
+                "name": "cb_cf7_shortcode",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "Пример: [contact-form-7 id=\"123\" title=\"Callback\"]",
+                "required": 0,
+                "conditional_logic": false,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_cb_image",
+                "label": "Картинка справа",
+                "name": "cb_image",
+                "aria-label": "",
+                "type": "image",
+                "instructions": "Изображение справа от формы.",
+                "required": 0,
+                "conditional_logic": false,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "array",
+                "preview_size": "medium",
+                "library": "all",
+                "min_width": 0,
+                "min_height": 0,
+                "min_size": 0,
+                "max_width": 0,
+                "max_height": 0,
+                "max_size": 0,
+                "mime_types": ""
+            },
+            {
+                "key": "field_cb_anchor_id",
+                "label": "ID секции",
+                "name": "cb_anchor_id",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "Если нужно ссылаться якорем (например: callback). Оставь пустым если не нужно.",
+                "required": 0,
+                "conditional_logic": false,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "options_page",
+                    "operator": "==",
+                    "value": "theme-callback-form"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": "",
+        "show_in_rest": false
+    },
+    {
+        "key": "group_text_photo_options",
+        "title": "CTA-Блок",
+        "fields": [
+            {
+                "key": "field_tp_tab_main",
+                "label": "Контент блока",
+                "name": "",
+                "aria-label": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": false,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "top",
+                "endpoint": 0,
+                "selected": 0
+            },
+            {
+                "key": "field_tp_title",
+                "label": "Заголовок",
+                "name": "tp_title",
+                "aria-label": "",
+                "type": "textarea",
+                "instructions": "Заголовок секции.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "rows": "",
+                "placeholder": "",
+                "new_lines": ""
+            },
+            {
+                "key": "field_tp_subtitle",
+                "label": "Подзаголовок \/ текст",
+                "name": "tp_subtitle",
+                "aria-label": "",
+                "type": "textarea",
+                "instructions": "Текст под заголовком.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "rows": "",
+                "placeholder": "",
+                "new_lines": ""
+            },
+            {
+                "key": "field_tp_button_text",
+                "label": "Текст кнопки",
+                "name": "tp_button_text",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "Например: «Написать в Telegram». Если пусто — кнопки не будет.",
+                "required": 0,
+                "conditional_logic": false,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "Написать в Telegram",
+                "maxlength": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_tp_button_url",
+                "label": "Ссылка кнопки",
+                "name": "tp_button_url",
+                "aria-label": "",
+                "type": "url",
+                "instructions": "Например: ссылка на Telegram\/WhatsApp. Если пусто — кнопки не будет.",
+                "required": 0,
+                "conditional_logic": false,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": ""
+            },
+            {
+                "key": "field_tp_image",
+                "label": "Картинка справа",
+                "name": "tp_image",
+                "aria-label": "",
+                "type": "image",
+                "instructions": "Картинка для блока (правая часть).",
+                "required": 0,
+                "conditional_logic": false,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "array",
+                "preview_size": "medium",
+                "library": "all",
+                "min_width": 0,
+                "min_height": 0,
+                "min_size": 0,
+                "max_width": 0,
+                "max_height": 0,
+                "max_size": 0,
+                "mime_types": ""
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "options_page",
+                    "operator": "==",
+                    "value": "CTA-block"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": "",
+        "show_in_rest": 0
+    },
+    {
+        "key": "group_price_page",
+        "title": "Price: Страница цен",
+        "fields": [
+            {
+                "key": "field_price_tab_hero",
+                "label": "Заголовок",
+                "name": "",
+                "aria-label": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": false,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "top",
+                "endpoint": 0,
+                "selected": 0
+            },
+            {
+                "key": "field_price_title",
+                "label": "Заголовок страницы",
+                "name": "price_title",
+                "aria-label": "",
+                "type": "textarea",
+                "instructions": "Можно переносы строк. В шаблоне переносы будут сохранены через <br>.",
+                "required": 0,
+                "conditional_logic": false,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "цены на услуги клининга\nв калининграде",
+                "placeholder": "",
+                "maxlength": "",
+                "new_lines": "",
+                "rows": ""
+            },
+            {
+                "key": "field_price_tab_accordion",
+                "label": "Прайс-аккордеон",
+                "name": "",
+                "aria-label": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": false,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "top",
+                "endpoint": 0,
+                "selected": 0
+            },
+            {
+                "key": "field_price_accordions",
+                "label": "Категории прайса",
+                "name": "price_accordions",
+                "aria-label": "",
+                "type": "repeater",
+                "instructions": "Одна категория = один аккордеон (например: КВАРТИРЫ, ДОМА, ОФИСЫ).",
+                "required": 0,
+                "conditional_logic": false,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "layout": "block",
+                "pagination": 0,
+                "min": 0,
+                "max": 0,
+                "collapsed": "field_price_acc_title",
+                "button_label": "Добавить категорию",
+                "rows_per_page": 20,
+                "sub_fields": [
+                    {
+                        "key": "field_price_acc_title",
+                        "label": "Заголовок категории",
+                        "name": "acc_title",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "Например: КВАРТИРЫ \/ ДОМА \/ ОФИСЫ \/ Коммерческие помещения.",
+                        "required": 1,
+                        "conditional_logic": false,
+                        "wrapper": {
+                            "width": "70",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "placeholder": "",
+                        "maxlength": "",
+                        "prepend": "",
+                        "append": "",
+                        "parent_repeater": "field_price_accordions"
+                    },
+                    {
+                        "key": "field_price_acc_open",
+                        "label": "Открыта по умолчанию",
+                        "name": "acc_is_open",
+                        "aria-label": "",
+                        "type": "true_false",
+                        "instructions": "Если включено — блок будет с классом is-open и aria-expanded=true.",
+                        "required": 0,
+                        "conditional_logic": false,
+                        "wrapper": {
+                            "width": "30",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": 0,
+                        "ui": 1,
+                        "ui_on_text": "Да",
+                        "ui_off_text": "Нет",
+                        "message": "",
+                        "parent_repeater": "field_price_accordions"
+                    },
+                    {
+                        "key": "field_price_rows",
+                        "label": "Строки прайса",
+                        "name": "rows",
+                        "aria-label": "",
+                        "type": "repeater",
+                        "instructions": "Одна строка = услуга + цена. Скидку\/бейдж задавай отдельным полем.",
+                        "required": 0,
+                        "conditional_logic": false,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "layout": "row",
+                        "pagination": 0,
+                        "min": 0,
+                        "max": 0,
+                        "collapsed": "field_price_row_name",
+                        "button_label": "Добавить строку",
+                        "rows_per_page": 20,
+                        "sub_fields": [
+                            {
+                                "key": "field_price_row_name",
+                                "label": "Название",
+                                "name": "name",
+                                "aria-label": "",
+                                "type": "text",
+                                "instructions": "Текст услуги (может быть длинный).",
+                                "required": 1,
+                                "conditional_logic": false,
+                                "wrapper": {
+                                    "width": "55",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "placeholder": "",
+                                "maxlength": "",
+                                "prepend": "",
+                                "append": "",
+                                "parent_repeater": "field_price_rows"
+                            },
+                            {
+                                "key": "field_price_row_price",
+                                "label": "Цена",
+                                "name": "price",
+                                "aria-label": "",
+                                "type": "text",
+                                "instructions": "Например: 130 руб\/м2 или от 130 руб\/м2.",
+                                "required": 1,
+                                "conditional_logic": false,
+                                "wrapper": {
+                                    "width": "25",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "placeholder": "",
+                                "maxlength": "",
+                                "prepend": "",
+                                "append": "",
+                                "parent_repeater": "field_price_rows"
+                            },
+                            {
+                                "key": "field_price_row_badge",
+                                "label": "Бейдж (необязательно)",
+                                "name": "badge",
+                                "aria-label": "",
+                                "type": "text",
+                                "instructions": "Например: - 30 % или - 15 %. Если пусто — бейджа не будет.",
+                                "required": 0,
+                                "conditional_logic": false,
+                                "wrapper": {
+                                    "width": "20",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "placeholder": "",
+                                "maxlength": "",
+                                "prepend": "",
+                                "append": "",
+                                "parent_repeater": "field_price_rows"
+                            }
+                        ],
+                        "parent_repeater": "field_price_accordions"
+                    }
+                ]
+            },
+            {
+                "key": "field_price_tab_featured",
+                "label": "Популярные услуги",
+                "name": "",
+                "aria-label": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": false,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "top",
+                "endpoint": 0,
+                "selected": 0
+            },
+            {
+                "key": "field_price_featured_services",
+                "label": "Выбранные услуги (карточки)",
+                "name": "price_featured_services",
+                "aria-label": "",
+                "type": "relationship",
+                "instructions": "Выбери услуги (CPT service), которые будут показаны в блоке «популярные услуги по уборке».",
+                "required": 0,
+                "conditional_logic": false,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "post_type": [
+                    "service"
+                ],
+                "taxonomy": [],
+                "filters": [
+                    "search",
+                    "post_type"
+                ],
+                "elements": [
+                    "featured_image"
+                ],
+                "min": 0,
+                "max": 0,
+                "return_format": "id",
+                "bidirectional_target": []
+            },
+            {
+                "key": "field_price_tab_text",
+                "label": "Текстовый блок",
+                "name": "",
+                "aria-label": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": false,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "top",
+                "endpoint": 0,
+                "selected": 0
+            },
+            {
+                "key": "field_price_text_title",
+                "label": "Заголовок блока",
+                "name": "price_text_title",
+                "aria-label": "",
+                "type": "textarea",
+                "instructions": "Можно переносы строк. В шаблоне переносы будут сохранены через <br>.",
+                "required": 0,
+                "conditional_logic": false,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "Убедитесь в качестве на практике:\nваш дом — наш следующий кейс",
+                "placeholder": "",
+                "maxlength": "",
+                "new_lines": "",
+                "rows": ""
+            },
+            {
+                "key": "field_price_text_content",
+                "label": "Текст",
+                "name": "price_text_content",
+                "aria-label": "",
+                "type": "wysiwyg",
+                "instructions": "Основной контент (как на статике).",
+                "required": 0,
+                "conditional_logic": false,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "tabs": "all",
+                "toolbar": "full",
+                "media_upload": 0,
+                "delay": 0
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "page_template",
+                    "operator": "==",
+                    "value": "price.php"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "seamless",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": [
+            "the_content"
+        ],
+        "active": true,
+        "description": "",
+        "show_in_rest": false
+    },
+    {
+        "key": "group_promo_article_fields_010",
+        "title": "Акция (CPT: promo)",
+        "fields": [
+            {
+                "key": "field_promo_tab_intro_010",
+                "label": "Первый экран",
+                "name": "",
+                "aria-label": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": false,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "top",
+                "endpoint": 0,
+                "selected": 0
+            },
+            {
+                "key": "field_promo_intro_group_010",
+                "label": "Интро-блок",
+                "name": "blog_intro",
+                "aria-label": "",
+                "type": "group",
+                "instructions": "",
+                "required": false,
+                "conditional_logic": false,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "layout": "block",
+                "sub_fields": [
+                    {
+                        "key": "field_promo_intro_p1_010",
+                        "label": "Вступление (абзац 1)",
+                        "name": "p1",
+                        "aria-label": "",
+                        "type": "wysiwyg",
+                        "instructions": "",
+                        "required": false,
+                        "conditional_logic": false,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "toolbar": "basic",
+                        "media_upload": 0,
+                        "tabs": "all",
+                        "default_value": "",
+                        "delay": 0
+                    },
+                    {
+                        "key": "field_promo_intro_h2_010",
+                        "label": "Заголовок (H2) в интро",
+                        "name": "h2",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "",
+                        "required": false,
+                        "conditional_logic": false,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "placeholder": "Например: Скидка 20% до конца месяца",
+                        "default_value": "",
+                        "maxlength": "",
+                        "prepend": "",
+                        "append": ""
+                    },
+                    {
+                        "key": "field_promo_intro_p2_010",
+                        "label": "Интро-текст (абзац 2)",
+                        "name": "p2",
+                        "aria-label": "",
+                        "type": "wysiwyg",
+                        "instructions": "",
+                        "required": false,
+                        "conditional_logic": false,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "toolbar": "basic",
+                        "media_upload": 0,
+                        "tabs": "all",
+                        "default_value": "",
+                        "delay": 0
+                    }
+                ]
+            },
+            {
+                "key": "field_promo_tab_content_010",
+                "label": "Контент акции",
+                "name": "",
+                "aria-label": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": false,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "top",
+                "endpoint": 0,
+                "selected": 0
+            },
+            {
+                "key": "field_promo_content_wysiwyg_010",
+                "label": "Основной контент (WYSIWYG)",
+                "name": "blog_content",
+                "aria-label": "",
+                "type": "wysiwyg",
+                "instructions": "",
+                "required": false,
+                "conditional_logic": false,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "toolbar": "full",
+                "media_upload": 1,
+                "tabs": "all",
+                "default_value": "",
+                "delay": 0
+            },
+            {
+                "key": "field_promo_tab_settings_010",
+                "label": "Опционально",
+                "name": "",
+                "aria-label": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": false,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "top",
+                "endpoint": 0,
+                "selected": 0
+            },
+            {
+                "key": "field_promo_show_next_010",
+                "label": "Показывать «Следующая акция»",
+                "name": "blog_show_next",
+                "aria-label": "",
+                "type": "true_false",
+                "instructions": "",
+                "required": false,
+                "conditional_logic": false,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": 1,
+                "ui": 1,
+                "ui_on_text": "Да",
+                "ui_off_text": "Нет",
+                "message": ""
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "promo"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": [
+            "the_content",
+            "excerpt"
+        ],
+        "active": true,
+        "description": "Поля под макет single-promo.php",
+        "show_in_rest": 0
+    },
+    {
+        "key": "group_ticker_settings",
+        "title": "Бегущая строка",
+        "fields": [
+            {
+                "key": "field_ticker_tab_content",
+                "label": "Контент",
+                "name": "",
+                "aria-label": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "top",
+                "endpoint": 0,
+                "selected": 0
+            },
+            {
+                "key": "field_ticker_items",
+                "label": "Пункты строки",
+                "name": "ticker_items",
+                "aria-label": "",
+                "type": "repeater",
+                "instructions": "Добавляй фразы, которые будут повторяться в бегущей строке. Разделители рисуются автоматически.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "layout": "table",
+                "pagination": 0,
+                "min": 0,
+                "max": 0,
+                "collapsed": "field_ticker_item_text",
+                "button_label": "Добавить пункт",
+                "rows_per_page": 20,
+                "sub_fields": [
+                    {
+                        "key": "field_ticker_item_text",
+                        "label": "Текст пункта",
+                        "name": "ticker_item_text",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "Например: «Менеджер будет на связи с вами 24\/7»",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "100",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "maxlength": 0,
+                        "parent_repeater": "field_ticker_items"
+                    }
+                ]
+            },
+            {
+                "key": "field_ticker_tab_notes",
+                "label": "Заметки",
+                "name": "",
+                "aria-label": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "top",
+                "endpoint": 0,
+                "selected": 0
+            },
+            {
+                "key": "field_ticker_note",
+                "label": "Подсказка",
+                "name": "",
+                "aria-label": "",
+                "type": "message",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "message": "Эти пункты используются по умолчанию в компоненте тикера. На отдельных страницах можно переопределить список через get_template_part(..., ['items' =&gt; [...] ])",
+                "new_lines": "wpautop",
+                "esc_html": 0
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "options_page",
+                    "operator": "==",
+                    "value": "ticker-settings"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": "",
+        "show_in_rest": 0
+    },
+    {
+        "key": "group_steps4_options",
+        "title": "Компонент: 4 шага",
+        "fields": [
+            {
+                "key": "field_steps4_tab_main",
+                "label": "Контент",
+                "name": "",
+                "aria-label": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": false,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "top",
+                "endpoint": 0,
+                "selected": 0
+            },
+            {
+                "key": "field_steps4_title",
+                "label": "Заголовок секции",
+                "name": "steps4_title",
+                "aria-label": "",
+                "type": "textarea",
+                "instructions": "Можно с переносами строк (Enter).",
+                "required": 1,
+                "conditional_logic": false,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "new_lines": "br",
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "",
+                "rows": ""
+            },
+            {
+                "key": "field_steps4_steps",
+                "label": "Шаги",
+                "name": "steps4_steps",
+                "aria-label": "",
+                "type": "repeater",
+                "instructions": "Рекомендуется ровно 4 шага. Первый шаг — lead (с кнопками).",
+                "required": 1,
+                "conditional_logic": false,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "min": 1,
+                "max": 4,
+                "layout": "row",
+                "button_label": "Добавить шаг",
+                "rows_per_page": 20,
+                "collapsed": "",
+                "sub_fields": [
+                    {
+                        "key": "field_steps4_step_title",
+                        "label": "Заголовок шага",
+                        "name": "title",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 1,
+                        "conditional_logic": false,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "parent_repeater": "field_steps4_steps"
+                    },
+                    {
+                        "key": "field_steps4_step_text",
+                        "label": "Текст шага",
+                        "name": "text",
+                        "aria-label": "",
+                        "type": "textarea",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": false,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "new_lines": "br",
+                        "default_value": "",
+                        "maxlength": "",
+                        "placeholder": "",
+                        "rows": "",
+                        "parent_repeater": "field_steps4_steps"
+                    },
+                    {
+                        "key": "field_steps4_step_icon_svg",
+                        "label": "SVG иконка",
+                        "name": "icon_svg",
+                        "aria-label": "",
+                        "type": "image",
+                        "instructions": "Изображение иконки",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "return_format": "url",
+                        "library": "all",
+                        "min_width": "",
+                        "min_height": "",
+                        "min_size": "",
+                        "max_width": "",
+                        "max_height": "",
+                        "max_size": "",
+                        "mime_types": "",
+                        "preview_size": "medium",
+                        "parent_repeater": "field_steps4_steps"
+                    },
+                    {
+                        "key": "field_steps4_step_actions",
+                        "label": "Кнопки (только для 1 шага)",
+                        "name": "actions",
+                        "aria-label": "",
+                        "type": "repeater",
+                        "instructions": "Оставь пустым для шагов 2-4. Для первого шага обычно 2 кнопки.",
+                        "required": 0,
+                        "conditional_logic": false,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "min": 0,
+                        "max": 2,
+                        "layout": "row",
+                        "button_label": "Добавить кнопку",
+                        "rows_per_page": 20,
+                        "collapsed": "",
+                        "sub_fields": [
+                            {
+                                "key": "field_steps4_action_label",
+                                "label": "Текст кнопки",
+                                "name": "label",
+                                "aria-label": "",
+                                "type": "text",
+                                "instructions": "",
+                                "required": 1,
+                                "conditional_logic": false,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "maxlength": "",
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": "",
+                                "parent_repeater": "field_steps4_step_actions"
+                            },
+                            {
+                                "key": "field_steps4_action_url",
+                                "label": "Ссылка",
+                                "name": "url",
+                                "aria-label": "",
+                                "type": "url",
+                                "instructions": "",
+                                "required": 1,
+                                "conditional_logic": false,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "placeholder": "",
+                                "parent_repeater": "field_steps4_step_actions"
+                            },
+                            {
+                                "key": "field_steps4_action_style",
+                                "label": "Стиль",
+                                "name": "style",
+                                "aria-label": "",
+                                "type": "select",
+                                "instructions": "",
+                                "required": 1,
+                                "conditional_logic": false,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "choices": {
+                                    "blue": "Blue",
+                                    "blue_outline": "Blue outline"
+                                },
+                                "default_value": "blue",
+                                "allow_null": 0,
+                                "multiple": 0,
+                                "ui": 0,
+                                "ajax": 0,
+                                "placeholder": "",
+                                "return_format": "value",
+                                "parent_repeater": "field_steps4_step_actions"
+                            }
+                        ],
+                        "parent_repeater": "field_steps4_steps"
+                    }
+                ]
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "options_page",
+                    "operator": "==",
+                    "value": "steps-4"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": "",
+        "show_in_rest": 0
+    },
+    {
+        "key": "group_work",
+        "title": "Наши работы",
+        "fields": [
+            {
+                "key": "field_work_tab_card",
+                "label": "Карточка Работы",
+                "name": "",
+                "aria-label": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "top",
+                "endpoint": 0,
+                "selected": 0
+            },
+            {
+                "key": "field_work_ba_before",
+                "label": "Фото ДО",
+                "name": "work_ba_before",
+                "aria-label": "",
+                "type": "image",
+                "instructions": "",
+                "required": false,
+                "conditional_logic": false,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "id",
+                "preview_size": "medium",
+                "library": "all",
+                "min_width": 0,
+                "min_height": 0,
+                "min_size": 0,
+                "max_width": 0,
+                "max_height": 0,
+                "max_size": 0,
+                "mime_types": ""
+            },
+            {
+                "key": "field_work_ba_after",
+                "label": "Фото ПОСЛЕ",
+                "name": "work_ba_after",
+                "aria-label": "",
+                "type": "image",
+                "instructions": "",
+                "required": false,
+                "conditional_logic": false,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "id",
+                "preview_size": "medium",
+                "library": "all",
+                "min_width": 0,
+                "min_height": 0,
+                "min_size": 0,
+                "max_width": 0,
+                "max_height": 0,
+                "max_size": 0,
+                "mime_types": ""
+            },
+            {
+                "key": "field_work_ba_start",
+                "label": "Старт сравнения (0-100)",
+                "name": "work_ba_start",
+                "aria-label": "",
+                "type": "range",
+                "instructions": "",
+                "required": false,
+                "conditional_logic": false,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "min": 0,
+                "max": 100,
+                "step": 1,
+                "default_value": 50,
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_work_area",
+                "label": "Площадь (текстом)",
+                "name": "work_area",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "Пример: 55 м2",
+                "required": false,
+                "conditional_logic": false,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_work_time",
+                "label": "Сроки (текстом)",
+                "name": "work_time",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "Пример: 5 ч",
+                "required": false,
+                "conditional_logic": false,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_work_price",
+                "label": "Цена (текстом)",
+                "name": "work_price",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "Пример: 10 590 Р",
+                "required": false,
+                "conditional_logic": false,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_work_tasks_title",
+                "label": "Заголовок списка работ",
+                "name": "work_tasks_title",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "",
+                "required": false,
+                "conditional_logic": false,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "Виды выполненных работ:",
+                "maxlength": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_work_tasks",
+                "label": "Список работ",
+                "name": "work_tasks",
+                "aria-label": "",
+                "type": "repeater",
+                "instructions": "",
+                "required": false,
+                "conditional_logic": false,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "layout": "row",
+                "button_label": "Добавить пункт",
+                "min": 0,
+                "max": 0,
+                "rows_per_page": 20,
+                "collapsed": "",
+                "sub_fields": [
+                    {
+                        "key": "field_work_tasks_text",
+                        "label": "Текст",
+                        "name": "text",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 1,
+                        "conditional_logic": false,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "parent_repeater": "field_work_tasks"
+                    }
+                ]
+            },
+            {
+                "key": "field_work_tab_single",
+                "label": "Внутренняя страницы Работы",
+                "name": "",
+                "aria-label": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "top",
+                "endpoint": 0,
+                "selected": 0
+            },
+            {
+                "key": "field_work_single_title",
+                "label": "Заголовок для single (если нужен другой)",
+                "name": "work_single_title",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "",
+                "required": false,
+                "conditional_logic": false,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_work_single_subtitle",
+                "label": "Подзаголовок",
+                "name": "work_single_subtitle",
+                "aria-label": "",
+                "type": "textarea",
+                "instructions": "",
+                "required": false,
+                "conditional_logic": false,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "new_lines": "br",
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "",
+                "rows": ""
+            },
+            {
+                "key": "field_work_single_text",
+                "label": "Текст\/описание работы",
+                "name": "work_single_text",
+                "aria-label": "",
+                "type": "wysiwyg",
+                "instructions": "",
+                "required": false,
+                "conditional_logic": false,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "tabs": "all",
+                "toolbar": "basic",
+                "media_upload": 0,
+                "default_value": "",
+                "delay": 0
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "work"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": "",
+        "show_in_rest": 0
+    },
+    {
+        "key": "group_reviews_card",
+        "title": "Отзыв — карточка",
+        "fields": [
+            {
+                "key": "field_review_tab_card",
+                "label": "Карточка отзыва",
+                "name": "",
+                "aria-label": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": false,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "top",
+                "endpoint": 0,
+                "selected": 0
+            },
+            {
+                "key": "field_review_name",
+                "label": "Имя \/ подпись",
+                "name": "review_name",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "Например: «Мария, домохозяйка». Если пусто — возьмём title.",
+                "required": 0,
+                "conditional_logic": false,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "Мария, домохозяйка",
+                "maxlength": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_review_rate",
+                "label": "Рейтинг (текстом)",
+                "name": "review_rate",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "Например: 5 или 4,9 (текстом).",
+                "required": 0,
+                "conditional_logic": false,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": 5,
+                "placeholder": "4,9",
+                "maxlength": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_review_text",
+                "label": "Текст отзыва",
+                "name": "review_text",
+                "aria-label": "",
+                "type": "textarea",
+                "instructions": "Основной текст отзыва.",
+                "required": 1,
+                "conditional_logic": false,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "new_lines": "br",
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "",
+                "rows": ""
+            },
+            {
+                "key": "field_review_source",
+                "label": "Источник",
+                "name": "review_source",
+                "aria-label": "",
+                "type": "select",
+                "instructions": "Для класса иконки-источника.",
+                "required": 0,
+                "conditional_logic": false,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "yandex": "Яндекс",
+                    "gis": "2GIS"
+                },
+                "default_value": "yandex",
+                "return_format": "value",
+                "ui": 1,
+                "multiple": 0,
+                "allow_null": 0,
+                "ajax": 0,
+                "placeholder": ""
+            },
+            {
+                "key": "field_review_services",
+                "label": "Привязка к услугам",
+                "name": "review_services",
+                "aria-label": "",
+                "type": "relationship",
+                "instructions": "Выбери услуги (service), к которым относится отзыв. На странице услуги будут показываться отзывы, где выбрана эта услуга.",
+                "required": 0,
+                "conditional_logic": false,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "post_type": [
+                    "service"
+                ],
+                "taxonomy": [],
+                "filters": [
+                    "search"
+                ],
+                "elements": [
+                    "featured_image"
+                ],
+                "min": 0,
+                "max": 0,
+                "return_format": "id",
+                "bidirectional_target": []
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "review"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": "",
+        "show_in_rest": false
+    },
+    {
+        "key": "group_team_card",
+        "title": "Сотрудник — карточка",
+        "fields": [
+            {
+                "key": "field_team_tab_card",
+                "label": "Карточка сотрудника",
+                "name": "",
+                "aria-label": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": false,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "top",
+                "endpoint": 0,
+                "selected": 0
+            },
+            {
+                "key": "field_team_quote",
+                "label": "Цитата",
+                "name": "team_quote",
+                "aria-label": "",
+                "type": "textarea",
+                "instructions": "Текст в кавычках на карточке. Можно переносы строк, через br",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "rows": "",
+                "placeholder": "",
+                "new_lines": "br"
+            },
+            {
+                "key": "field_team_cleanings",
+                "label": "Количество уборок",
+                "name": "team_cleanings",
+                "aria-label": "",
+                "type": "number",
+                "instructions": "Например: 350 (на странице будет “350 уборок”).",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "min": 0,
+                "max": "",
+                "placeholder": "",
+                "step": 1,
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_team_rating",
+                "label": "Рейтинг (текстом)",
+                "name": "team_rating",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "Например: 5 или 4,9",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": 5,
+                "maxlength": "",
+                "placeholder": 5,
+                "prepend": "",
+                "append": ""
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "team"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": "",
+        "show_in_rest": 0
+    },
+    {
+        "key": "group_blog_article_fields_010",
+        "title": "Статья (CPT: blog)",
+        "fields": [
+            {
+                "key": "field_blog_tab_intro_010",
+                "label": "Первый экран",
+                "name": "",
+                "aria-label": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": false,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "top",
+                "endpoint": 0,
+                "selected": 0
+            },
+            {
+                "key": "field_blog_intro_group_010",
+                "label": "Интро-блок",
+                "name": "blog_intro",
+                "aria-label": "",
+                "type": "group",
+                "instructions": "Заполняй строго по макету: 1) абзац, 2) заголовок H2, 3) абзац. Картинка — это «Миниатюра записи» (Featured Image).",
+                "required": 0,
+                "conditional_logic": false,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "layout": "block",
+                "sub_fields": [
+                    {
+                        "key": "field_blog_intro_p1_010",
+                        "label": "Вступление (абзац 1)",
+                        "name": "p1",
+                        "aria-label": "",
+                        "type": "wysiwyg",
+                        "instructions": "Это первый текстовый абзац справа от картинки (как в статике).",
+                        "required": 0,
+                        "conditional_logic": false,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "tabs": "all",
+                        "toolbar": "basic",
+                        "media_upload": 0,
+                        "delay": 0,
+                        "default_value": ""
+                    },
+                    {
+                        "key": "field_blog_intro_h2_010",
+                        "label": "Заголовок (H2) в интро",
+                        "name": "h2",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "Один заголовок H2, который идёт сразу после первого абзаца (как в статике).",
+                        "required": 0,
+                        "conditional_logic": false,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "placeholder": "Например: Чем опасны пылевые клещи…",
+                        "prepend": "",
+                        "append": "",
+                        "maxlength": ""
+                    },
+                    {
+                        "key": "field_blog_intro_p2_010",
+                        "label": "Интро-текст (абзац 2)",
+                        "name": "p2",
+                        "aria-label": "",
+                        "type": "wysiwyg",
+                        "instructions": "Второй абзац в интро под H2 (как в статике).",
+                        "required": 0,
+                        "conditional_logic": false,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "tabs": "all",
+                        "toolbar": "basic",
+                        "media_upload": 0,
+                        "delay": 0,
+                        "default_value": ""
+                    }
+                ]
+            },
+            {
+                "key": "field_blog_tab_content_010",
+                "label": "Контент статьи",
+                "name": "",
+                "aria-label": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": false,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "top",
+                "endpoint": 0,
+                "selected": 0
+            },
+            {
+                "key": "field_blog_content_wysiwyg_010",
+                "label": "Основной контент (WYSIWYG)",
+                "name": "blog_content",
+                "aria-label": "",
+                "type": "wysiwyg",
+                "instructions": "Это блок .blog-article__content.wysiwyg. Верстай внутри редактора заголовками H2, списками, абзацами — как в макете\/статике.",
+                "required": 0,
+                "conditional_logic": false,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "tabs": "all",
+                "toolbar": "full",
+                "media_upload": 1,
+                "delay": 0,
+                "default_value": ""
+            },
+            {
+                "key": "field_blog_tab_settings_010",
+                "label": "Опционально",
+                "name": "",
+                "aria-label": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": false,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "top",
+                "endpoint": 0,
+                "selected": 0
+            },
+            {
+                "key": "field_blog_show_next_010",
+                "label": "Показывать «Следующая статья»",
+                "name": "blog_show_next",
+                "aria-label": "",
+                "type": "true_false",
+                "instructions": "Если выключить — кнопка «Следующая статья» не выводится.",
+                "required": 0,
+                "conditional_logic": false,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "message": "",
+                "default_value": 1,
+                "ui": 1,
+                "ui_on_text": "Да",
+                "ui_off_text": "Нет"
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "blog"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": [
+            "the_content",
+            "excerpt"
+        ],
+        "active": true,
+        "description": "Поля под макет single-blog.php: интро (p + h2 + p) и основной контент WYSIWYG.",
+        "show_in_rest": 0
+    },
+    {
+        "key": "group_services_full",
+        "title": "Услуга — все поля (services-full)",
+        "fields": [
+            {
+                "key": "field_services_tab_card",
+                "label": "Карточка услуги в общей странице",
+                "name": "",
+                "aria-label": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "top",
+                "endpoint": 0,
+                "selected": 0
+            },
+            {
+                "key": "field_service_intro",
+                "label": "Интро (короткий текст сверху)",
+                "name": "service_intro",
+                "aria-label": "",
+                "type": "textarea",
+                "instructions": "Короткий вводный текст для страницы услуги (single). Если не нужен — оставь пустым.",
+                "required": 0,
+                "conditional_logic": false,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "new_lines": "br",
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "",
+                "rows": ""
+            },
+            {
+                "key": "field_service_features",
+                "label": "Пункты списка на карточке",
+                "name": "service_features",
+                "aria-label": "",
+                "type": "repeater",
+                "instructions": "Это список под заголовком услуги на карточке (обычно 3 пункта).",
+                "required": 0,
+                "conditional_logic": false,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "min": 0,
+                "max": 6,
+                "layout": "row",
+                "button_label": "Добавить пункт",
+                "rows_per_page": 20,
+                "collapsed": "",
+                "sub_fields": [
+                    {
+                        "key": "field_service_features_text",
+                        "label": "Текст пункта",
+                        "name": "text",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "Пример: «Среднее время уборки 5-8 часов»",
+                        "required": 1,
+                        "conditional_logic": false,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "maxlength": "",
+                        "parent_repeater": "field_service_features"
+                    }
+                ]
+            },
+            {
+                "key": "field_service_price",
+                "label": "Цена (текстом)",
+                "name": "service_price",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "Как на макете: «от 140 руб\/м²» (тут именно текст, чтобы не ломать формат).",
+                "required": 0,
+                "conditional_logic": false,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "от 140 руб\/м²",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_service_order_link",
+                "label": "Ссылка «Заказать»",
+                "name": "service_order_link",
+                "aria-label": "",
+                "type": "url",
+                "instructions": "Ссылка на форму\/мессенджер\/страницу заказа. Можно поставить #",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": ""
+            },
+            {
+                "key": "field_service_content",
+                "label": "Основной контент (WYSIWYG)",
+                "name": "service_content",
+                "aria-label": "",
+                "type": "wysiwyg",
+                "instructions": "Основной текст для страницы услуги (single). Сюда пишем заголовки\/списки\/параграфы",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "tabs": "all",
+                "toolbar": "full",
+                "media_upload": 1,
+                "delay": 0
+            },
+            {
+                "key": "field_services_tab_hero",
+                "label": "Заглавная секция",
+                "name": "",
+                "aria-label": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "top",
+                "endpoint": 0,
+                "selected": 0
+            },
+            {
+                "key": "field_service_hero_title",
+                "label": "H1 (заголовок вверху страницы)",
+                "name": "service_hero_title",
+                "aria-label": "",
+                "type": "textarea",
+                "instructions": "Заголовок. Переносы строк можно делать через Enter (в шаблоне выводим через nl2br).",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "rows": "",
+                "placeholder": "",
+                "new_lines": "br"
+            },
+            {
+                "key": "field_service_hero_main_image",
+                "label": "Hero — главное изображение (980×420)",
+                "name": "service_hero_main_image",
+                "aria-label": "",
+                "type": "image",
+                "instructions": "Главное фото в шапке услуги. Рекомендованный размер 980×420.",
+                "required": 0,
+                "conditional_logic": false,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "array",
+                "preview_size": "medium",
+                "library": "all",
+                "min_width": 0,
+                "min_height": 0,
+                "min_size": 0,
+                "max_width": 0,
+                "max_height": 0,
+                "max_size": 0,
+                "mime_types": ""
+            },
+            {
+                "key": "field_service_hero_main_alt",
+                "label": "Hero — alt главного изображения",
+                "name": "service_hero_main_alt",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "Alt для главной картинки (SEO\/доступность). Если пусто — подставим заголовок услуги.",
+                "required": 0,
+                "conditional_logic": false,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_service_hero_side_image",
+                "label": "Hero — боковое изображение (420×420)",
+                "name": "service_hero_side_image",
+                "aria-label": "",
+                "type": "image",
+                "instructions": "Боковое фото в шапке услуги. Рекомендованный размер 420×420.",
+                "required": 0,
+                "conditional_logic": false,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "array",
+                "preview_size": "medium",
+                "library": "all",
+                "min_width": 0,
+                "min_height": 0,
+                "min_size": 0,
+                "max_width": 0,
+                "max_height": 0,
+                "max_size": 0,
+                "mime_types": ""
+            },
+            {
+                "key": "field_service_hero_side_alt",
+                "label": "Hero — alt бокового изображения",
+                "name": "service_hero_side_alt",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "Alt для боковой картинки. Если пусто — подставим заголовок услуги.",
+                "required": 0,
+                "conditional_logic": false,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_services_tab_intro_block",
+                "label": "Блок «Текст + фото»",
+                "name": "",
+                "aria-label": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": false,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "top",
+                "endpoint": 0,
+                "selected": 0
+            },
+            {
+                "key": "field_service_intro_block",
+                "label": "Блок «Текст + фото» (после Hero)",
+                "name": "service_intro_block",
+                "aria-label": "",
+                "type": "group",
+                "instructions": "Большой текстовый блок с картинкой справа",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "layout": "block",
+                "sub_fields": [
+                    {
+                        "key": "field_service_intro_title",
+                        "label": "Заголовок блока",
+                        "name": "title",
+                        "aria-label": "",
+                        "type": "textarea",
+                        "instructions": "Заголовок как в макете. Переносы строк можно делать через Enter.",
+                        "required": false,
+                        "conditional_logic": false,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "new_lines": "br",
+                        "default_value": "",
+                        "maxlength": "",
+                        "placeholder": "",
+                        "rows": ""
+                    },
+                    {
+                        "key": "field_service_intro_text",
+                        "label": "Текст блока",
+                        "name": "text",
+                        "aria-label": "",
+                        "type": "wysiwyg",
+                        "instructions": "Текст под заголовком. Можно вставлять переносы\/абзацы как в статике.",
+                        "required": false,
+                        "conditional_logic": false,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "tabs": "all",
+                        "toolbar": "basic",
+                        "media_upload": 0,
+                        "default_value": "",
+                        "delay": 0
+                    },
+                    {
+                        "key": "field_service_intro_image",
+                        "label": "Изображение блока (630×540)",
+                        "name": "image",
+                        "aria-label": "",
+                        "type": "image",
+                        "instructions": "Картинка справа. Рекомендованный размер 630×540.",
+                        "required": false,
+                        "conditional_logic": false,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "return_format": "array",
+                        "preview_size": "medium",
+                        "library": "all",
+                        "min_width": 0,
+                        "min_height": 0,
+                        "min_size": 0,
+                        "max_width": 0,
+                        "max_height": 0,
+                        "max_size": 0,
+                        "mime_types": ""
+                    },
+                    {
+                        "key": "field_service_intro_alt",
+                        "label": "Alt изображения",
+                        "name": "alt",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "Alt для картинки. Если пусто — подставим заголовок услуги.",
+                        "required": false,
+                        "conditional_logic": false,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": ""
+                    }
+                ]
+            },
+            {
+                "key": "field_services_tab_includes",
+                "label": "Табы «Что входит»",
+                "name": "",
+                "aria-label": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": false,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "top",
+                "endpoint": 0,
+                "selected": 0
+            },
+            {
+                "key": "field_service_includes_tabs",
+                "label": "Блок «Что входит» (табы)",
+                "name": "service_includes_tabs",
+                "aria-label": "",
+                "type": "group",
+                "instructions": "Табы: кнопки + панели",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "layout": "block",
+                "sub_fields": [
+                    {
+                        "key": "field_service_includes_title",
+                        "label": "Заголовок блока",
+                        "name": "title",
+                        "aria-label": "",
+                        "type": "textarea",
+                        "instructions": "Заголовок над табами. Переносы строк можно делать через Enter.",
+                        "required": false,
+                        "conditional_logic": false,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "new_lines": "br",
+                        "default_value": "",
+                        "maxlength": "",
+                        "placeholder": "",
+                        "rows": ""
+                    },
+                    {
+                        "key": "field_service_includes_tabs_items",
+                        "label": "Табы",
+                        "name": "tabs",
+                        "aria-label": "",
+                        "type": "repeater",
+                        "instructions": "Каждый таб = кнопка + контент (колонки). Первый таб будет активным по умолчанию.",
+                        "required": false,
+                        "conditional_logic": false,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "layout": "block",
+                        "button_label": "Добавить таб",
+                        "min": 0,
+                        "max": 0,
+                        "rows_per_page": 20,
+                        "collapsed": "",
+                        "sub_fields": [
+                            {
+                                "key": "field_service_includes_tab_label",
+                                "label": "Название таба (кнопка)",
+                                "name": "label",
+                                "aria-label": "",
+                                "type": "text",
+                                "instructions": "Например: «В тарифе», «Мытье окон», «Химчистка», «Дополнительные услуги».",
+                                "required": false,
+                                "conditional_logic": false,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "maxlength": "",
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": "",
+                                "parent_repeater": "field_service_includes_tabs_items"
+                            },
+                            {
+                                "key": "field_service_includes_tab_columns",
+                                "label": "Колонки внутри таба",
+                                "name": "columns",
+                                "aria-label": "",
+                                "type": "repeater",
+                                "instructions": "Колонка = подзаголовок + список пунктов.",
+                                "required": false,
+                                "conditional_logic": false,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "layout": "block",
+                                "button_label": "Добавить колонку",
+                                "min": 0,
+                                "max": 0,
+                                "rows_per_page": 20,
+                                "collapsed": "",
+                                "sub_fields": [
+                                    {
+                                        "key": "field_service_includes_col_title",
+                                        "label": "Подзаголовок колонки",
+                                        "name": "title",
+                                        "aria-label": "",
+                                        "type": "text",
+                                        "instructions": "Например: «Кухня:», «Ванная комната и санузел:».",
+                                        "required": false,
+                                        "conditional_logic": false,
+                                        "wrapper": {
+                                            "width": "",
+                                            "class": "",
+                                            "id": ""
+                                        },
+                                        "default_value": "",
+                                        "maxlength": "",
+                                        "placeholder": "",
+                                        "prepend": "",
+                                        "append": "",
+                                        "parent_repeater": "field_service_includes_tab_columns"
+                                    },
+                                    {
+                                        "key": "field_service_includes_col_list",
+                                        "label": "Список пунктов",
+                                        "name": "items",
+                                        "aria-label": "",
+                                        "type": "repeater",
+                                        "instructions": "Пункты списка как в макете.",
+                                        "required": false,
+                                        "conditional_logic": false,
+                                        "wrapper": {
+                                            "width": "",
+                                            "class": "",
+                                            "id": ""
+                                        },
+                                        "layout": "row",
+                                        "button_label": "Добавить пункт",
+                                        "min": 0,
+                                        "max": 0,
+                                        "rows_per_page": 20,
+                                        "collapsed": "",
+                                        "sub_fields": [
+                                            {
+                                                "key": "field_service_includes_item_text",
+                                                "label": "Текст пункта",
+                                                "name": "text",
+                                                "aria-label": "",
+                                                "type": "text",
+                                                "instructions": "",
+                                                "required": false,
+                                                "conditional_logic": false,
+                                                "wrapper": {
+                                                    "width": "",
+                                                    "class": "",
+                                                    "id": ""
+                                                },
+                                                "default_value": "",
+                                                "maxlength": "",
+                                                "placeholder": "",
+                                                "prepend": "",
+                                                "append": "",
+                                                "parent_repeater": "field_service_includes_col_list"
+                                            }
+                                        ],
+                                        "parent_repeater": "field_service_includes_tab_columns"
+                                    }
+                                ],
+                                "parent_repeater": "field_service_includes_tabs_items"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "key": "field_services_tab_works",
+                "label": "Примеры работ",
+                "name": "",
+                "aria-label": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": false,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "top",
+                "endpoint": 0,
+                "selected": 0
+            },
+            {
+                "key": "field_service_works_examples",
+                "label": "Блок «Примеры работ»",
+                "name": "service_works_examples",
+                "aria-label": "",
+                "type": "group",
+                "instructions": "Слайдер кейсов, Внутри кейса — галерея и текстовые поля.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "layout": "block",
+                "sub_fields": [
+                    {
+                        "key": "field_service_works_title",
+                        "label": "Заголовок блока",
+                        "name": "title",
+                        "aria-label": "",
+                        "type": "textarea",
+                        "instructions": "Заголовок блока. Переносы строк можно делать через Enter.",
+                        "required": false,
+                        "conditional_logic": false,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "new_lines": "br",
+                        "default_value": "",
+                        "maxlength": "",
+                        "placeholder": "",
+                        "rows": ""
+                    },
+                    {
+                        "key": "field_service_works_all_link",
+                        "label": "Ссылка «Все наши работы»",
+                        "name": "all_link",
+                        "aria-label": "",
+                        "type": "url",
+                        "instructions": "Куда ведёт кнопка «Все наши работы». Можно оставить пустым — тогда кнопку скрываем.",
+                        "required": false,
+                        "conditional_logic": false,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "placeholder": ""
+                    },
+                    {
+                        "key": "field_service_works_items",
+                        "label": "Кейсы (карточки работ)",
+                        "name": "items",
+                        "aria-label": "",
+                        "type": "repeater",
+                        "instructions": "Каждый кейс = карточка work-card (слайд).",
+                        "required": false,
+                        "conditional_logic": false,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "layout": "block",
+                        "button_label": "Добавить кейс",
+                        "min": 0,
+                        "max": 0,
+                        "rows_per_page": 20,
+                        "collapsed": "",
+                        "sub_fields": [
+                            {
+                                "key": "field_service_work_gallery",
+                                "label": "Галерея кейса",
+                                "name": "gallery",
+                                "aria-label": "",
+                                "type": "gallery",
+                                "instructions": "Фото для мини-слайдера внутри карточки.",
+                                "required": false,
+                                "conditional_logic": false,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "return_format": "array",
+                                "preview_size": "medium",
+                                "library": "all",
+                                "insert": "append",
+                                "min": 0,
+                                "max": 0,
+                                "min_width": 0,
+                                "min_height": 0,
+                                "min_size": 0,
+                                "max_width": 0,
+                                "max_height": 0,
+                                "max_size": 0,
+                                "mime_types": "",
+                                "parent_repeater": "field_service_works_items"
+                            },
+                            {
+                                "key": "field_service_work_title",
+                                "label": "Название работы",
+                                "name": "title",
+                                "aria-label": "",
+                                "type": "text",
+                                "instructions": "Например: «Клининг квартиры».",
+                                "required": false,
+                                "conditional_logic": false,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "maxlength": "",
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": "",
+                                "parent_repeater": "field_service_works_items"
+                            },
+                            {
+                                "key": "field_service_work_area",
+                                "label": "Площадь (мета)",
+                                "name": "area",
+                                "aria-label": "",
+                                "type": "text",
+                                "instructions": "Например: «55 м²».",
+                                "required": false,
+                                "conditional_logic": false,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "maxlength": "",
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": "",
+                                "parent_repeater": "field_service_works_items"
+                            },
+                            {
+                                "key": "field_service_work_time",
+                                "label": "Сроки (мета)",
+                                "name": "time",
+                                "aria-label": "",
+                                "type": "text",
+                                "instructions": "Например: «5 ч».",
+                                "required": false,
+                                "conditional_logic": false,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "maxlength": "",
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": "",
+                                "parent_repeater": "field_service_works_items"
+                            },
+                            {
+                                "key": "field_service_work_price",
+                                "label": "Цена (мета)",
+                                "name": "price",
+                                "aria-label": "",
+                                "type": "text",
+                                "instructions": "Например: «11 900 ₽».",
+                                "required": false,
+                                "conditional_logic": false,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "maxlength": "",
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": "",
+                                "parent_repeater": "field_service_works_items"
+                            },
+                            {
+                                "key": "field_service_work_list_title",
+                                "label": "Подзаголовок списка работ",
+                                "name": "list_title",
+                                "aria-label": "",
+                                "type": "text",
+                                "instructions": "По умолчанию в макете: «Виды выполненных работ:». Можно оставить пустым — поставим дефолт.",
+                                "required": false,
+                                "conditional_logic": false,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "maxlength": "",
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": "",
+                                "parent_repeater": "field_service_works_items"
+                            },
+                            {
+                                "key": "field_service_work_list",
+                                "label": "Список выполненных работ",
+                                "name": "list",
+                                "aria-label": "",
+                                "type": "repeater",
+                                "instructions": "",
+                                "required": false,
+                                "conditional_logic": false,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "layout": "row",
+                                "button_label": "Добавить пункт",
+                                "min": 0,
+                                "max": 0,
+                                "rows_per_page": 20,
+                                "collapsed": "",
+                                "sub_fields": [
+                                    {
+                                        "key": "field_service_work_list_item",
+                                        "label": "Пункт",
+                                        "name": "text",
+                                        "aria-label": "",
+                                        "type": "text",
+                                        "instructions": "",
+                                        "required": false,
+                                        "conditional_logic": false,
+                                        "wrapper": {
+                                            "width": "",
+                                            "class": "",
+                                            "id": ""
+                                        },
+                                        "default_value": "",
+                                        "maxlength": "",
+                                        "placeholder": "",
+                                        "prepend": "",
+                                        "append": "",
+                                        "parent_repeater": "field_service_work_list"
+                                    }
+                                ],
+                                "parent_repeater": "field_service_works_items"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "key": "field_services_tab_equipment",
+                "label": "Оборудование",
+                "name": "",
+                "aria-label": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": false,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "top",
+                "endpoint": 0,
+                "selected": 0
+            },
+            {
+                "key": "field_service_equipment",
+                "label": "Блок «Оборудование»",
+                "name": "service_equipment",
+                "aria-label": "",
+                "type": "group",
+                "instructions": "Слайдер карточек оборудования (картинка + заголовок).",
+                "required": false,
+                "conditional_logic": false,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "sub_fields": [
+                    {
+                        "key": "field_service_equipment_title",
+                        "label": "Заголовок блока",
+                        "name": "title",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "Например: «ОБОРУДОВАНИЕ».",
+                        "required": false,
+                        "conditional_logic": false,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": ""
+                    },
+                    {
+                        "key": "field_service_equipment_items",
+                        "label": "Карточки оборудования",
+                        "name": "items",
+                        "aria-label": "",
+                        "type": "repeater",
+                        "instructions": "",
+                        "required": false,
+                        "conditional_logic": false,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "layout": "block",
+                        "button_label": "Добавить карточку",
+                        "min": 0,
+                        "max": 0,
+                        "rows_per_page": 20,
+                        "collapsed": "",
+                        "sub_fields": [
+                            {
+                                "key": "field_service_equipment_image",
+                                "label": "Картинка",
+                                "name": "image",
+                                "aria-label": "",
+                                "type": "image",
+                                "instructions": "Картинка оборудования.",
+                                "required": false,
+                                "conditional_logic": false,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "return_format": "array",
+                                "preview_size": "medium",
+                                "library": "all",
+                                "min_width": 0,
+                                "min_height": 0,
+                                "min_size": 0,
+                                "max_width": 0,
+                                "max_height": 0,
+                                "max_size": 0,
+                                "mime_types": "",
+                                "parent_repeater": "field_service_equipment_items"
+                            },
+                            {
+                                "key": "field_service_equipment_alt",
+                                "label": "Alt картинки",
+                                "name": "alt",
+                                "aria-label": "",
+                                "type": "text",
+                                "instructions": "Alt для картинки. Если пусто — можно подставить заголовок карточки.",
+                                "required": false,
+                                "conditional_logic": false,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "maxlength": "",
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": "",
+                                "parent_repeater": "field_service_equipment_items"
+                            },
+                            {
+                                "key": "field_service_equipment_card_title",
+                                "label": "Заголовок карточки",
+                                "name": "title",
+                                "aria-label": "",
+                                "type": "textarea",
+                                "instructions": "Текст как в макете. Переносы строк можно делать через Enter.",
+                                "required": false,
+                                "conditional_logic": false,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "new_lines": "br",
+                                "default_value": "",
+                                "maxlength": "",
+                                "placeholder": "",
+                                "rows": "",
+                                "parent_repeater": "field_service_equipment_items"
+                            }
+                        ]
+                    }
+                ],
+                "layout": "block"
+            },
+            {
+                "key": "field_services_tab_bottom",
+                "label": "Блок «Текст + фото 2»",
+                "name": "",
+                "aria-label": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "top",
+                "endpoint": 0,
+                "selected": 0
+            },
+            {
+                "key": "field_service_bottom_text_photo",
+                "label": "Блок «Текст + фото 2»",
+                "name": "service_bottom_text_photo",
+                "aria-label": "",
+                "type": "group",
+                "instructions": "Большой текстовый блок ближе к концу страницы",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "layout": "block",
+                "sub_fields": [
+                    {
+                        "key": "field_service_bottom_title",
+                        "label": "Заголовок",
+                        "name": "title",
+                        "aria-label": "",
+                        "type": "textarea",
+                        "instructions": "Заголовок как в макете. Переносы строк можно делать через Enter.",
+                        "required": false,
+                        "conditional_logic": false,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "new_lines": "br",
+                        "default_value": "",
+                        "maxlength": "",
+                        "placeholder": "",
+                        "rows": ""
+                    },
+                    {
+                        "key": "field_service_bottom_text",
+                        "label": "Текст (можно несколькими абзацами)",
+                        "name": "text",
+                        "aria-label": "",
+                        "type": "wysiwyg",
+                        "instructions": "Текст\/абзацы как в статике. Можно 2–4 абзаца.",
+                        "required": false,
+                        "conditional_logic": false,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "tabs": "all",
+                        "toolbar": "basic",
+                        "media_upload": 0,
+                        "default_value": "",
+                        "delay": 0
+                    },
+                    {
+                        "key": "field_service_bottom_image",
+                        "label": "Картинка",
+                        "name": "image",
+                        "aria-label": "",
+                        "type": "image",
+                        "instructions": "",
+                        "required": false,
+                        "conditional_logic": false,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "return_format": "array",
+                        "preview_size": "medium",
+                        "library": "all",
+                        "min_width": 0,
+                        "min_height": 0,
+                        "min_size": 0,
+                        "max_width": 0,
+                        "max_height": 0,
+                        "max_size": 0,
+                        "mime_types": ""
+                    },
+                    {
+                        "key": "field_service_bottom_alt",
+                        "label": "Alt картинки",
+                        "name": "alt",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "Alt для картинки. Если пусто — подставим заголовок услуги.",
+                        "required": false,
+                        "conditional_logic": false,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": ""
+                    }
+                ]
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "service"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "acf_after_title",
+        "style": "seamless",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": [
+            "the_content",
+            "excerpt",
+            "discussion",
+            "comments",
+            "format"
+        ],
+        "active": true,
+        "description": "Единая группа полей услуги с табами, без переименования существующих name.",
+        "show_in_rest": 0
+    },
+    {
+        "key": "group_header_settings_001",
+        "title": "Шапка + Футер — настройки",
+        "fields": [
+            {
+                "key": "field_header_tab_main_001",
+                "label": "Шапка",
+                "name": "",
+                "aria-label": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": false,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "top",
+                "endpoint": 0,
+                "selected": 0
+            },
+            {
+                "key": "field_header_cfg_001",
+                "label": "Конфиг шапки",
+                "name": "header_cfg",
+                "aria-label": "",
+                "type": "group",
+                "instructions": "",
+                "required": false,
+                "conditional_logic": false,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "layout": "block",
+                "sub_fields": [
+                    {
+                        "key": "field_header_phone_label_001",
+                        "label": "Телефон (текст)",
+                        "name": "phone_label",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "",
+                        "required": false,
+                        "conditional_logic": false,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "placeholder": "+7 (924) 019 69 62",
+                        "default_value": "",
+                        "maxlength": "",
+                        "prepend": "",
+                        "append": ""
+                    },
+                    {
+                        "key": "field_header_phone_tel_001",
+                        "label": "Телефон (для tel:)",
+                        "name": "phone_tel",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "Можно с пробелами\/скобками",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": "",
+                        "placeholder": "+79240196962",
+                        "prepend": "",
+                        "append": ""
+                    },
+                    {
+                        "key": "field_header_cta_001",
+                        "label": "Кнопка (CTA)",
+                        "name": "cta",
+                        "aria-label": "",
+                        "type": "group",
+                        "instructions": "",
+                        "required": false,
+                        "conditional_logic": false,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "layout": "row",
+                        "sub_fields": [
+                            {
+                                "key": "field_header_cta_label_001",
+                                "label": "Текст",
+                                "name": "label",
+                                "aria-label": "",
+                                "type": "text",
+                                "instructions": "",
+                                "required": false,
+                                "conditional_logic": false,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "Заказать звонок",
+                                "maxlength": "",
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": ""
+                            },
+                            {
+                                "key": "field_header_cta_url_001",
+                                "label": "Ссылка",
+                                "name": "url",
+                                "aria-label": "",
+                                "type": "url",
+                                "instructions": "",
+                                "required": false,
+                                "conditional_logic": false,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "#",
+                                "placeholder": ""
+                            }
+                        ]
+                    },
+                    {
+                        "key": "field_header_nav_001",
+                        "label": "Основное меню",
+                        "name": "nav",
+                        "aria-label": "",
+                        "type": "repeater",
+                        "instructions": "",
+                        "required": false,
+                        "conditional_logic": false,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "layout": "row",
+                        "button_label": "Добавить пункт",
+                        "min": 0,
+                        "max": 0,
+                        "rows_per_page": 20,
+                        "collapsed": "",
+                        "sub_fields": [
+                            {
+                                "key": "field_header_nav_label_001",
+                                "label": "Текст",
+                                "name": "label",
+                                "aria-label": "",
+                                "type": "text",
+                                "instructions": "",
+                                "required": 1,
+                                "conditional_logic": false,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "maxlength": "",
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": "",
+                                "parent_repeater": "field_header_nav_001"
+                            },
+                            {
+                                "key": "field_header_nav_link_001",
+                                "label": "Ссылка",
+                                "name": "link",
+                                "aria-label": "",
+                                "type": "link",
+                                "instructions": "",
+                                "required": 1,
+                                "conditional_logic": false,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "return_format": "array",
+                                "parent_repeater": "field_header_nav_001"
+                            },
+                            {
+                                "key": "field_header_nav_is_promo_001",
+                                "label": "Иконка Огня",
+                                "name": "is_promo",
+                                "aria-label": "",
+                                "type": "true_false",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "message": "",
+                                "default_value": 0,
+                                "ui_on_text": "",
+                                "ui_off_text": "",
+                                "ui": 1,
+                                "parent_repeater": "field_header_nav_001"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "field_header_nav_alt_001",
+                        "label": "Дополнительное меню (нижнее)",
+                        "name": "nav_alt",
+                        "aria-label": "",
+                        "type": "repeater",
+                        "instructions": "",
+                        "required": false,
+                        "conditional_logic": false,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "layout": "row",
+                        "button_label": "Добавить пункт",
+                        "min": 0,
+                        "max": 0,
+                        "rows_per_page": 20,
+                        "collapsed": "",
+                        "sub_fields": [
+                            {
+                                "key": "field_header_nav_alt_label_001",
+                                "label": "Текст",
+                                "name": "label",
+                                "aria-label": "",
+                                "type": "text",
+                                "instructions": "",
+                                "required": 1,
+                                "conditional_logic": false,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "maxlength": "",
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": "",
+                                "parent_repeater": "field_header_nav_alt_001"
+                            },
+                            {
+                                "key": "field_header_nav_alt_link_001",
+                                "label": "Ссылка",
+                                "name": "link",
+                                "aria-label": "",
+                                "type": "link",
+                                "instructions": "",
+                                "required": 1,
+                                "conditional_logic": false,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "return_format": "array",
+                                "parent_repeater": "field_header_nav_alt_001"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "key": "field_footer_tab_main_001",
+                "label": "Футер",
+                "name": "",
+                "aria-label": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": false,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "top",
+                "endpoint": 0,
+                "selected": 0
+            },
+            {
+                "key": "field_footer_cfg_001",
+                "label": "Конфиг футера",
+                "name": "footer_cfg",
+                "aria-label": "",
+                "type": "group",
+                "instructions": "",
+                "required": false,
+                "conditional_logic": false,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "layout": "block",
+                "sub_fields": [
+                    {
+                        "key": "field_footer_cols_001",
+                        "label": "Колонки",
+                        "name": "cols",
+                        "aria-label": "",
+                        "type": "repeater",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "layout": "block",
+                        "pagination": 0,
+                        "min": 0,
+                        "max": 0,
+                        "collapsed": "",
+                        "button_label": "Добавить колонку",
+                        "rows_per_page": 20,
+                        "sub_fields": [
+                            {
+                                "key": "field_footer_col_title_001",
+                                "label": "Заголовок колонки",
+                                "name": "title",
+                                "aria-label": "",
+                                "type": "text",
+                                "instructions": "",
+                                "required": 1,
+                                "conditional_logic": false,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "maxlength": "",
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": "",
+                                "parent_repeater": "field_footer_cols_001"
+                            },
+                            {
+                                "key": "field_footer_col_links_001",
+                                "label": "Ссылки",
+                                "name": "links",
+                                "aria-label": "",
+                                "type": "repeater",
+                                "instructions": "",
+                                "required": false,
+                                "conditional_logic": false,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "layout": "row",
+                                "button_label": "Добавить ссылку",
+                                "min": 0,
+                                "max": 0,
+                                "rows_per_page": 20,
+                                "collapsed": "",
+                                "sub_fields": [
+                                    {
+                                        "key": "field_footer_col_link_001",
+                                        "label": "Ссылка",
+                                        "name": "link",
+                                        "aria-label": "",
+                                        "type": "link",
+                                        "instructions": "",
+                                        "required": 1,
+                                        "conditional_logic": false,
+                                        "wrapper": {
+                                            "width": "",
+                                            "class": "",
+                                            "id": ""
+                                        },
+                                        "return_format": "array",
+                                        "parent_repeater": "field_footer_col_links_001"
+                                    }
+                                ],
+                                "parent_repeater": "field_footer_cols_001"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "field_footer_contacts_group_001",
+                        "label": "Контакты",
+                        "name": "contacts",
+                        "aria-label": "",
+                        "type": "group",
+                        "instructions": "",
+                        "required": false,
+                        "conditional_logic": false,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "layout": "row",
+                        "sub_fields": [
+                            {
+                                "key": "field_footer_phone_label_001",
+                                "label": "Телефон (текст)",
+                                "name": "phone_label",
+                                "aria-label": "",
+                                "type": "text",
+                                "instructions": "",
+                                "required": false,
+                                "conditional_logic": false,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "placeholder": "+7 (924) 019 69 62",
+                                "default_value": "",
+                                "maxlength": "",
+                                "prepend": "",
+                                "append": ""
+                            },
+                            {
+                                "key": "field_footer_phone_tel_001",
+                                "label": "Телефон (для tel:)",
+                                "name": "phone_tel",
+                                "aria-label": "",
+                                "type": "text",
+                                "instructions": "Можно с пробелами\/скобками",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "maxlength": "",
+                                "placeholder": "+79240196962",
+                                "prepend": "",
+                                "append": ""
+                            },
+                            {
+                                "key": "field_footer_email_001",
+                                "label": "Email",
+                                "name": "email",
+                                "aria-label": "",
+                                "type": "email",
+                                "instructions": "",
+                                "required": false,
+                                "conditional_logic": false,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "placeholder": "mail@example.com",
+                                "default_value": "",
+                                "prepend": "",
+                                "append": ""
+                            },
+                            {
+                                "key": "field_footer_address_001",
+                                "label": "Адрес",
+                                "name": "address",
+                                "aria-label": "",
+                                "type": "text",
+                                "instructions": "",
+                                "required": false,
+                                "conditional_logic": false,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "placeholder": "г. Калининград, ул. ...",
+                                "default_value": "",
+                                "maxlength": "",
+                                "prepend": "",
+                                "append": ""
+                            }
+                        ]
+                    },
+                    {
+                        "key": "field_footer_region_group_001",
+                        "label": "Регион работы",
+                        "name": "region",
+                        "aria-label": "",
+                        "type": "group",
+                        "instructions": "",
+                        "required": false,
+                        "conditional_logic": false,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "layout": "row",
+                        "sub_fields": [
+                            {
+                                "key": "field_footer_region_title_001",
+                                "label": "Заголовок",
+                                "name": "title",
+                                "aria-label": "",
+                                "type": "text",
+                                "instructions": "",
+                                "required": false,
+                                "conditional_logic": false,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "Регион работы:",
+                                "maxlength": "",
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": ""
+                            },
+                            {
+                                "key": "field_footer_region_text_001",
+                                "label": "Текст",
+                                "name": "text",
+                                "aria-label": "",
+                                "type": "textarea",
+                                "instructions": "",
+                                "required": false,
+                                "conditional_logic": false,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "new_lines": "br",
+                                "placeholder": "Калининград,\nи Калининградская область",
+                                "default_value": "",
+                                "maxlength": "",
+                                "rows": ""
+                            }
+                        ]
+                    },
+                    {
+                        "key": "field_footer_pay_title_001",
+                        "label": "Блок «Способы оплаты» — заголовок",
+                        "name": "pay_title",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "",
+                        "required": false,
+                        "conditional_logic": false,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "Способы оплаты:",
+                        "maxlength": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": ""
+                    }
+                ]
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "options_page",
+                    "operator": "==",
+                    "value": "theme-header-settings"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": "Одна страница опций: вкладки Шапка\/Футер.",
+        "show_in_rest": 0
+    },
+    {
+        "key": "group_callback_form_override",
+        "title": "Callback form (Переопределение на странице)",
+        "fields": [
+            {
+                "key": "field_cb_override_tab",
+                "label": "Callback form",
+                "name": "",
+                "aria-label": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": false,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "top",
+                "endpoint": 0,
+                "selected": 0
+            },
+            {
+                "key": "field_cb_override_enable",
+                "label": "Переопределить на этой странице",
+                "name": "cb_override_enable",
+                "aria-label": "",
+                "type": "true_false",
+                "instructions": "Включи, если нужен уникальный текст\/картинка\/форма именно на этой странице.",
+                "required": 0,
+                "conditional_logic": false,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "ui": 1,
+                "default_value": 0,
+                "message": "",
+                "ui_on_text": "",
+                "ui_off_text": ""
+            },
+            {
+                "key": "field_cb_override_title",
+                "label": "Заголовок (override)",
+                "name": "cb_override_title",
+                "aria-label": "",
+                "type": "textarea",
+                "instructions": "Можно использовать <br>.",
+                "required": 0,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_cb_override_enable",
+                            "operator": "==",
+                            "value": "1"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "new_lines": "br",
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "",
+                "rows": ""
+            },
+            {
+                "key": "field_cb_override_subtitle",
+                "label": "Подзаголовок (override)",
+                "name": "cb_override_subtitle",
+                "aria-label": "",
+                "type": "textarea",
+                "instructions": "Можно использовать <br>.",
+                "required": 0,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_cb_override_enable",
+                            "operator": "==",
+                            "value": "1"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "new_lines": "br",
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "",
+                "rows": ""
+            },
+            {
+                "key": "field_cb_override_cf7",
+                "label": "CF7 шорткод (override)",
+                "name": "cb_override_cf7_shortcode",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "Если пусто — возьмём глобальный.",
+                "required": 0,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_cb_override_enable",
+                            "operator": "==",
+                            "value": "1"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_cb_override_image",
+                "label": "Картинка (override)",
+                "name": "cb_override_image",
+                "aria-label": "",
+                "type": "image",
+                "instructions": "Если пусто — возьмём глобальную.",
+                "required": 0,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_cb_override_enable",
+                            "operator": "==",
+                            "value": "1"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "array",
+                "preview_size": "medium",
+                "library": "all",
+                "min_width": 0,
+                "min_height": 0,
+                "min_size": 0,
+                "max_width": 0,
+                "max_height": 0,
+                "max_size": 0,
+                "mime_types": ""
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "page"
+                }
+            ]
+        ],
+        "menu_order": 20,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": "",
+        "show_in_rest": false
+    }
+]
